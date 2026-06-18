@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Electric Forest 2027 — AC Landing Checklist</title>
-<meta name="description" content="A mobile-friendly packing checklist for Electric Forest (AC Landing glamping). Tap to check items off — your progress saves automatically on your device.">
+<title>Electric Forest 2026 — Packing Checklist (pick your camping option)</title>
+<meta name="description" content="Pick your Electric Forest 2026 camping option (GA, Good Life, Back 40, RV, Hotel) and get a tailored packing checklist with weather pinned on top. Progress saves on your device.">
 <meta name="theme-color" content="#081410">
 <meta name="color-scheme" content="dark">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌲</text></svg>">
-<meta property="og:title" content="Electric Forest — AC Landing Packing Checklist">
-<meta property="og:description" content="Interactive packing checklist for Electric Forest glamping. Tap to check off; progress saves on your device.">
+<meta property="og:title" content="Electric Forest 2026 — Packing Checklist">
+<meta property="og:description" content="Pick your camping option and get a tailored packing list. Tap to check off; progress saves on your device.">
 <meta property="og:type" content="website">
 <style>
   :root{
@@ -19,7 +19,7 @@
     --panel-line:#1d3a2a;
     --ink:#e9f3ec;
     --ink-dim:#8aa597;
-    --ink-faint:#5d7468;
+    --ink-faint:#7b9285;   /* lifted to pass WCAG AA on the dark panel */
     --glow:#57efa6;      /* bioluminescent green */
     --glow-soft:#2fae79;
     --firefly:#ffd887;   /* warm string-light amber */
@@ -43,12 +43,12 @@
   }
   .wrap{max-width:660px;margin:0 auto;}
 
-  /* ---------- Sticky progress header ---------- */
+  /* ---------- Sticky control header (kept compact) ---------- */
   header{
     position:sticky;top:0;z-index:20;
-    margin:0 -14px 18px;
-    padding:16px 16px 14px;
-    background:linear-gradient(180deg, rgba(8,20,16,.94), rgba(8,20,16,.80));
+    margin:0 -14px 12px;
+    padding:12px 16px 11px;
+    background:linear-gradient(180deg, rgba(8,20,16,.95), rgba(8,20,16,.82));
     backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
     border-bottom:1px solid var(--panel-line);
     overflow:hidden;
@@ -56,76 +56,120 @@
   .fireflies{position:absolute;inset:0;pointer-events:none;}
   .ff{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--firefly);
       box-shadow:0 0 6px 2px rgba(255,216,135,.7);opacity:calc(.15 + var(--p,0)*.8);}
-  .eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--glow);font-weight:700;}
-  h1{margin:3px 0 2px;font-size:21px;line-height:1.15;font-weight:800;letter-spacing:-.01em;}
-  .meta{font-size:12px;color:var(--ink-dim);line-height:1.45;margin-top:2px;}
-  .meta b{color:var(--ink);font-weight:600;}
+  .eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--glow);font-weight:700;}
 
-  .progwrap{display:flex;align-items:baseline;gap:8px;margin:12px 0 7px;}
-  .count{font-size:26px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;}
+  /* option selector */
+  .opt-label{display:block;font-size:11px;letter-spacing:.04em;color:var(--ink-dim);font-weight:600;margin:7px 0 3px;}
+  .select-shell{position:relative;}
+  .select-shell::after{content:"";position:absolute;right:14px;top:50%;width:8px;height:8px;
+       border-right:2px solid var(--glow);border-bottom:2px solid var(--glow);
+       transform:translateY(-65%) rotate(45deg);pointer-events:none;}
+  select#opt{
+    width:100%;min-height:48px;font:inherit;font-size:15px;font-weight:700;color:var(--ink);
+    background:#0c1f16;border:1.5px solid var(--glow-soft);border-radius:12px;
+    padding:11px 38px 11px 13px;appearance:none;-webkit-appearance:none;cursor:pointer;
+    line-height:1.25;touch-action:manipulation;}
+  select#opt:focus-visible{outline:2px solid var(--glow);outline-offset:2px;}
+  select#opt optgroup{font-weight:700;color:var(--glow);background:#0c1f16;}
+  select#opt option{font-weight:500;color:var(--ink);background:#0c1f16;}
+
+  .progwrap{display:flex;align-items:baseline;gap:8px;margin:9px 0 6px;}
+  .count{font-size:22px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;}
   .count small{font-size:13px;font-weight:600;color:var(--ink-dim);}
   .bar{height:9px;border-radius:99px;background:#11271c;border:1px solid var(--panel-line);overflow:hidden;}
   .fill{height:100%;width:0%;border-radius:99px;
         background:linear-gradient(90deg,var(--glow-soft),var(--glow));
         box-shadow:0 0 12px rgba(87,239,166,calc(.25 + var(--p,0)*.55));
         transition:width .35s cubic-bezier(.2,.8,.2,1);}
-  .toolbar{display:flex;gap:8px;margin-top:12px;}
+  .toolbar{display:flex;gap:8px;margin-top:9px;}
   .tbtn{flex:0 0 auto;font:inherit;font-size:12px;font-weight:600;color:var(--ink-dim);
         background:transparent;border:1px solid var(--panel-line);border-radius:99px;
-        padding:7px 13px;cursor:pointer;transition:.15s;}
+        padding:10px 15px;min-height:44px;cursor:pointer;transition:.15s;touch-action:manipulation;}
   .tbtn:hover{color:var(--ink);border-color:var(--glow-soft);}
   .tbtn.danger:hover{color:var(--warn);border-color:var(--warn-line);}
+  .tbtn.danger.armed{color:var(--warn);border-color:var(--warn);background:rgba(255,155,122,.08);}
   .tbtn:focus-visible{outline:2px solid var(--glow);outline-offset:2px;}
 
-  /* ---------- Reference blocks ---------- */
+  /* option sub-line (scrolls with content, not pinned) */
+  .opt-sub{font-size:12.5px;color:var(--ink-dim);line-height:1.45;margin:0 2px 14px;}
+
+  /* ---------- Reference / note blocks ---------- */
   .note-card{border-radius:var(--r);padding:13px 15px;margin:0 0 14px;font-size:13px;line-height:1.5;background:var(--panel);}
-  .note-card .lbl{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:5px;}
+  .note-card .lbl{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:6px;}
   .note-card.info{border:1px solid var(--info-line);border-left:3px solid var(--glow-soft);}
   .note-card.info .lbl{color:var(--glow);}
   .note-card.info .body{color:var(--ink-dim);}
   .note-card.warn{border:1px solid var(--warn-line);border-left:3px solid var(--warn);}
   .note-card.warn .lbl{color:var(--warn);}
   .note-card.warn .body{color:#d8b5a8;}
+  .note-card ul{margin:6px 0 0;padding-left:18px;}
+  .note-card li{margin:3px 0;}
+  .note-card .body p{margin:6px 0 0;}
+
+  /* ---------- Weather (collapsible) ---------- */
+  .weather{border-radius:var(--r);margin:0 0 14px;background:var(--panel);
+           border:1px solid var(--info-line);border-left:3px solid var(--firefly);overflow:hidden;}
+  .whead{display:flex;align-items:center;gap:10px;width:100%;border:0;background:transparent;
+         color:var(--ink);font:inherit;text-align:left;cursor:pointer;padding:12px 15px;min-height:48px;touch-action:manipulation;}
+  .whead:focus-visible{outline:2px solid var(--glow);outline-offset:-2px;}
+  .wtitlewrap{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px;}
+  .wtitle{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--firefly);}
+  .wsummary{font-size:13px;font-weight:600;color:var(--ink);line-height:1.3;}
+  .wbody{padding:0 15px 14px;font-size:13px;line-height:1.5;color:var(--ink-dim);}
+  .weather.collapsed .wbody{display:none;}
+  .wdate{font-size:11px;color:var(--ink-dim);font-weight:600;margin-bottom:9px;}
+  .forecast{display:flex;gap:6px;margin:0 0 10px;flex-wrap:wrap;}
+  .fday{flex:1 1 0;min-width:64px;text-align:center;background:#0c1f16;border:1px solid var(--panel-line);
+        border-radius:10px;padding:8px 4px;}
+  .fday .d{font-size:11px;color:var(--ink-dim);font-weight:600;}
+  .fday .hi{font-size:16px;font-weight:800;color:var(--ink);font-variant-numeric:tabular-nums;}
+  .fday .lo{font-size:12px;color:var(--ink-dim);font-variant-numeric:tabular-nums;}
+  .wpack{color:var(--ink);}
+  .wstorm{color:#ffd2c2;margin-top:8px;}
+  .wsrc{color:var(--ink-faint);font-size:11px;margin-top:8px;font-style:italic;}
 
   /* ---------- Sections ---------- */
   .section{background:var(--panel);border:1px solid var(--panel-line);border-radius:var(--r);margin-bottom:12px;overflow:hidden;}
   .shead{display:flex;align-items:center;gap:10px;width:100%;border:0;background:transparent;
-         color:var(--ink);font:inherit;text-align:left;cursor:pointer;padding:14px 15px;}
+         color:var(--ink);font:inherit;text-align:left;cursor:pointer;padding:14px 15px;min-height:50px;touch-action:manipulation;}
   .shead:focus-visible{outline:2px solid var(--glow);outline-offset:-2px;}
   .stitle{flex:1;font-size:15px;font-weight:700;letter-spacing:-.01em;}
   .sbadge{font-size:12px;font-weight:700;font-variant-numeric:tabular-nums;color:var(--ink-dim);
           background:#102619;border:1px solid var(--panel-line);border-radius:99px;padding:3px 9px;min-width:46px;text-align:center;}
   .sbadge.done{color:#07140d;background:var(--glow);border-color:var(--glow);}
   .chev{width:9px;height:9px;border-right:2px solid var(--ink-faint);border-bottom:2px solid var(--ink-faint);
-        transform:rotate(45deg);transition:transform .2s;margin-left:2px;}
-  .section.collapsed .chev{transform:rotate(-45deg);}
-  .snote{font-size:12px;color:var(--ink-dim);padding:0 15px 4px;margin-top:-4px;line-height:1.45;font-style:italic;}
+        transform:rotate(45deg);transition:transform .2s;margin-left:2px;flex:0 0 auto;}
+  .section.collapsed .chev,.weather.collapsed .chev{transform:rotate(-45deg);}
   .items{padding:2px 6px 8px;}
-  .section.collapsed .items,.section.collapsed .snote{display:none;}
+  .section.collapsed .items{display:none;}
 
   /* ---------- Item rows ---------- */
   .item{display:flex;align-items:flex-start;gap:12px;padding:11px 9px;border-radius:11px;cursor:pointer;
-        min-height:46px;transition:background .12s;}
+        min-height:46px;transition:background .12s;touch-action:manipulation;}
   .item:hover{background:rgba(87,239,166,.05);}
+  .item:active{background:rgba(87,239,166,.10);}
   .item:focus-visible{outline:2px solid var(--glow);outline-offset:-2px;}
-  .box{flex:0 0 auto;width:23px;height:23px;border-radius:7px;border:2px solid #335a45;margin-top:1px;
+  .box{flex:0 0 auto;width:24px;height:24px;border-radius:7px;border:2px solid #335a45;margin-top:1px;
        position:relative;transition:.15s;background:#0c1f16;}
   .box::after{content:"";position:absolute;left:7px;top:3px;width:5px;height:10px;
        border:solid #07140d;border-width:0 2.5px 2.5px 0;transform:rotate(45deg) scale(0);
        transition:transform .15s cubic-bezier(.2,1.4,.4,1);}
   .item.checked .box{background:var(--glow);border-color:var(--glow);box-shadow:0 0 10px rgba(87,239,166,.5);}
   .item.checked .box::after{transform:rotate(45deg) scale(1);}
-  .txt{flex:1;font-size:14.5px;line-height:1.4;padding-top:1px;}
+  .txt{flex:1;font-size:14.5px;line-height:1.4;padding-top:2px;}
   .txt .n{display:block;font-size:12.5px;color:var(--ink-dim);line-height:1.45;margin-top:3px;}
-  .item.checked .txt{color:var(--ink-faint);text-decoration:line-through;text-decoration-color:rgba(138,165,151,.5);}
+  .item.checked .txt{color:var(--ink-faint);text-decoration:line-through;text-decoration-color:rgba(123,146,133,.55);}
   .item.checked .txt .n{color:var(--ink-faint);text-decoration:line-through;}
 
-  footer{text-align:center;color:var(--ink-faint);font-size:12px;line-height:1.5;padding:18px 8px 26px;}
+  footer{text-align:center;color:var(--ink-dim);font-size:12px;line-height:1.5;padding:18px 8px 30px;}
   footer .save-state{color:var(--glow-soft);font-weight:600;}
+  footer a{color:var(--ink-dim);}
 
   .done-banner{display:none;text-align:center;margin:0 0 14px;padding:14px;border-radius:var(--r);
     border:1px solid var(--glow-soft);background:rgba(87,239,166,.08);color:var(--glow);font-weight:700;font-size:15px;}
   .done-banner.show{display:block;}
+
+  .visually-hidden{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);border:0;}
 
   @media (prefers-reduced-motion: no-preference){
     .ff{animation:float var(--d,6s) ease-in-out infinite alternate;}
@@ -137,231 +181,188 @@
 <div class="wrap">
   <header>
     <div class="fireflies" id="fireflies" aria-hidden="true"></div>
-    <div class="eyebrow">Electric Forest · Rothbury, MI</div>
-    <h1>AC Landing Packing Checklist</h1>
-    <div class="meta"><b>2027 dates expected Thu June 24</b> (confirm on electricforest.com) · hot days, cold nights, real storm risk</div>
+    <div class="eyebrow">Electric Forest 2026 · Rothbury, MI</div>
+    <label class="opt-label" for="opt">Your camping / lodging option</label>
+    <div class="select-shell">
+      <select id="opt"></select>
+    </div>
     <div class="progwrap">
       <span class="count" id="count">0 <small>/ 0 packed</small></span>
     </div>
     <div class="bar"><div class="fill" id="fill"></div></div>
     <div class="toolbar">
       <button class="tbtn" id="toggleAll" type="button">Collapse all</button>
-      <button class="tbtn danger" id="reset" type="button">Reset all</button>
+      <button class="tbtn danger" id="reset" type="button" aria-live="polite">Reset all</button>
     </div>
   </header>
 
+  <div class="opt-sub" id="optSub"></div>
+  <div id="weatherHost"></div>
   <div class="done-banner" id="doneBanner">🌲 Fully packed. Have a beautiful Forest.</div>
   <div id="content"></div>
 
   <footer>
     <span id="saveState" class="save-state">Checkmarks save automatically on this device.</span><br>
-    Tap a row to mark it packed. The two highlighted cards are reference only — don't pack those.
+    Tap a row to mark it packed. Switching options keeps a separate list for each.<br>
+    Not official Electric Forest material — confirm dates &amp; rules at <a href="https://www.electricforest.com" target="_blank" rel="noopener">electricforest.com</a>.
   </footer>
 </div>
 
 <script>
-/* ---------------- Data ---------------- */
-const PROVIDED = "Tent · real bed (1 queen or 2 twins) · sheets, pillows, comforters · cooling unit · side table · battery light · tent lock · complimentary showers + A/C restrooms · 24-hr concierge · shuttle. Leave these home.";
-const PROHIBITED = "Glass · drones · nitrous · fireworks · generators (except RV built-in/solar) · propane over 1 lb / grills / charcoal / open flame · weapons & knives in the venue · pro / detachable-lens cameras · metal hammers · framed or oversized backpacks in the venue · chairs in the venue.";
+/* ---------------- Data (inlined at build time) ---------------- */
+const DATA = {"event":{"name":"Electric Forest","edition":"14th","year":2026,"location":"Double JJ Resort, Rothbury, MI","dates":{"start":"2026-06-25","end":"2026-06-28","label":"Thu June 25 – Sun June 28, 2026"},"earlyArrival":"Standard GA campers arrive Thursday June 25 (Wednesday June 24 = +$50 add-on, one per campsite/vehicle). GA Preferred Car Camping, GA RV/Powered RV, Lucky Lake Pre-Set RV, Group Camping include Wednesday arrival. All Good Life tiers include Wednesday June 24, 8:00 AM ET. Back 40 camping/FHU/Enchanted: Wednesday June 24, 8:00 AM ET; Back 40 Cabins/Log Homes: Wednesday June 24, 3:00 PM ET. Hotel packages: 5 nights, check-in Wed June 24 / check-out Mon June 29.","boxOffice":"Winston Speedway Box Office (new location for 2026) opens Tuesday June 23 at 10 PM and runs 24 hrs through the weekend; all will-call must be picked up there before reaching the toll entrances.","source":"electricforest.com/pass-types; Wikipedia (14th edition); research compiled June 18, 2026"},"weather":{"pulledDate":"2026-06-18","climatology":"Late-June Rothbury (49452): typical highs ~74–78°F, lows ~55–60°F; June day-highs 68–88°F, lows 52–69°F; ~14 rain days/month totaling ~2.5\"; humidity ~80%; UV index ~5; ~15.5 hrs daylight (sunrise ~6:05 AM, sunset ~9:30 PM); no snow May–September. The severe-storm pattern is real and recurring.","forecast":[{"day":"Thu 6/25","high":74,"low":55},{"day":"Fri 6/26","high":78,"low":57},{"day":"Sat 6/27","high":78,"low":59},{"day":"Sun 6/28","high":77,"low":58}],"packFor":"Plan for warm, humid days near 80°F, cool nights in the mid-to-upper 50s, and a high likelihood of at least one thunderstorm. Bring sun protection (SPF, hat, sunglasses, bandana), rain protection (poncho/rain jacket, pack-cover, extra tarp, dry bag), a warm layer/hoodie for nights, sturdy closed-toe shoes plus a rinse-off pair, and a documented severe-weather plan.","stormNote":"In a storm, shelter in a hard vehicle or a shuttle/shelter bus — NOT a tent (Michigan State Police: \"do not try to shelter in your tent. Go into your vehicle\"). Stake/guy-out everything; secure pop-ups, tarps, and loose items. Monitor the EF app and 99.5 FM. The 2024 festival evacuated twice and 2025 also saw weather disruptions.","sources":"Synthesized from weather.com, FOX Weather, and NWS Grand Rapids (GRR), pulled June 17–18, 2026; AccuWeather and weather-us.com for climatology."},"prohibited":{"everywhere":["Fireworks, sky lanterns, explosives","Grills, open flame, candles, charcoal (small Coleman-style camp stoves with ≤1 lb propane canisters are the only exemption)","Generators (RV built-in gas generators and solar generators OK; external gas/diesel/kerosene generators and any gas/fuel cans banned)","Glass of any kind (mirrors OK)","Kegs and hard liquor","Drones","Laser pointers","Nitrous oxide","Weapons of any kind","Tiki torches","Golf clubs","Hammers (bring a rubber mallet instead)","Helium tanks","Bicycles, skateboards, scooters, one-wheels","Boats and hard floatation","Native American headdresses","Confederate flags","Threatening signs or apparel","Speakers larger than 11x5x5 (handheld/USB personal speakers OK)"],"venueAdditional":["Outside food, alcohol, or beverage","Chairs, lawn, or beach furniture (no-pump inflatable WindPouch-type seating allowed, except on the Ranch Arena lawn)","Pro / audio / detachable-lens cameras","Knives of any kind","Framed or large backpacks","Picnic baskets","Tents","Wagons, strollers, carts","Frisbees","Large markers, paint pens, spray paint","Soliciting or sampling"],"permittedDaypack":["Small non-framed bag, fanny pack, or small hydration pack","Empty reusable bottle/hydration pack (or one factory-sealed water bottle ≤1 gallon)","Phone + power bank","ID + card","Sunscreen, lip balm, sunglasses, bandana","Warm layer","Earplugs","Small handmade gifts, pins, kandi for trading","Totem ≤7 ft on light PVC (no wood/metal, nothing sharp on top, no threatening messaging)","LED accessories","Biodegradable glitter","Factory-sealed single-dose naloxone nasal spray (4 mg)"],"alcohol":"Campgrounds, 21+: one case of beer/seltzer OR one box of wine per person; no glass, no liquor, no kegs; cannot be carried into the venue.","meds":"Keep prescriptions in original labeled bottles; ID must match; declare at search.","harmReduction":"Bunk Police will NOT be on-site in 2026 — source any fentanyl/xylazine test strips and reagent/purity kits before arrival; keep prescriptions labeled; factory-sealed single-dose naloxone nasal spray is permitted."},"providesVocab":{"tent":"Shelter (pre-pitched tent or hard-sided unit) provided — no need to bring your own tent or stakes/mallet.","sleeping-gear":"Sleeping bags and/or sleeping pads/cots provided.","bedding":"Real bed(s) with sheets, pillows, and comforters/blankets provided.","cooling":"Cooling unit / air conditioning provided in your lodging.","towels":"Bath/shower towels provided.","furniture":"Camp furniture provided (side tables, chairs, and/or bistro table).","chairs":"Seating/chairs provided.","lighting":"In-unit lighting provided (lanterns or battery light).","lighting-partial":"Only a single battery light is provided — bring an extra lantern.","tent-lock":"A lock for the tent/unit is provided.","kitchen":"Full kitchen/kitchenette provided (cooktop/oven/microwave, fridge, sink).","cookware":"Cookware, plates/cups/bowls, and utensils provided.","coffee-maker":"Coffee maker (and toaster) provided.","soap":"Soap / dish soap / toilet paper provided.","cleaning":"Cleaning supplies provided (broom, trash bin).","comp-showers":"Complimentary showers + A/C restrooms provided (no shower-haul needed, but personal toiletries still required).","shared-showers":"Shared shower facilities available (basic, not A/C).","concierge":"On-site concierge / Good Life base perks (A/C lounge, charging, dedicated entrances).","shuttle":"Dedicated or 24-hr shuttle service provided.","parking-pass":"A parking/car pass is included with this option.","car-onsite":"You camp beside your car (car/companion pass included; pack heavier).","power-30a":"30A electrical service provided at the site.","full-hookup":"Full hook-up provided: 30A electrical + water + sewer (no daily services or water-rationing needed).","in-tent-outlet":"A single in-tent outlet is provided, rated for charging small electronic devices only.","hotel-room":"Hotel room with linens, towels, A/C, housekeeping, and a real bathroom — no camping gear needed.","swim":"Beach/pool/swim access included with this option.","in-camp-ice":"In-camp ice sales available (lighter cooler-loading possible).","brunch":"Daily brunch provided (Thu–Sun, 9 AM–1 PM ET) — reduces breakfast-food needs.","meal-card":"$25 meal card per person + welcome basket included.","rv-bring":"BYO RV option — you bring and run the RV.","linens-unconfirmed":"EF does not confirm linens/towels for this lodging in writing — bring your own as backup or confirm with the Good Life concierge.","pillows-provided":"Pillows provided"},"catalog":[{"id":"photo-id","category":"Documents & Entry","text":"Photo ID","note":"Name must match your prescription labels."},{"id":"rfid-wristband","category":"Documents & Entry","text":"RFID wristband(s)","note":"Register in the EF app BEFORE putting them on."},{"id":"vehicle-pass","category":"Documents & Entry","text":"Vehicle / parking pass","note":"Exterior upper driver's-side windshield, before you arrive."},{"id":"arrival-confirmation","category":"Documents & Entry","text":"Arrival email / package confirmation"},{"id":"backup-card-cash","category":"Documents & Entry","text":"Backup card + some cash","note":"Venue is cashless; cash is for tolls, gas, off-site stops."},{"id":"ef-app-maps","category":"Documents & Entry","text":"EF app + offline map & set times saved","note":"Cell service degrades at peak (40k–50k people)."},{"id":"printed-directions","category":"Documents & Entry","text":"Printed directions + Will Call (Winston Speedway Box Office) location","note":"Cell service is unreliable on-site."},{"id":"spare-car-key","category":"Documents & Entry","text":"Spare car key","note":"Kept separate from your main key.","addedBy":["car-onsite","parking-pass","rv-bring"],"providedBy":["hotel-room"]},{"id":"phone-numbers-meetup","category":"Documents & Entry","text":"Written phone numbers + a group meetup spot/time"},{"id":"tent","category":"Shelter & Sleep","text":"Tent + rubber mallet & stakes","note":"Metal hammers get confiscated — bring a rubber mallet.","providedBy":["tent","hotel-room"]},{"id":"shade-canopy","category":"Shelter & Sleep","text":"Shade canopy / pop-up","note":"Limited tree cover in most GA fields; stake and guy it out — pop-ups catch wind.","providedBy":["tent","hotel-room"]},{"id":"sleeping-bag-pad","category":"Shelter & Sleep","text":"Sleeping bag + sleeping pad or air mattress","providedBy":["sleeping-gear","bedding","hotel-room"]},{"id":"pillow","category":"Shelter & Sleep","text":"Pillow","providedBy":["bedding","hotel-room","pillows-provided"]},{"id":"sheet-liner-preset","category":"Shelter & Sleep","text":"Sheet or sleeping-bag liner","note":"Provided sleeping bags/cots come without sheets — bring a liner.","addedBy":["sleeping-gear"],"providedBy":["bedding","hotel-room"]},{"id":"extra-warm-blanket","category":"Shelter & Sleep","text":"Extra warm blanket or sleeping-bag liner","note":"Nights hit the low-to-mid 50s; no throw blanket is included.","addedBy":["bedding"],"providedBy":["hotel-room"]},{"id":"mattress-topper","category":"Shelter & Sleep","text":"Mattress topper","note":"Comfort over the provided bed.","addedBy":["bedding"],"providedBy":["hotel-room"]},{"id":"linens-backup","category":"Shelter & Sleep","text":"Your own sheets / blankets / pillows as backup","note":"EF doesn't confirm linens for this unit — bring as backup or confirm with the Good Life concierge (goodlife@electricforestfestival.com).","addedBy":["linens-unconfirmed"],"providedBy":["hotel-room"]},{"id":"eye-mask-earplugs","category":"Shelter & Sleep","text":"Eye mask + earplugs","note":"Sun's up around 6 AM."},{"id":"confirm-cooling","category":"Shelter & Sleep","text":"On arrival: confirm cooling-unit operation + nearest shower/shuttle","addedBy":["cooling"],"providedBy":["hotel-room"]},{"id":"padlock-valuables","category":"Shelter & Sleep","text":"Padlock for valuables","note":"Peace of mind for gear in camp.","providedBy":["hotel-room"]},{"id":"cooler-ice","category":"Camp Kitchen & Food","text":"Cooler + ice plan","note":"Buy ice at your last stop; locals sell out on EF weekend.","providedBy":["kitchen","hotel-room"]},{"id":"groceries","category":"Camp Kitchen & Food","text":"Food / groceries","note":"Low/no-cook options: bars, fruit, nut butter, wraps, jerky, oatmeal, pre-cooked protein.","providedBy":["hotel-room"]},{"id":"food-containers","category":"Camp Kitchen & Food","text":"Non-glass food containers + dry-goods bin","providedBy":["kitchen","hotel-room"]},{"id":"camp-stove","category":"Camp Kitchen & Food","text":"Coleman-style camp stove + fuel","note":"≤1 lb propane only — grills, charcoal & open flame are banned.","providedBy":["kitchen","hotel-room"]},{"id":"utensils-plates","category":"Camp Kitchen & Food","text":"Utensils, plates, cups","providedBy":["cookware","hotel-room"]},{"id":"dish-soap-tub","category":"Camp Kitchen & Food","text":"Biodegradable dish soap + wash tub","providedBy":["soap","kitchen","hotel-room"]},{"id":"paper-towels-trash","category":"Camp Kitchen & Food","text":"Paper towels; trash + recycling bags","providedBy":["cleaning","hotel-room"]},{"id":"coffee-supplies","category":"Camp Kitchen & Food","text":"Coffee / tea supplies","providedBy":["coffee-maker","hotel-room"]},{"id":"own-coffee","category":"Camp Kitchen & Food","text":"Your own coffee (grounds/pods)","note":"Coffee maker is provided but coffee is not.","addedBy":["coffee-maker"],"providedBy":["hotel-room"]},{"id":"refill-bottle","category":"Water & Hydration","text":"Reusable non-glass bottle + hydration pack","note":"Both must be EMPTY to enter the venue."},{"id":"gallon-jugs","category":"Water & Hydration","text":"Non-glass gallon jugs / drinking water for camp","note":"Free refill stations throughout; bring drinking water beyond the daily refill for Pre-Set RVs.","providedBy":["hotel-room"]},{"id":"electrolytes","category":"Water & Hydration","text":"Electrolyte packets / tabs","note":"Essential in the heat and humidity."},{"id":"clothes-day","category":"Clothing","text":"Day: breathable tops, shorts, tanks/dresses; extra socks + underwear"},{"id":"clothes-night","category":"Clothing","text":"Night: hoodie/fleece, long pants, pashmina/onesie","note":"Genuinely cold after dark."},{"id":"clothes-rain","category":"Clothing","text":"Rain: packable jacket/poncho + quick-dry layers","note":"Cotton stays wet."},{"id":"sun-hat-gaiter","category":"Clothing","text":"Bandana / neck gaiter, sun hat, sunglasses"},{"id":"swimsuit","category":"Clothing","text":"Swimsuit","addedBy":["swim"],"providedBy":["hotel-room"]},{"id":"costumes","category":"Clothing","text":"Costumes / themed outfits"},{"id":"shoes-closed-toe","category":"Footwear","text":"Broken-in closed-toe shoes","note":"Miles of uneven terrain."},{"id":"shoes-rotate","category":"Footwear","text":"Second pair to rotate","note":"So wet/muddy ones can dry."},{"id":"rain-boots","category":"Footwear","text":"Rain / waterproof boots","note":"Mud is real after storms."},{"id":"camp-sandals","category":"Footwear","text":"Camp sandals / flip-flops"},{"id":"water-shoes","category":"Footwear","text":"Water shoes","note":"For the beach/pool.","addedBy":["swim"],"providedBy":["hotel-room"]},{"id":"towels","category":"Toiletries & Hygiene","text":"Towel(s)","note":"At least one, ideally a spare.","providedBy":["towels","hotel-room"]},{"id":"beach-towel","category":"Toiletries & Hygiene","text":"Quick-dry / beach towel + dry bag","note":"Separate towel for the beach/pool; dry bag keeps gear dry.","addedBy":["swim"],"providedBy":["hotel-room"]},{"id":"shower-shoes","category":"Toiletries & Hygiene","text":"Shower shoes / flip-flops","addedBy":["shared-showers","comp-showers"],"providedBy":["hotel-room"]},{"id":"soap-shampoo","category":"Toiletries & Hygiene","text":"Soap, shampoo/conditioner, deodorant, toothbrush/toothpaste"},{"id":"toilet-paper","category":"Toiletries & Hygiene","text":"Toilet paper + tissues","providedBy":["soap"]},{"id":"wet-wipes-sanitizer","category":"Toiletries & Hygiene","text":"Wet wipes + hand sanitizer"},{"id":"glasses-contacts","category":"Toiletries & Hygiene","text":"Glasses / contacts + spares; nail clippers"},{"id":"shaving","category":"Toiletries & Hygiene","text":"Shaving supplies"},{"id":"feminine-hygiene","category":"Toiletries & Hygiene","text":"Feminine hygiene products"},{"id":"body-glide","category":"Toiletries & Hygiene","text":"Body Glide / Gold Bond","note":"Chafing."},{"id":"first-aid-kit","category":"Health, First Aid & Meds","text":"First aid kit","note":"Bandages, blister pads, ointment, pain reliever, anti-diarrheal, antihistamine."},{"id":"prescriptions","category":"Health, First Aid & Meds","text":"Prescriptions in original labeled bottles","note":"Name matches your ID."},{"id":"naloxone","category":"Health, First Aid & Meds","text":"Naloxone / Narcan","note":"Factory-sealed; explicitly permitted."},{"id":"test-strips","category":"Health, First Aid & Meds","text":"Fentanyl/xylazine test strips + reagent kit","note":"Bunk Police will NOT be on-site in 2026 — source any drug-checking supplies BEFORE arrival."},{"id":"rehydration-melatonin","category":"Health, First Aid & Meds","text":"Electrolytes / rehydration salts; melatonin"},{"id":"sunscreen","category":"Sun & Bug Protection","text":"Sunscreen SPF 30+","note":"Reapply through the day."},{"id":"lip-balm-spf","category":"Sun & Bug Protection","text":"Lip balm with SPF"},{"id":"insect-repellent","category":"Sun & Bug Protection","text":"Insect repellent"},{"id":"after-sun-aloe","category":"Sun & Bug Protection","text":"After-sun aloe"},{"id":"phone-cable","category":"Electronics & Power","text":"Phone + cable"},{"id":"power-banks","category":"Electronics & Power","text":"2 power banks per person","note":"Primarily for the venue and long charging lines; cell towers collapse with 40k–50k people."},{"id":"wall-charger","category":"Electronics & Power","text":"Wall / USB charger + adapters"},{"id":"headlamp","category":"Electronics & Power","text":"Headlamp + backup flashlight","providedBy":["hotel-room"]},{"id":"lanterns-string-lights","category":"Electronics & Power","text":"Lanterns + LED string lights for camp","providedBy":["lighting","hotel-room","lighting-partial"]},{"id":"extra-lantern","category":"Electronics & Power","text":"Extra lantern","note":"Only one battery light is included.","addedBy":["lighting-partial"],"providedBy":["hotel-room"]},{"id":"spare-batteries","category":"Electronics & Power","text":"Spare batteries"},{"id":"walkie-talkies","category":"Electronics & Power","text":"Walkie-talkies (optional)","note":"Cell towers collapse with 40k–50k people."},{"id":"led-chargers","category":"Electronics & Power","text":"Chargers / batteries for LED gear + flow toys"},{"id":"battery-fan","category":"Electronics & Power","text":"Small battery / USB fan","note":"Backup air; tents get hot.","addedBy":["cooling"],"providedBy":["hotel-room"]},{"id":"fan-no-cooling","category":"Electronics & Power","text":"Battery / USB fan (ESSENTIAL)","note":"Pre-set tents have no A/C and get hot — a battery/USB fan is essential.","addedBy":["tent"],"providedBy":["cooling","hotel-room"]},{"id":"ac-box-fan","category":"Electronics & Power","text":"AC box fan + power strip","note":"Use the in-tent outlet for low-draw devices only — fan + phone charging + a small light is fine; do NOT run high-draw appliances (portable A/C, heaters).","addedBy":["in-tent-outlet"],"providedBy":["cooling","hotel-room"]},{"id":"cord-30a","category":"Electronics & Power","text":"30A power cord/adapter + 30A surge protector","note":"Needed for 30A shore power.","addedBy":["power-30a","full-hookup"],"providedBy":["hotel-room"]},{"id":"rv-hookup-hoses","category":"Electronics & Power","text":"Sewer hose + fittings, drinking-water hose + pressure regulator","note":"Full hook-up: connect water and sewer.","addedBy":["full-hookup"],"providedBy":["hotel-room"]},{"id":"rv-self-contained","category":"Electronics & Power","text":"Fresh-water fill + grey/black-water plan, leveling blocks, battery/solar power","note":"Self-contained: no on-site dump; external gas generators banned (built-in/solar OK).","addedBy":["rv-bring"],"providedBy":["full-hookup","hotel-room"]},{"id":"daypack-bag","category":"Festival Daypack (carry in daily)","text":"Small bag or non-framed backpack","note":"Every bag is searched; framed/large packs are banned in the venue."},{"id":"daypack-bottle","category":"Festival Daypack (carry in daily)","text":"Empty water bottle / hydration pack"},{"id":"daypack-power","category":"Festival Daypack (carry in daily)","text":"Power bank + cable; phone"},{"id":"daypack-id-card","category":"Festival Daypack (carry in daily)","text":"ID + a card","note":"Cashless venue."},{"id":"daypack-sun","category":"Festival Daypack (carry in daily)","text":"Sunscreen, lip balm, sunglasses, bandana"},{"id":"daypack-layer","category":"Festival Daypack (carry in daily)","text":"Warm layer for after dark"},{"id":"daypack-earplugs","category":"Festival Daypack (carry in daily)","text":"Earplugs","note":"Hearing protection at the bass stages."},{"id":"daypack-led","category":"Festival Daypack (carry in daily)","text":"LED accessories / kandi to trade; small flashlight"},{"id":"daypack-poncho","category":"Festival Daypack (carry in daily)","text":"Rain poncho if storms threaten"},{"id":"camp-chair","category":"Comfort & Camp Setup","text":"Camp chair (1 per person)","note":"Chairs aren't allowed inside the venue.","providedBy":["chairs","hotel-room"]},{"id":"reflective-tarps","category":"Comfort & Camp Setup","text":"Reflective tarps (4) + bungee cords","note":"Silver side OUT, with an air gap off the tent fabric. Cinch them down if weather turns; they catch wind like sails. For pre-set tents, check with the concierge that covering the tent is OK.","providedBy":["hotel-room"]},{"id":"side-table","category":"Comfort & Camp Setup","text":"Folding outdoor side table","providedBy":["furniture","hotel-room"]},{"id":"outdoor-rug","category":"Comfort & Camp Setup","text":"Outdoor rug / mat for the tent entrance","providedBy":["hotel-room"]},{"id":"hammock","category":"Comfort & Camp Setup","text":"Hammock + tree straps","providedBy":["hotel-room"]},{"id":"tapestries-flags","category":"Comfort & Camp Setup","text":"Tapestries / flags / group totem","note":"Personalize and find your camp.","providedBy":["hotel-room"]},{"id":"hand-mister","category":"Comfort & Camp Setup","text":"Hand mister / squirt toy","providedBy":["hotel-room"]},{"id":"yoga-mat","category":"Comfort & Camp Setup","text":"Yoga mat","providedBy":["hotel-room"]},{"id":"multi-tool","category":"Comfort & Camp Setup","text":"Multi-tool","note":"Camp only — no knives in the venue.","providedBy":["hotel-room"]},{"id":"rubber-mallet","category":"Comfort & Camp Setup","text":"Rubber mallet","note":"Metal hammers get confiscated.","providedBy":["tent","hotel-room"]},{"id":"duct-tape-ziptie","category":"Comfort & Camp Setup","text":"Duct tape; zip ties; jumper cables","providedBy":["hotel-room"]},{"id":"wagon-cart","category":"Comfort & Camp Setup","text":"Wagon / cart for the walk-in haul","note":"Carts are allowed in the campground (banned only IN the venue).","providedBy":["hotel-room"]},{"id":"trash-bags","category":"Cleaning & Leave-No-Trace","text":"Heavy-duty trash + recycling bags","note":"Tie them down so they don't blow away.","providedBy":["cleaning","hotel-room"]},{"id":"greywater-strain","category":"Cleaning & Leave-No-Trace","text":"Biodegradable dish soap + wash tub","note":"Greywater to pod sinks — strain first.","providedBy":["soap","kitchen","hotel-room"]},{"id":"reusable-shopping-bag","category":"Cleaning & Leave-No-Trace","text":"Reusable shopping bag for ice / supply hauls","providedBy":["hotel-room"]},{"id":"donate-gear","category":"Cleaning & Leave-No-Trace","text":"Plan to donate usable gear on the way out","providedBy":["hotel-room"]},{"id":"pins-lanyard","category":"Rave / Festival Extras","text":"Pins + lanyard","note":"For the pin-trading culture."},{"id":"kandi-gifts","category":"Rave / Festival Extras","text":"Kandi + small handmade gifts","note":"Giving Tree: handmade/meaningful only."},{"id":"led-gear","category":"Rave / Festival Extras","text":"LED gear, glow accessories, flow toys","note":"With chargers."},{"id":"totem","category":"Rave / Festival Extras","text":"Totem","note":"≤7 ft, light PVC (no wood/metal), nothing sharp on top."},{"id":"body-paint","category":"Rave / Festival Extras","text":"Costumes, body/face paint + remover","note":"Biodegradable glitter only."},{"id":"notebook-camera","category":"Rave / Festival Extras","text":"Notebook/pen; phone or compact camera","note":"No pro / detachable-lens cameras in the venue."}],"options":[{"id":"ac-landing","name":"A/C Landing","tier":"Good Life","lodging":"Glamping tent with a real bed (1 queen or 2 twins) and cooling unit.","arrival":"Wednesday June 24 included (Good Life).","provides":["tent","bedding","cooling","furniture","lighting","tent-lock","comp-showers","concierge","shuttle"],"notes":["Provided: tent, real bed, sheets/pillows/comforters, cooling unit, side table, battery light, tent lock, comp showers + A/C restrooms, 24-hr concierge, shuttle.","NOT provided: towels (bring your own) and chairs (bring a camp chair).","If reflective-tarping the pre-set tent, confirm with the concierge that covering it is OK."]},{"id":"ga-tent-camping","name":"GA Tent Camping","tier":"GA","lodging":"BYO tent in the GA campground.","arrival":"Thursday June 25 (Wednesday +$50 add-on).","provides":["shared-showers"],"notes":["Everything — full master camping kit.","Buy a parking pass separately (or arrive with a multi-person car).","Bring extra shade — limited tree cover."]},{"id":"ga-car-camping","name":"GA Car Camping","tier":"GA","lodging":"BYO tent beside your car; site ~12'×35'.","arrival":"Thursday June 25 (Wednesday +$50 add-on).","provides":["shared-showers","car-onsite"],"notes":["Full master kit; pack heavier since the car is on-site (bigger cooler, more water, car-powered inflator).","Narrow site (~12 ft wide) — a low-profile canopy fits better than a large pavilion."]},{"id":"ga-preferred-car-camping","name":"GA Preferred Car Camping","tier":"GA","lodging":"BYO tent beside your car, guaranteed site near main entrance; site ~20'×25' (new for 2026).","arrival":"Wednesday June 24 included.","provides":["shared-showers","car-onsite"],"notes":["Full master kit; the extra space supports a full canopy + larger group setup.","Guaranteed location near the main venue entrance regardless of arrival time."]},{"id":"ga-rv","name":"GA RV","tier":"GA","lodging":"BYO RV; includes 1 companion car (\u003c16 ft) pass. No electrical hookup.","arrival":"Wednesday June 24 included.","provides":["car-onsite","rv-bring"],"notes":["Run the RV self-contained — fresh water (no hookup), full propane for onboard systems, battery/solar power.","External gas generators banned; RV built-in gas generators and solar OK.","Leveling blocks, grey/black-water plan (no on-site dump). Bring a venue daypack."]},{"id":"ga-powered-rv","name":"GA Powered RV","tier":"GA","lodging":"BYO RV with 30A electrical + companion car.","arrival":"Wednesday June 24 included.","provides":["car-onsite","rv-bring","power-30a"],"notes":["30A power cord/adapter and 30A surge protector; otherwise self-contained water and waste (powered, not full hookup).","Run rooftop A/C off shore power. Fresh-water fill and a grey/black-water plan still needed."]},{"id":"ga-preset-tent","name":"GA Pre-Set Tent","tier":"GA Enhanced","lodging":"Pre-pitched specially-designed tent + 2 sleeping bags + 2 sleeping pads (yours to keep). Formerly EFfortless.","arrival":"Thursday June 25 (Wednesday +$50 add-on).","wristbands":"2 wristbands.","provides":["tent","sleeping-gear","comp-showers","parking-pass"],"notes":["Bring pillow + sheet/liner, camp chair, shade/canopy if desired, cooler + ice, lantern/headlamp, power banks, toiletries + quick-dry towel + shower shoes, food + stove.","Bring a fan — no in-tent power; tents can get hot.","2026 tent design revealed on arrival."]},{"id":"ga-maplewoods","name":"GA Maplewoods","tier":"GA Enhanced","lodging":"Forested/shaded walk-in BYO tent site.","arrival":"Thursday June 25 (Wednesday +$50 add-on).","wristbands":"2–4 wristbands.","provides":["comp-showers","parking-pass","concierge"],"notes":["Full BYO tent master kit, but shade canopy is less critical (tree cover).","Bring a wagon/cart for the walk-in haul, extra rope/tarps for the wooded site, and bug spray (wooded)."]},{"id":"ga-lucky-lake-camping","name":"GA Lucky Lake — Camping","tier":"GA Enhanced","lodging":"Walk-in BYO tent; beach/swim access.","arrival":"Thursday June 25 (Wednesday +$50 add-on).","wristbands":"2–4 wristbands.","provides":["comp-showers","parking-pass","swim","in-camp-ice","shuttle"],"notes":["Full BYO tent kit PLUS swim gear: swimsuit, beach/quick-dry towel, water shoes, dry bag, extra SPF, bug spray.","Walk-in haul cart. Ice can be bought in-camp (lighter cooler-loading possible)."]},{"id":"ga-lucky-lake-lakeside","name":"GA Lucky Lake — Lakeside","tier":"GA Enhanced","lodging":"BYO tent beside your car, prime lakefront location (car camping pass included).","arrival":"Thursday June 25 (Wednesday +$50 add-on).","wristbands":"2–4 wristbands.","provides":["comp-showers","car-onsite","swim","in-camp-ice","shuttle"],"notes":["Same as Lucky Lake camping but pack heavier (car on-site); swim gear is the defining extra.","Very limited availability."]},{"id":"ga-lucky-lake-preset-rv","name":"GA Lucky Lake — Pre-Set RV","tier":"GA Enhanced","lodging":"Furnished Pre-Set RV: 30A, daily waste/water service Thu–Sun, queen + bunks, full kitchen, shower/toilet.","arrival":"Wednesday June 24 included.","wristbands":"2–4 wristbands.","provides":["tent","bedding","towels","kitchen","cookware","coffee-maker","soap","cleaning","comp-showers","swim","in-camp-ice","shuttle","parking-pass"],"notes":["Bring: food/groceries, drinking water beyond daily refill, your own coffee, personal toiletries, swim gear (swimsuit/towel/water shoes), venue daypack.","Don't bring a generator. Includes 1 car pass."]},{"id":"camp-higher-love","name":"Camp Higher Love","tier":"GA Enhanced","lodging":"BYO tent, larger sites; camp beside your car (1 car camping pass included).","arrival":"Thursday June 25 (Wednesday +$50 add-on).","wristbands":"2–4 wristbands.","provides":["comp-showers","car-onsite","concierge","shuttle"],"notes":["Full BYO tent master kit (camp next to car since car pass included).","Higher Love Lounge (shaded seating) + dedicated shuttle reduce the need to haul your own shade/seating to the venue, but you still need full camp gear."]},{"id":"ga-group-camping","name":"Group Camping","tier":"GA","lodging":"BYO tent in designated group areas near Main Street.","arrival":"Early arrival included.","provides":["shared-showers"],"notes":["Full BYO tent master kit; group gear coordination (shared canopy, group flag/totem to find camp, communal water/shade).","Camp Traction = substance-free homebase (no alcohol); Her Forest = femme-identifying space; Wayfinder = guided/solo-friendly.","Parking/car pass per the specific group option."]},{"id":"ga-hotel-package","name":"GA Hotel Package","tier":"Hotel","lodging":"Hotel room (linens, towels, A/C, housekeeping, real bathroom); 5 nights, Wed check-in. ~Shoreline Inn (~27 mi).","arrival":"Check-in Wed June 24 / check-out Mon June 29.","wristbands":"2–4 person.","provides":["hotel-room","shuttle","meal-card"],"notes":["Venue daypack only (empty bottle, power bank, poncho, warm layer, SPF, earplugs, ID/card), plus a normal hotel travel bag.","Plan around shuttle schedule; no campground access. Backup card (cashless).","Includes $25 meal card/person, souvenir poster, 1 locker, 1 welcome basket."]},{"id":"good-life-tent-camping","name":"Good Life Tent Camping","tier":"Good Life","lodging":"BYO tent. Formerly Sherwood Court.","arrival":"Wednesday June 24 included.","provides":["comp-showers","parking-pass","concierge","shuttle"],"notes":["Full BYO tent master kit (tent through cooler).","The A/C lounge + charging lounges reduce reliance on your own power, but you still bring full camp gear."]},{"id":"good-life-village-car-camping","name":"Good Life Village Car Camping","tier":"Good Life","lodging":"BYO tent beside your car, in the livelier Good Life Village core.","arrival":"Wednesday June 24 included.","provides":["comp-showers","car-onsite","concierge","shuttle"],"notes":["Full master kit; pack heavier (car on-site)."]},{"id":"good-life-meadow-car-camping","name":"Good Life Meadow Car Camping","tier":"Good Life","lodging":"BYO tent beside your car, quieter area.","arrival":"Wednesday June 24 included.","provides":["comp-showers","car-onsite","concierge","shuttle"],"notes":["Identical to Village car camping; choose for quiet.","Bring everything; nothing extra provided beyond the car-side space."]},{"id":"good-life-powered-rv","name":"Good Life Powered RV","tier":"Good Life","lodging":"BYO RV with 30A electrical + companion car.","arrival":"Wednesday June 24 included.","provides":["car-onsite","rv-bring","power-30a","comp-showers","concierge","shuttle"],"notes":["30A cord/adapter + surge protector; self-contained fresh water and waste (powered, not full hookup); venue daypack.","No external generators."]},{"id":"good-life-preset-rv","name":"Good Life Pre-Set RV","tier":"Good Life","lodging":"Furnished, powered Pre-Set RV, no vehicle needed (new for 2026): 30A, daily waste/water Thu–Sun, queen + bunks, full kitchen.","arrival":"Wednesday June 24 included.","provides":["tent","bedding","towels","kitchen","cookware","coffee-maker","soap","cleaning","comp-showers","concierge","shuttle","parking-pass"],"notes":["Bring: food/groceries, drinking water beyond daily refill, your own coffee, personal toiletries, venue daypack.","The most hands-off RV option. Includes 1 car pass."]},{"id":"electric-avenue","name":"Electric Avenue","tier":"Good Life","lodging":"Furnished pre-set tent: full bedding for 2–4 twin or 1–2 queen; 2 side tables, 2 chairs, 1 bistro table, 2 lanterns, area rug; tent lock; single in-tent outlet. NO cooling unit, NO towels.","arrival":"Wednesday June 24 included.","provides":["tent","bedding","furniture","chairs","lighting","tent-lock","in-tent-outlet","comp-showers","concierge","shuttle"],"notes":["A battery or USB fan is ESSENTIAL — there is NO cooling unit and the tents get hot (mesh limits airflow).","Bring your own bath/shower towels (NOT provided).","The in-tent outlet is rated only for charging small electronic devices — a fan + phone charging + a small light is fine, but do NOT run high-draw appliances (portable A/C, heaters).","Bring toiletries; cooler + food + stove; personal lighting/power bank."]},{"id":"bungalow","name":"Bungalow","tier":"Good Life","lodging":"Pre-set 4-person tent: 4 twin cots + 4 souvenir sleeping bags (yours to keep) + 4 pillows; 1 side table; 1 battery light; tent lock; single in-tent outlet. NO cooling unit, NO towels.","arrival":"Wednesday June 24 included.","provides":["tent","sleeping-gear","furniture","lighting-partial","tent-lock","in-tent-outlet","comp-showers","concierge","shuttle","pillows-provided"],"notes":["Bring a fan — no cooling unit (tents run hot).","Bring your own towels (not provided).","Sheet/liner for cots if desired; extra lantern (only one battery light included).","Same outlet caveat as Electric Avenue — small devices only.","Bring cooler + food + stove; toiletries; power bank."]},{"id":"back-40-camping","name":"Back 40 Camping","tier":"Back 40","lodging":"BYO tent, rustic; permanent bathrooms + comp showers; 1 car pass.","arrival":"Wednesday June 24 included.","provides":["comp-showers","car-onsite","swim","brunch","concierge","shuttle","parking-pass"],"notes":["Full BYO tent master kit PLUS swim gear: swimsuit, towel, water shoes.","Old Western Town pool + 150-ft slide + hot tub + unlimited Frontier Water Park; daily brunch (Thu–Sun, 9 AM–1 PM ET) reduces breakfast-food needs.","Quick-dry towel for showers; separate beach towel for pool."]},{"id":"back-40-fhu-rv","name":"Back 40 FHU RV","tier":"Back 40","lodging":"BYO RV; full hook-up (30A + water + sewer); companion car.","arrival":"Wednesday June 24 included.","provides":["car-onsite","rv-bring","full-hookup","comp-showers","swim","brunch","concierge","shuttle"],"notes":["30A cord/adapter + surge protector, sewer hose + fittings, drinking-water hose + pressure regulator.","Full hook-up means no water-rationing or waste-hauling. Food/groceries; swim gear; venue daypack.","No external generators (built-in/solar OK). Pool/waterpark + daily brunch."]},{"id":"back-40-cabin","name":"Back 40 Cabin","tier":"Back 40","lodging":"Hard-sided A/C cabin: queen + 2 twin loft + queen sofa/futon; full private bathroom; kitchenette (microwave + mini-fridge); 2 parking passes.","arrival":"Check-in Wednesday June 24, 3:00 PM ET.","provides":["tent","cooling","comp-showers","swim","brunch","concierge","shuttle","parking-pass","car-onsite","linens-unconfirmed"],"notes":["OPEN ITEM — EF is silent on whether linens/bedding and bath towels are included (unlike every other Good Life lodging type). The underlying Double JJ Resort cabins list \"linens & towels provided,\" so likely supplied, but EF does not confirm in writing.","Kitchenette is microwave + mini-fridge only — no cooktop/oven, so a ≤1 lb camp stove is still needed for hot food; cookware/utensils are not confirmed.","Bring your own sheets/blankets/pillows and bath towels as backup, or confirm with the Good Life concierge (goodlife@electricforestfestival.com).","Also bring: groceries (kitchenette cooking), toiletries, swim gear, venue daypack.","Includes 2 Back 40 parking passes; pool/waterpark + daily brunch."]},{"id":"back-40-log-home","name":"Back 40 Log Home","tier":"Back 40","lodging":"Large A/C log home (sleeps up to 8): king + double + 4 twin loft + queen sofa; 2 full baths; full kitchen + living room; 3 parking passes.","arrival":"Check-in Wednesday June 24, 3:00 PM ET.","provides":["tent","cooling","kitchen","comp-showers","swim","brunch","concierge","shuttle","parking-pass","car-onsite","linens-unconfirmed"],"notes":["SAME OPEN ITEM as the Cabin — EF is silent on linens/towels; the resort's log homes list \"linens & towels provided,\" so likely supplied, but bring your own bedding/towels as backup or confirm with concierge.","Also bring: groceries/pantry staples + dish soap (resort units list cookware, but confirm), toiletries, swim gear, venue daypacks for the group.","Includes 3 Back 40 parking passes; pool/waterpark + daily brunch. Best option for large groups wanting a house."]},{"id":"back-40-enchanted-experience","name":"Back 40 Enchanted Experience","tier":"Back 40","lodging":"Luxury pre-set tent with cooling unit; full bedding incl. woven throws + throw pillows; 2 side tables, bistro table, 2 chairs, 2 rugs, 2 lanterns, bench, mirror, trash can; bath towel sets + soap; in-tent outlet; dedicated golf-cart shuttle; spa lounge.","arrival":"Wednesday June 24 included.","provides":["tent","bedding","cooling","towels","furniture","chairs","lighting","soap","cleaning","in-tent-outlet","comp-showers","swim","brunch","concierge","shuttle"],"notes":["Very little to bring. Personal clothing + costumes, toiletries beyond soap, swim gear, phone/power bank, venue daypack.","Food/snacks optional — or rely on brunch + vendors.","The lowest-effort camping option at the festival."]},{"id":"good-life-hotel-package","name":"Good Life Hotel Package","tier":"Hotel","lodging":"Hotel room (linens, towels, A/C, housekeeping); 5 nights, Wed check-in; Good Life in-venue perks. ~Michillinda Lodge, Whitehall.","arrival":"Check-in Wed June 24 / check-out Mon June 29.","wristbands":"Good Life wristbands; 2–4 person.","provides":["hotel-room","shuttle","meal-card","concierge"],"notes":["Venue daypack only + normal travel bag. Plan around shuttle; backup card (cashless).","Good Life perks: dedicated entrances, viewing areas, A/C lounge, happy hours.","Includes $25 meal card/person, poster, 1 locker, 1 welcome basket. Highest-comfort no-camping Good Life option."]}]};
+const YEAR = (DATA.event && DATA.event.year) || 2026;
 
-const SECTIONS = [
-  {title:"Documents & Entry", items:[
-    {t:"Photo ID", n:"Name must match your prescription labels."},
-    {t:"RFID wristband(s)", n:"Register in the EF app BEFORE putting them on."},
-    {t:"Vehicle / parking pass", n:"Exterior upper driver's-side windshield, before you arrive."},
-    {t:"AC Landing arrival email / confirmation"},
-    {t:"Backup card + some cash", n:"Venue is cashless; cash is for tolls, gas, off-site stops."},
-    {t:"EF app + offline map & set times saved"},
-    {t:"Printed directions + Will Call location", n:"Cell service is unreliable on-site."},
-    {t:"Spare car key", n:"Kept separate from your main key."},
-    {t:"Written phone numbers + a group meetup spot/time"},
-  ]},
-  {title:"Shelter & Sleep", note:"AC Landing gives you the tent and bed — these just make it comfortable.", items:[
-    {t:"Extra warm blanket or sleeping bag liner", n:"Nights hit the low-to-mid 50s; no throw blanket is included."},
-    {t:"Mattress topper", n:"Comfort over the provided bed."},
-    {t:"Eye mask + earplugs", n:"Sun's up around 6 AM."},
-    {t:"Small battery fan", n:"Backup air if the cooling unit underperforms."},
-    {t:"Personal pillow / pillowcase if you're particular"},
-    {t:"A padlock for valuables", n:"Tent lock is provided, but peace of mind."},
-    {t:"On arrival: confirm cooling-unit operation + nearest shower/shuttle"},
-  ]},
-  {title:"Camp Kitchen & Food", note:"Outside food & drink is fine in camp — but not into the venue.", items:[
-    {t:"Cooler + ice plan", n:"Buy ice at your last stop; locals sell out on EF weekend."},
-    {t:"Non-glass food containers + dry-goods bin"},
-    {t:"Low / no-cook food", n:"Bars, fruit, nut butter, wraps, jerky, oatmeal, pre-cooked protein."},
-    {t:"Coleman-style camp stove + fuel", n:"≤1 lb propane only — grills, charcoal & open flame are banned."},
-    {t:"Utensils, plates, cups"},
-    {t:"Biodegradable dish soap + wash tub"},
-    {t:"Paper towels; trash + recycling bags"},
-    {t:"Coffee / tea supplies"},
-  ]},
-  {title:"Water & Hydration", items:[
-    {t:"Reusable non-glass bottle + hydration pack", n:"Both must be EMPTY to enter the venue."},
-    {t:"Non-glass gallon jugs for camp"},
-    {t:"Electrolyte packets / tabs", n:"Essential in the heat and humidity."},
-  ]},
-  {title:"Clothing", items:[
-    {t:"Day: breathable tops, shorts, tanks/dresses; extra socks + underwear"},
-    {t:"Night: hoodie/fleece, long pants, pashmina/onesie", n:"Genuinely cold after dark."},
-    {t:"Rain: packable jacket/poncho + quick-dry layers", n:"Cotton stays wet."},
-    {t:"Bandana / neck gaiter, sun hat, sunglasses"},
-    {t:"Swimsuit"},
-    {t:"Costumes / themed outfits"},
-  ]},
-  {title:"Footwear", items:[
-    {t:"Broken-in closed-toe shoes", n:"Miles of uneven terrain."},
-    {t:"Second pair to rotate", n:"So wet/muddy ones can dry."},
-    {t:"Rain / waterproof boots", n:"Mud is real after storms."},
-    {t:"Camp sandals / flip-flops"},
-  ]},
-  {title:"Toiletries & Hygiene", items:[
-    {t:"Towel(s)", n:"At least one, ideally a spare — AC Landing provides none."},
-    {t:"Shower shoes / flip-flops"},
-    {t:"Soap, shampoo/conditioner, deodorant, toothbrush/toothpaste"},
-    {t:"Toilet paper + tissues"},
-    {t:"Wet wipes + hand sanitizer"},
-    {t:"Glasses / contacts + spares; nail clippers"},
-    {t:"Shaving supplies"},
-    {t:"Feminine hygiene products"},
-    {t:"Body Glide / Gold Bond", n:"Chafing."},
-  ]},
-  {title:"Health, First Aid & Meds", items:[
-    {t:"First aid kit", n:"Bandages, blister pads, ointment, pain reliever, anti-diarrheal, antihistamine."},
-    {t:"Prescriptions in original labeled bottles", n:"Name matches your ID."},
-    {t:"Naloxone / Narcan", n:"Factory-sealed; explicitly permitted."},
-    {t:"Electrolytes / rehydration salts; melatonin"},
-  ]},
-  {title:"Sun & Bug Protection", items:[
-    {t:"Sunscreen SPF 30+", n:"Reapply through the day."},
-    {t:"Lip balm with SPF"},
-    {t:"Insect repellent"},
-    {t:"After-sun aloe"},
-  ]},
-  {title:"Electronics & Power", items:[
-    {t:"Phone + cable"},
-    {t:"2 power banks per person", n:"In-tent outlet reliability is unconfirmed; charging lines are long."},
-    {t:"Wall / USB charger + adapters"},
-    {t:"Headlamp + backup flashlight"},
-    {t:"Lanterns + LED string lights for camp"},
-    {t:"Spare batteries"},
-    {t:"Walkie-talkies (optional)", n:"Cell towers collapse with 40k–50k people."},
-    {t:"Chargers / batteries for LED gear + flow toys"},
-  ]},
-  {title:"Festival Daypack (carry in daily)", items:[
-    {t:"Small bag or non-framed backpack", n:"Every bag is searched."},
-    {t:"Empty water bottle / hydration pack"},
-    {t:"Power bank + cable; phone"},
-    {t:"ID + a card", n:"Cashless venue."},
-    {t:"Sunscreen, lip balm, sunglasses, bandana"},
-    {t:"Warm layer for after dark"},
-    {t:"Earplugs", n:"Hearing protection at the bass stages."},
-    {t:"LED accessories / kandi to trade; small flashlight"},
-    {t:"Rain poncho if storms threaten"},
-  ]},
-  {title:"Comfort & Camp Setup", items:[
-    {t:"Camp chair (1 per person)", n:"None provided; chairs aren't allowed inside the venue."},
-    {t:"Reflective tarps (4) + bungee cords", n:"Silver side OUT, with an air gap off the tent fabric — drape over the canopy frame above the tent. Cinch them down if weather turns; they catch wind like sails. Check with the concierge that covering the pre-set tent is OK."},
-    {t:"Folding outdoor side table"},
-    {t:"Outdoor rug / mat for the tent entrance"},
-    {t:"Hammock + tree straps"},
-    {t:"Tapestries / flags", n:"Personalize and find your camp."},
-    {t:"Hand mister / squirt toy"},
-    {t:"Yoga mat"},
-    {t:"Multi-tool", n:"Camp only — no knives in the venue."},
-    {t:"Rubber mallet", n:"Metal hammers get confiscated."},
-    {t:"Duct tape; zip ties; jumper cables"},
-  ]},
-  {title:"Cleaning & Leave-No-Trace", items:[
-    {t:"Heavy-duty trash + recycling bags", n:"Tie them down so they don't blow away."},
-    {t:"Biodegradable dish soap + wash tub", n:"Greywater to pod sinks — strain first."},
-    {t:"Reusable shopping bag for ice / supply hauls"},
-    {t:"Plan to donate usable gear on the way out"},
-  ]},
-  {title:"Rave / Festival Extras", items:[
-    {t:"Pins + lanyard", n:"For the pin-trading culture."},
-    {t:"Kandi + small handmade gifts", n:"Giving Tree: handmade/meaningful only."},
-    {t:"LED gear, glow accessories, flow toys", n:"With chargers."},
-    {t:"Totem", n:"≤7 ft, light PVC (no wood/metal), nothing sharp on top."},
-    {t:"Costumes, body/face paint + remover", n:"Biodegradable glitter only."},
-    {t:"Notebook/pen; phone or compact camera", n:"No pro / detachable-lens cameras in the venue."},
-  ]},
-  {title:"Easy-to-Forget", items:[
-    {t:"Towels (none included)"},
-    {t:"Mattress topper + extra warm blanket"},
-    {t:"Charged power banks + cables"},
-    {t:"Sunscreen + bug spray"},
-    {t:"Toilet paper + wet wipes"},
-    {t:"Spare car key + written phone numbers"},
-    {t:"Cooler ice plan + gallon water jugs"},
-    {t:"Rubber mallet (not a hammer)"},
-    {t:"Rain poncho + waterproof footwear"},
-    {t:"Reflective tarps + bungees"},
-    {t:"Cash for tolls/gas + backup card"},
-    {t:"Earplugs (sleep + shows)"},
-  ]},
-  {title:"Verify for 2027", note:"Confirm these once Electric Forest publishes official 2027 details.", items:[
-    {t:"Confirm official 2027 dates, gate hours & prohibited list", n:"electricforest.com"},
-    {t:"Confirm your AC Landing package contents", n:"Inclusions can change year to year."},
-    {t:"Register wristband + notify your bank for the cashless system"},
-    {t:"Stage two grab-and-go kits", n:"A hot-day daypack and a cold-night/rain layer set."},
-    {t:"Severe-weather plan: shelter in your vehicle, not the tent", n:"Watch the app + 99.5 FM."},
-  ]},
-];
+/* ---------------- Render rule (mirrors scripts/generate-checklists.mjs) ---------------- */
+function renderItems(opt){
+  const F = new Set(opt.provides || []);
+  return (DATA.catalog || []).filter(it=>{
+    if(it.providedBy && it.providedBy.some(f=>F.has(f))) return false;   // provided => removed
+    if(it.addedBy && it.addedBy.length) return it.addedBy.some(f=>F.has(f)); // conditional add
+    return true;                                                          // universal
+  });
+}
+function groupByCategory(items){
+  const order=[], map=new Map();
+  items.forEach(it=>{ if(!map.has(it.category)){map.set(it.category,[]);order.push(it.category);} map.get(it.category).push(it); });
+  return order.map(cat=>({cat, items:map.get(cat)}));
+}
 
-/* ---------------- Persistence ---------------- */
-const KEY = "efAcLanding2027";
-let state = {};
-let memFallback = "{}";
+/* ---------------- Persistence (tiered, namespaced per option) ---------------- */
 const hasStore = !!(window.storage && window.storage.get && window.storage.set);
-const hasLocal = (function(){
-  try{ const k="__ef_test__"; localStorage.setItem(k,"1"); localStorage.removeItem(k); return true; }
-  catch(e){ return false; }
-})();
+const hasLocal = (function(){ try{ const k="__ef_t__"; localStorage.setItem(k,"1"); localStorage.removeItem(k); return true; }catch(e){ return false; } })();
+const mem = {};
+function keyFor(optId){ return "ef"+YEAR+":"+optId; }
+const LAST_KEY = "ef"+YEAR+":__last";
 
-async function loadState(){
-  if(hasStore){
-    try{ const r = await window.storage.get(KEY); if(r && r.value) return JSON.parse(r.value); }
-    catch(e){ /* key not set yet */ }
-    return {};
-  }
-  if(hasLocal){
-    try{ const v = localStorage.getItem(KEY); if(v) return JSON.parse(v); }
-    catch(e){ /* unreadable / not set yet */ }
-    return {};
-  }
-  try{ return JSON.parse(memFallback); }catch(e){ return {}; }
+// Read a value, falling through tiers if a higher tier is missing OR errors,
+// so a transient primary-tier failure can't drop a good saved copy below it.
+async function loadRaw(key){
+  if(hasStore){ try{ const r=await window.storage.get(key); if(r && r.value!=null) return r.value; }catch(e){} }
+  if(hasLocal){ try{ const v=localStorage.getItem(key); if(v!=null) return v; }catch(e){} }
+  return (key in mem) ? mem[key] : null;
 }
-async function saveState(){
-  const s = JSON.stringify(state);
-  if(hasStore){ try{ await window.storage.set(KEY, s); return; }catch(e){} }
-  if(hasLocal){ try{ localStorage.setItem(KEY, s); return; }catch(e){} }
-  memFallback = s;
+async function saveRaw(key,val){
+  if(hasStore){ try{ await window.storage.set(key,val); return; }catch(e){} }
+  if(hasLocal){ try{ localStorage.setItem(key,val); return; }catch(e){} }
+  mem[key]=val;
 }
+async function loadState(optId){
+  const raw = await loadRaw(keyFor(optId));
+  if(!raw) return {};
+  try{ return JSON.parse(raw) || {}; }catch(e){ return {}; }
+}
+async function saveState(){ if(currentOpt) await saveRaw(keyFor(currentOpt.id), JSON.stringify(state)); }
 
-/* ---------------- Build ---------------- */
-function slug(str){return str.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,"").slice(0,40);}
+/* ---------------- App state ---------------- */
+let currentOpt = null;
+let state = {};
 let TOTAL = 0;
-const itemEls = []; // {id, el}
+let itemEls = [];     // {id, row, si}
+let sectionMeta = []; // [{cat, count}]
+let allCollapsed = false;
+let selectGen = 0;    // guards against overlapping async option switches
 
-function noteCard(cls, lbl, body){
-  const d=document.createElement("div"); d.className="note-card "+cls;
-  d.innerHTML='<span class="lbl">'+lbl+'</span><span class="body">'+body+'</span>';
-  return d;
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+
+/* ---------------- Selector ---------------- */
+function buildSelect(){
+  const sel=document.getElementById("opt");
+  sel.innerHTML="";
+  const tiers=[]; const byTier=new Map();
+  DATA.options.forEach(o=>{ const t=o.tier||"Other"; if(!byTier.has(t)){byTier.set(t,[]);tiers.push(t);} byTier.get(t).push(o); });
+  tiers.forEach(t=>{
+    const g=document.createElement("optgroup"); g.label=t;
+    byTier.get(t).forEach(o=>{ const op=document.createElement("option"); op.value=o.id; op.textContent=o.name; g.appendChild(op); });
+    sel.appendChild(g);
+  });
+  sel.addEventListener("change",()=>{ selectOption(sel.value, true); });
 }
 
-function build(){
+/* ---------------- Weather (built once) ---------------- */
+function buildWeather(){
+  const w=DATA.weather||{}; const host=document.getElementById("weatherHost");
+  const card=document.createElement("section"); card.className="weather";
+  const bodyId="weather-body";
+  const fc=w.forecast||[];
+  let summary="";
+  const his=fc.map(d=>d.high).filter(n=>n!=null), los=fc.map(d=>d.low).filter(n=>n!=null);
+  if(his.length && los.length){
+    const a=Math.min(...his),b=Math.max(...his),c=Math.min(...los),e=Math.max(...los);
+    summary="Highs "+(a===b?a:a+"–"+b)+"° · nights "+(c===e?c:c+"–"+e)+"° · storms likely";
+  }
+  const head=document.createElement("button"); head.className="whead"; head.type="button"; head.setAttribute("aria-controls",bodyId);
+  head.innerHTML='<span class="wtitlewrap"><span class="wtitle">Weather — pack for</span>'+
+    (summary?'<span class="wsummary">'+esc(summary)+'</span>':'')+'</span>';
+  const chev=document.createElement("span"); chev.className="chev"; head.appendChild(chev);
+
+  const body=document.createElement("div"); body.className="wbody"; body.id=bodyId;
+  let fcHtml="";
+  fc.forEach(d=>{ fcHtml+='<div class="fday"><div class="d">'+esc(d.day)+'</div><div class="hi">'+(d.high!=null?esc(d.high):'—')+'°</div><div class="lo">'+(d.low!=null?esc(d.low):'—')+'°</div></div>'; });
+  body.innerHTML=
+    (w.pulledDate?'<div class="wdate">Forecast pulled '+esc(w.pulledDate)+' — re-check 2–3 days out.</div>':'')+
+    (fcHtml?'<div class="forecast">'+fcHtml+'</div>':'')+
+    (w.packFor?'<p class="wpack">'+esc(w.packFor)+'</p>':'')+
+    (w.stormNote?'<p class="wstorm">⚠️ '+esc(w.stormNote)+'</p>':'')+
+    (w.climatology?'<p>'+esc(w.climatology)+'</p>':'')+
+    (w.sources?'<p class="wsrc">'+esc(w.sources)+'</p>':'');
+
+  // Default collapsed on small screens so the checklist isn't buried; the
+  // always-visible summary still surfaces the key weather call.
+  const startCollapsed = !!(window.matchMedia && window.matchMedia("(max-width:560px)").matches);
+  card.classList.toggle("collapsed", startCollapsed);
+  head.setAttribute("aria-expanded", startCollapsed?"false":"true");
+  head.addEventListener("click",()=>{ card.classList.toggle("collapsed"); head.setAttribute("aria-expanded", card.classList.contains("collapsed")?"false":"true"); });
+
+  card.appendChild(head); card.appendChild(body);
+  host.appendChild(card);
+}
+
+/* ---------------- Note cards ---------------- */
+function providedCard(opt){
+  const vocab=DATA.providesVocab||{};
+  const provs=(opt.provides||[]).map(f=>vocab[f]||f);
+  const d=document.createElement("div"); d.className="note-card info";
+  let html='<span class="lbl">Provided by '+esc(opt.name)+' — don’t pack these</span><div class="body">';
+  if(provs.length){ html+='<ul>'+provs.map(p=>'<li>'+esc(p)+'</li>').join("")+'</ul>'; }
+  else { html+='<p>This option provides shared facilities only — bring the full kit below.</p>'; }
+  if(opt.notes&&opt.notes.length){ html+='<p><b style="color:var(--glow)">Heads-up:</b></p><ul>'+opt.notes.map(n=>'<li>'+esc(n)+'</li>').join("")+'</ul>'; }
+  html+='</div>';
+  d.innerHTML=html; return d;
+}
+function prohibitedCard(){
+  const p=DATA.prohibited||{};
+  const d=document.createElement("div"); d.className="note-card warn";
+  let html='<span class="lbl">Do NOT pack — confiscated at the gate</span><div class="body">';
+  if(p.everywhere&&p.everywhere.length){ html+='<p><b>Banned everywhere:</b> '+esc(p.everywhere.join("; "))+'.</p>'; }
+  if(p.venueAdditional&&p.venueAdditional.length){ html+='<p><b>Also banned in the venue:</b> '+esc(p.venueAdditional.join("; "))+'.</p>'; }
+  if(p.permittedDaypack&&p.permittedDaypack.length){ html+='<p><b>OK in your venue daypack:</b> '+esc(p.permittedDaypack.join("; "))+'.</p>'; }
+  if(p.alcohol){ html+='<p><b>Alcohol (campground, 21+):</b> '+esc(p.alcohol)+'</p>'; }
+  if(p.meds){ html+='<p><b>Meds:</b> '+esc(p.meds)+'</p>'; }
+  if(p.harmReduction){ html+='<p><b>Harm reduction:</b> '+esc(p.harmReduction)+'</p>'; }
+  html+='</div>';
+  d.innerHTML=html; return d;
+}
+
+/* ---------------- Build checklist for current option ---------------- */
+function buildChecklist(opt){
   const content=document.getElementById("content");
+  content.innerHTML="";
+  TOTAL=0; itemEls=[]; sectionMeta=[];
 
-  content.appendChild(noteCard("info","Provided by AC Landing — don't pack", PROVIDED));
+  content.appendChild(providedCard(opt));
 
-  SECTIONS.forEach((sec,si)=>{
-    const sl=slug(sec.title);
+  const groups=groupByCategory(renderItems(opt));
+  groups.forEach((g,si)=>{
+    sectionMeta.push({cat:g.cat, count:g.items.length});
     const section=document.createElement("section"); section.className="section";
-
+    if(allCollapsed) section.classList.add("collapsed");
+    const bodyId="sec-"+si;
     const head=document.createElement("button"); head.className="shead"; head.type="button";
-    head.setAttribute("aria-expanded","true");
+    head.setAttribute("aria-expanded", allCollapsed?"false":"true");
+    head.setAttribute("aria-controls", bodyId);
     const badge=document.createElement("span"); badge.className="sbadge"; badge.id="badge-"+si;
-    head.innerHTML='<span class="stitle">'+sec.title+'</span>';
+    head.innerHTML='<span class="stitle">'+esc(g.cat)+'</span>';
     const chev=document.createElement("span"); chev.className="chev";
     head.appendChild(badge); head.appendChild(chev);
     head.addEventListener("click",()=>{
@@ -370,23 +371,18 @@ function build(){
     });
     section.appendChild(head);
 
-    if(sec.note){const n=document.createElement("div");n.className="snote";n.textContent=sec.note;section.appendChild(n);}
-
-    const list=document.createElement("div"); list.className="items";
-    sec.items.forEach((it,ii)=>{
-      const id=si+"-"+slug(it.t);
-      TOTAL++;
-      const row=document.createElement("div");
-      row.className="item"; row.id="row-"+id;
-      row.setAttribute("role","checkbox"); row.setAttribute("aria-checked","false");
-      row.setAttribute("tabindex","0");
+    const list=document.createElement("div"); list.className="items"; list.id=bodyId;
+    g.items.forEach(it=>{
+      const id=it.id; TOTAL++;
+      const row=document.createElement("div"); row.className="item"; row.id="row-"+id;
+      row.setAttribute("role","checkbox"); row.setAttribute("aria-checked","false"); row.setAttribute("tabindex","0");
       const box=document.createElement("div"); box.className="box";
       const txt=document.createElement("div"); txt.className="txt";
-      txt.innerHTML=esc(it.t)+(it.n?'<span class="n">'+esc(it.n)+'</span>':'');
+      txt.innerHTML=esc(it.text)+(it.note?'<span class="n">'+esc(it.note)+'</span>':'');
       row.appendChild(box); row.appendChild(txt);
       const toggle=()=>setChecked(id, !state[id]);
       row.addEventListener("click",toggle);
-      row.addEventListener("keydown",e=>{if(e.key===" "||e.key==="Enter"){e.preventDefault();toggle();}});
+      row.addEventListener("keydown",e=>{ if(e.key===" "||e.key==="Enter"){ e.preventDefault(); toggle(); } });
       list.appendChild(row);
       itemEls.push({id, row, si});
     });
@@ -394,40 +390,56 @@ function build(){
     content.appendChild(section);
   });
 
-  content.appendChild(noteCard("warn","Do NOT pack — confiscated at the gate", PROHIBITED));
+  content.appendChild(prohibitedCard());
 }
-
-function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
 
 /* ---------------- State sync ---------------- */
-function setChecked(id, val, skipSave){
+function setChecked(id, val, skipSave, skipRender){
   if(val) state[id]=true; else delete state[id];
   const o=itemEls.find(x=>x.id===id);
-  if(o){o.row.classList.toggle("checked",!!val);o.row.setAttribute("aria-checked",val?"true":"false");}
+  if(o){ o.row.classList.toggle("checked",!!val); o.row.setAttribute("aria-checked", val?"true":"false"); }
   if(!skipSave) saveState();
-  updateProgress();
+  if(!skipRender) updateProgress();
 }
-
 function updateProgress(){
-  const done=Object.keys(state).length;
+  let done=0; itemEls.forEach(x=>{ if(state[x.id]) done++; });   // same per-row basis as TOTAL/badges
   document.getElementById("count").innerHTML=done+' <small>/ '+TOTAL+' packed</small>';
   const pct=TOTAL? done/TOTAL : 0;
-  const fill=document.getElementById("fill");
-  fill.style.width=(pct*100).toFixed(1)+"%";
+  document.getElementById("fill").style.width=(pct*100).toFixed(1)+"%";
   document.documentElement.style.setProperty("--p", pct.toFixed(3));
-  // per-section badges
-  SECTIONS.forEach((sec,si)=>{
-    const total=sec.items.length;
-    let c=0; itemEls.forEach(x=>{if(x.si===si && state[x.id])c++;});
+  sectionMeta.forEach((sm,si)=>{
+    let c=0; itemEls.forEach(x=>{ if(x.si===si && state[x.id]) c++; });
     const b=document.getElementById("badge-"+si);
-    if(b){b.textContent=c+"/"+total; b.classList.toggle("done", c===total && total>0);}
+    if(b){ b.textContent=c+"/"+sm.count; b.classList.toggle("done", c===sm.count && sm.count>0); }
   });
   document.getElementById("doneBanner").classList.toggle("show", done===TOTAL && TOTAL>0);
 }
 
+/* ---------------- Select an option (guarded against overlapping switches) ---------------- */
+async function selectOption(optId, userInitiated){
+  const gen=++selectGen;
+  const opt=DATA.options.find(o=>o.id===optId) || DATA.options[0];
+  currentOpt=opt;
+  document.getElementById("opt").value=opt.id;
+  document.getElementById("optSub").textContent=[opt.lodging, opt.arrival?("Arrival: "+opt.arrival):null].filter(Boolean).join(" · ");
+  buildChecklist(opt);
+  const loaded=await loadState(opt.id);
+  if(gen!==selectGen) return;                 // superseded by a newer selection
+  state=loaded;
+  itemEls.forEach(x=>{ if(state[x.id]) setChecked(x.id, true, true, true); });
+  updateProgress();
+  await saveRaw(LAST_KEY, opt.id);
+  if(gen!==selectGen) return;
+  if(userInitiated){
+    if(history.replaceState) history.replaceState(null,"","#"+opt.id);
+    document.getElementById("content").scrollIntoView({block:"start", behavior:"smooth"});
+  } else if(location.hash.slice(1)!==opt.id && history.replaceState){
+    history.replaceState(null,"","#"+opt.id);
+  }
+}
+
 /* ---------------- Controls ---------------- */
 function wireControls(){
-  let allCollapsed=false;
   document.getElementById("toggleAll").addEventListener("click",e=>{
     allCollapsed=!allCollapsed;
     document.querySelectorAll(".section").forEach(s=>{
@@ -436,26 +448,25 @@ function wireControls(){
     });
     e.target.textContent=allCollapsed?"Expand all":"Collapse all";
   });
-
   const resetBtn=document.getElementById("reset");
   let armed=false, t=null;
   resetBtn.addEventListener("click",()=>{
     if(!armed){
-      armed=true; resetBtn.textContent="Tap again to clear";
-      t=setTimeout(()=>{armed=false;resetBtn.textContent="Reset all";},3000);
+      armed=true; resetBtn.classList.add("armed"); resetBtn.textContent="Tap again to clear";
+      t=setTimeout(()=>{armed=false;resetBtn.classList.remove("armed");resetBtn.textContent="Reset all";},3000);
       return;
     }
-    clearTimeout(t); armed=false; resetBtn.textContent="Reset all";
-    state={}; itemEls.forEach(x=>{x.row.classList.remove("checked");x.row.setAttribute("aria-checked","false");});
+    clearTimeout(t); armed=false; resetBtn.classList.remove("armed"); resetBtn.textContent="Reset all";
+    state={}; itemEls.forEach(x=>{ x.row.classList.remove("checked"); x.row.setAttribute("aria-checked","false"); });
     saveState(); updateProgress();
   });
+  window.addEventListener("hashchange",()=>{ const h=location.hash.slice(1); if(h && h!==(currentOpt&&currentOpt.id) && DATA.options.some(o=>o.id===h)) selectOption(h,false); });
 }
 
 /* ---------------- Fireflies ---------------- */
 function fireflies(){
   const host=document.getElementById("fireflies"); if(!host) return;
-  const n=10;
-  for(let i=0;i<n;i++){
+  for(let i=0;i<10;i++){
     const f=document.createElement("span"); f.className="ff";
     f.style.left=(5+Math.random()*90)+"%";
     f.style.top=(10+Math.random()*75)+"%";
@@ -469,15 +480,16 @@ function fireflies(){
 
 /* ---------------- Init ---------------- */
 (async function init(){
-  build();
+  buildSelect();
+  buildWeather();
   wireControls();
   fireflies();
-  if(!hasStore && !hasLocal){
-    document.getElementById("saveState").textContent="Checkmarks stay while this view is open.";
-  }
-  state = await loadState();
-  itemEls.forEach(x=>{ if(state[x.id]) setChecked(x.id, true, true); });
-  updateProgress();
+  if(!hasStore && !hasLocal){ document.getElementById("saveState").textContent="Checkmarks stay while this view is open."; }
+  const hash=location.hash.slice(1);
+  let startId = (hash && DATA.options.some(o=>o.id===hash)) ? hash : null;
+  if(!startId){ const last=await loadRaw(LAST_KEY); if(last && DATA.options.some(o=>o.id===last)) startId=last; }
+  if(!startId) startId = DATA.options[0].id;
+  await selectOption(startId, false);
 })();
 </script>
 </body>

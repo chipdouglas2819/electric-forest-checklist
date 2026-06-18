@@ -1,0 +1,7 @@
+# Local preview / editor tooling (per-developer, not part of the app)
+.claude/
+node_modules/
+
+# OS cruft
+.DS_Store
+Thumbs.db
