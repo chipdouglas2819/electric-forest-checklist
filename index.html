@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Electric Forest 2027 — AC Landing Checklist</title>
+<meta name="description" content="A mobile-friendly packing checklist for Electric Forest (AC Landing glamping). Tap to check items off — your progress saves automatically on your device.">
+<meta name="theme-color" content="#081410">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌲</text></svg>">
+<meta property="og:title" content="Electric Forest — AC Landing Packing Checklist">
+<meta property="og:description" content="Interactive packing checklist for Electric Forest glamping. Tap to check off; progress saves on your device.">
+<meta property="og:type" content="website">
+<style>
+  :root{
+    --bg0:#081410;
+    --bg1:#0d2118;
+    --panel:rgba(14,33,24,.72);
+    --panel-line:#1d3a2a;
+    --ink:#e9f3ec;
+    --ink-dim:#8aa597;
+    --ink-faint:#5d7468;
+    --glow:#57efa6;      /* bioluminescent green */
+    --glow-soft:#2fae79;
+    --firefly:#ffd887;   /* warm string-light amber */
+    --warn:#ff9b7a;      /* prohibited / heads-up */
+    --warn-line:#5a2e22;
+    --info-line:#1f4d39;
+    --r:16px;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;padding:0;}
+  body{
+    min-height:100vh;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(120% 60% at 50% -10%, rgba(87,239,166,.10), transparent 60%),
+      radial-gradient(90% 50% at 80% 0%, rgba(255,216,135,.06), transparent 55%),
+      linear-gradient(180deg, var(--bg1), var(--bg0));
+    background-attachment:fixed;
+    padding:0 14px env(safe-area-inset-bottom) 14px;
+  }
+  .wrap{max-width:660px;margin:0 auto;}
+
+  /* ---------- Sticky progress header ---------- */
+  header{
+    position:sticky;top:0;z-index:20;
+    margin:0 -14px 18px;
+    padding:16px 16px 14px;
+    background:linear-gradient(180deg, rgba(8,20,16,.94), rgba(8,20,16,.80));
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--panel-line);
+    overflow:hidden;
+  }
+  .fireflies{position:absolute;inset:0;pointer-events:none;}
+  .ff{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--firefly);
+      box-shadow:0 0 6px 2px rgba(255,216,135,.7);opacity:calc(.15 + var(--p,0)*.8);}
+  .eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--glow);font-weight:700;}
+  h1{margin:3px 0 2px;font-size:21px;line-height:1.15;font-weight:800;letter-spacing:-.01em;}
+  .meta{font-size:12px;color:var(--ink-dim);line-height:1.45;margin-top:2px;}
+  .meta b{color:var(--ink);font-weight:600;}
+
+  .progwrap{display:flex;align-items:baseline;gap:8px;margin:12px 0 7px;}
+  .count{font-size:26px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;}
+  .count small{font-size:13px;font-weight:600;color:var(--ink-dim);}
+  .bar{height:9px;border-radius:99px;background:#11271c;border:1px solid var(--panel-line);overflow:hidden;}
+  .fill{height:100%;width:0%;border-radius:99px;
+        background:linear-gradient(90deg,var(--glow-soft),var(--glow));
+        box-shadow:0 0 12px rgba(87,239,166,calc(.25 + var(--p,0)*.55));
+        transition:width .35s cubic-bezier(.2,.8,.2,1);}
+  .toolbar{display:flex;gap:8px;margin-top:12px;}
+  .tbtn{flex:0 0 auto;font:inherit;font-size:12px;font-weight:600;color:var(--ink-dim);
+        background:transparent;border:1px solid var(--panel-line);border-radius:99px;
+        padding:7px 13px;cursor:pointer;transition:.15s;}
+  .tbtn:hover{color:var(--ink);border-color:var(--glow-soft);}
+  .tbtn.danger:hover{color:var(--warn);border-color:var(--warn-line);}
+  .tbtn:focus-visible{outline:2px solid var(--glow);outline-offset:2px;}
+
+  /* ---------- Reference blocks ---------- */
+  .note-card{border-radius:var(--r);padding:13px 15px;margin:0 0 14px;font-size:13px;line-height:1.5;background:var(--panel);}
+  .note-card .lbl{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:5px;}
+  .note-card.info{border:1px solid var(--info-line);border-left:3px solid var(--glow-soft);}
+  .note-card.info .lbl{color:var(--glow);}
+  .note-card.info .body{color:var(--ink-dim);}
+  .note-card.warn{border:1px solid var(--warn-line);border-left:3px solid var(--warn);}
+  .note-card.warn .lbl{color:var(--warn);}
+  .note-card.warn .body{color:#d8b5a8;}
+
+  /* ---------- Sections ---------- */
+  .section{background:var(--panel);border:1px solid var(--panel-line);border-radius:var(--r);margin-bottom:12px;overflow:hidden;}
+  .shead{display:flex;align-items:center;gap:10px;width:100%;border:0;background:transparent;
+         color:var(--ink);font:inherit;text-align:left;cursor:pointer;padding:14px 15px;}
+  .shead:focus-visible{outline:2px solid var(--glow);outline-offset:-2px;}
+  .stitle{flex:1;font-size:15px;font-weight:700;letter-spacing:-.01em;}
+  .sbadge{font-size:12px;font-weight:700;font-variant-numeric:tabular-nums;color:var(--ink-dim);
+          background:#102619;border:1px solid var(--panel-line);border-radius:99px;padding:3px 9px;min-width:46px;text-align:center;}
+  .sbadge.done{color:#07140d;background:var(--glow);border-color:var(--glow);}
+  .chev{width:9px;height:9px;border-right:2px solid var(--ink-faint);border-bottom:2px solid var(--ink-faint);
+        transform:rotate(45deg);transition:transform .2s;margin-left:2px;}
+  .section.collapsed .chev{transform:rotate(-45deg);}
+  .snote{font-size:12px;color:var(--ink-dim);padding:0 15px 4px;margin-top:-4px;line-height:1.45;font-style:italic;}
+  .items{padding:2px 6px 8px;}
+  .section.collapsed .items,.section.collapsed .snote{display:none;}
+
+  /* ---------- Item rows ---------- */
+  .item{display:flex;align-items:flex-start;gap:12px;padding:11px 9px;border-radius:11px;cursor:pointer;
+        min-height:46px;transition:background .12s;}
+  .item:hover{background:rgba(87,239,166,.05);}
+  .item:focus-visible{outline:2px solid var(--glow);outline-offset:-2px;}
+  .box{flex:0 0 auto;width:23px;height:23px;border-radius:7px;border:2px solid #335a45;margin-top:1px;
+       position:relative;transition:.15s;background:#0c1f16;}
+  .box::after{content:"";position:absolute;left:7px;top:3px;width:5px;height:10px;
+       border:solid #07140d;border-width:0 2.5px 2.5px 0;transform:rotate(45deg) scale(0);
+       transition:transform .15s cubic-bezier(.2,1.4,.4,1);}
+  .item.checked .box{background:var(--glow);border-color:var(--glow);box-shadow:0 0 10px rgba(87,239,166,.5);}
+  .item.checked .box::after{transform:rotate(45deg) scale(1);}
+  .txt{flex:1;font-size:14.5px;line-height:1.4;padding-top:1px;}
+  .txt .n{display:block;font-size:12.5px;color:var(--ink-dim);line-height:1.45;margin-top:3px;}
+  .item.checked .txt{color:var(--ink-faint);text-decoration:line-through;text-decoration-color:rgba(138,165,151,.5);}
+  .item.checked .txt .n{color:var(--ink-faint);text-decoration:line-through;}
+
+  footer{text-align:center;color:var(--ink-faint);font-size:12px;line-height:1.5;padding:18px 8px 26px;}
+  footer .save-state{color:var(--glow-soft);font-weight:600;}
+
+  .done-banner{display:none;text-align:center;margin:0 0 14px;padding:14px;border-radius:var(--r);
+    border:1px solid var(--glow-soft);background:rgba(87,239,166,.08);color:var(--glow);font-weight:700;font-size:15px;}
+  .done-banner.show{display:block;}
+
+  @media (prefers-reduced-motion: no-preference){
+    .ff{animation:float var(--d,6s) ease-in-out infinite alternate;}
+    @keyframes float{from{transform:translate(0,0)}to{transform:translate(var(--mx,6px),var(--my,-8px))}}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="fireflies" id="fireflies" aria-hidden="true"></div>
+    <div class="eyebrow">Electric Forest · Rothbury, MI</div>
+    <h1>AC Landing Packing Checklist</h1>
+    <div class="meta"><b>2027 dates expected Thu June 24</b> (confirm on electricforest.com) · hot days, cold nights, real storm risk</div>
+    <div class="progwrap">
+      <span class="count" id="count">0 <small>/ 0 packed</small></span>
+    </div>
+    <div class="bar"><div class="fill" id="fill"></div></div>
+    <div class="toolbar">
+      <button class="tbtn" id="toggleAll" type="button">Collapse all</button>
+      <button class="tbtn danger" id="reset" type="button">Reset all</button>
+    </div>
+  </header>
+
+  <div class="done-banner" id="doneBanner">🌲 Fully packed. Have a beautiful Forest.</div>
+  <div id="content"></div>
+
+  <footer>
+    <span id="saveState" class="save-state">Checkmarks save automatically on this device.</span><br>
+    Tap a row to mark it packed. The two highlighted cards are reference only — don't pack those.
+  </footer>
+</div>
+
+<script>
+/* ---------------- Data ---------------- */
+const PROVIDED = "Tent · real bed (1 queen or 2 twins) · sheets, pillows, comforters · cooling unit · side table · battery light · tent lock · complimentary showers + A/C restrooms · 24-hr concierge · shuttle. Leave these home.";
+const PROHIBITED = "Glass · drones · nitrous · fireworks · generators (except RV built-in/solar) · propane over 1 lb / grills / charcoal / open flame · weapons & knives in the venue · pro / detachable-lens cameras · metal hammers · framed or oversized backpacks in the venue · chairs in the venue.";
+
+const SECTIONS = [
+  {title:"Documents & Entry", items:[
+    {t:"Photo ID", n:"Name must match your prescription labels."},
+    {t:"RFID wristband(s)", n:"Register in the EF app BEFORE putting them on."},
+    {t:"Vehicle / parking pass", n:"Exterior upper driver's-side windshield, before you arrive."},
+    {t:"AC Landing arrival email / confirmation"},
+    {t:"Backup card + some cash", n:"Venue is cashless; cash is for tolls, gas, off-site stops."},
+    {t:"EF app + offline map & set times saved"},
+    {t:"Printed directions + Will Call location", n:"Cell service is unreliable on-site."},
+    {t:"Spare car key", n:"Kept separate from your main key."},
+    {t:"Written phone numbers + a group meetup spot/time"},
+  ]},
+  {title:"Shelter & Sleep", note:"AC Landing gives you the tent and bed — these just make it comfortable.", items:[
+    {t:"Extra warm blanket or sleeping bag liner", n:"Nights hit the low-to-mid 50s; no throw blanket is included."},
+    {t:"Mattress topper", n:"Comfort over the provided bed."},
+    {t:"Eye mask + earplugs", n:"Sun's up around 6 AM."},
+    {t:"Small battery fan", n:"Backup air if the cooling unit underperforms."},
+    {t:"Personal pillow / pillowcase if you're particular"},
+    {t:"A padlock for valuables", n:"Tent lock is provided, but peace of mind."},
+    {t:"On arrival: confirm cooling-unit operation + nearest shower/shuttle"},
+  ]},
+  {title:"Camp Kitchen & Food", note:"Outside food & drink is fine in camp — but not into the venue.", items:[
+    {t:"Cooler + ice plan", n:"Buy ice at your last stop; locals sell out on EF weekend."},
+    {t:"Non-glass food containers + dry-goods bin"},
+    {t:"Low / no-cook food", n:"Bars, fruit, nut butter, wraps, jerky, oatmeal, pre-cooked protein."},
+    {t:"Coleman-style camp stove + fuel", n:"≤1 lb propane only — grills, charcoal & open flame are banned."},
+    {t:"Utensils, plates, cups"},
+    {t:"Biodegradable dish soap + wash tub"},
+    {t:"Paper towels; trash + recycling bags"},
+    {t:"Coffee / tea supplies"},
+  ]},
+  {title:"Water & Hydration", items:[
+    {t:"Reusable non-glass bottle + hydration pack", n:"Both must be EMPTY to enter the venue."},
+    {t:"Non-glass gallon jugs for camp"},
+    {t:"Electrolyte packets / tabs", n:"Essential in the heat and humidity."},
+  ]},
+  {title:"Clothing", items:[
+    {t:"Day: breathable tops, shorts, tanks/dresses; extra socks + underwear"},
+    {t:"Night: hoodie/fleece, long pants, pashmina/onesie", n:"Genuinely cold after dark."},
+    {t:"Rain: packable jacket/poncho + quick-dry layers", n:"Cotton stays wet."},
+    {t:"Bandana / neck gaiter, sun hat, sunglasses"},
+    {t:"Swimsuit"},
+    {t:"Costumes / themed outfits"},
+  ]},
+  {title:"Footwear", items:[
+    {t:"Broken-in closed-toe shoes", n:"Miles of uneven terrain."},
+    {t:"Second pair to rotate", n:"So wet/muddy ones can dry."},
+    {t:"Rain / waterproof boots", n:"Mud is real after storms."},
+    {t:"Camp sandals / flip-flops"},
+  ]},
+  {title:"Toiletries & Hygiene", items:[
+    {t:"Towel(s)", n:"At least one, ideally a spare — AC Landing provides none."},
+    {t:"Shower shoes / flip-flops"},
+    {t:"Soap, shampoo/conditioner, deodorant, toothbrush/toothpaste"},
+    {t:"Toilet paper + tissues"},
+    {t:"Wet wipes + hand sanitizer"},
+    {t:"Glasses / contacts + spares; nail clippers"},
+    {t:"Shaving supplies"},
+    {t:"Feminine hygiene products"},
+    {t:"Body Glide / Gold Bond", n:"Chafing."},
+  ]},
+  {title:"Health, First Aid & Meds", items:[
+    {t:"First aid kit", n:"Bandages, blister pads, ointment, pain reliever, anti-diarrheal, antihistamine."},
+    {t:"Prescriptions in original labeled bottles", n:"Name matches your ID."},
+    {t:"Naloxone / Narcan", n:"Factory-sealed; explicitly permitted."},
+    {t:"Electrolytes / rehydration salts; melatonin"},
+  ]},
+  {title:"Sun & Bug Protection", items:[
+    {t:"Sunscreen SPF 30+", n:"Reapply through the day."},
+    {t:"Lip balm with SPF"},
+    {t:"Insect repellent"},
+    {t:"After-sun aloe"},
+  ]},
+  {title:"Electronics & Power", items:[
+    {t:"Phone + cable"},
+    {t:"2 power banks per person", n:"In-tent outlet reliability is unconfirmed; charging lines are long."},
+    {t:"Wall / USB charger + adapters"},
+    {t:"Headlamp + backup flashlight"},
+    {t:"Lanterns + LED string lights for camp"},
+    {t:"Spare batteries"},
+    {t:"Walkie-talkies (optional)", n:"Cell towers collapse with 40k–50k people."},
+    {t:"Chargers / batteries for LED gear + flow toys"},
+  ]},
+  {title:"Festival Daypack (carry in daily)", items:[
+    {t:"Small bag or non-framed backpack", n:"Every bag is searched."},
+    {t:"Empty water bottle / hydration pack"},
+    {t:"Power bank + cable; phone"},
+    {t:"ID + a card", n:"Cashless venue."},
+    {t:"Sunscreen, lip balm, sunglasses, bandana"},
+    {t:"Warm layer for after dark"},
+    {t:"Earplugs", n:"Hearing protection at the bass stages."},
+    {t:"LED accessories / kandi to trade; small flashlight"},
+    {t:"Rain poncho if storms threaten"},
+  ]},
+  {title:"Comfort & Camp Setup", items:[
+    {t:"Camp chair (1 per person)", n:"None provided; chairs aren't allowed inside the venue."},
+    {t:"Reflective tarps (4) + bungee cords", n:"Silver side OUT, with an air gap off the tent fabric — drape over the canopy frame above the tent. Cinch them down if weather turns; they catch wind like sails. Check with the concierge that covering the pre-set tent is OK."},
+    {t:"Folding outdoor side table"},
+    {t:"Outdoor rug / mat for the tent entrance"},
+    {t:"Hammock + tree straps"},
+    {t:"Tapestries / flags", n:"Personalize and find your camp."},
+    {t:"Hand mister / squirt toy"},
+    {t:"Yoga mat"},
+    {t:"Multi-tool", n:"Camp only — no knives in the venue."},
+    {t:"Rubber mallet", n:"Metal hammers get confiscated."},
+    {t:"Duct tape; zip ties; jumper cables"},
+  ]},
+  {title:"Cleaning & Leave-No-Trace", items:[
+    {t:"Heavy-duty trash + recycling bags", n:"Tie them down so they don't blow away."},
+    {t:"Biodegradable dish soap + wash tub", n:"Greywater to pod sinks — strain first."},
+    {t:"Reusable shopping bag for ice / supply hauls"},
+    {t:"Plan to donate usable gear on the way out"},
+  ]},
+  {title:"Rave / Festival Extras", items:[
+    {t:"Pins + lanyard", n:"For the pin-trading culture."},
+    {t:"Kandi + small handmade gifts", n:"Giving Tree: handmade/meaningful only."},
+    {t:"LED gear, glow accessories, flow toys", n:"With chargers."},
+    {t:"Totem", n:"≤7 ft, light PVC (no wood/metal), nothing sharp on top."},
+    {t:"Costumes, body/face paint + remover", n:"Biodegradable glitter only."},
+    {t:"Notebook/pen; phone or compact camera", n:"No pro / detachable-lens cameras in the venue."},
+  ]},
+  {title:"Easy-to-Forget", items:[
+    {t:"Towels (none included)"},
+    {t:"Mattress topper + extra warm blanket"},
+    {t:"Charged power banks + cables"},
+    {t:"Sunscreen + bug spray"},
+    {t:"Toilet paper + wet wipes"},
+    {t:"Spare car key + written phone numbers"},
+    {t:"Cooler ice plan + gallon water jugs"},
+    {t:"Rubber mallet (not a hammer)"},
+    {t:"Rain poncho + waterproof footwear"},
+    {t:"Reflective tarps + bungees"},
+    {t:"Cash for tolls/gas + backup card"},
+    {t:"Earplugs (sleep + shows)"},
+  ]},
+  {title:"Verify for 2027", note:"Confirm these once Electric Forest publishes official 2027 details.", items:[
+    {t:"Confirm official 2027 dates, gate hours & prohibited list", n:"electricforest.com"},
+    {t:"Confirm your AC Landing package contents", n:"Inclusions can change year to year."},
+    {t:"Register wristband + notify your bank for the cashless system"},
+    {t:"Stage two grab-and-go kits", n:"A hot-day daypack and a cold-night/rain layer set."},
+    {t:"Severe-weather plan: shelter in your vehicle, not the tent", n:"Watch the app + 99.5 FM."},
+  ]},
+];
+
+/* ---------------- Persistence ---------------- */
+const KEY = "efAcLanding2027";
+let state = {};
+let memFallback = "{}";
+const hasStore = !!(window.storage && window.storage.get && window.storage.set);
+const hasLocal = (function(){
+  try{ const k="__ef_test__"; localStorage.setItem(k,"1"); localStorage.removeItem(k); return true; }
+  catch(e){ return false; }
+})();
+
+async function loadState(){
+  if(hasStore){
+    try{ const r = await window.storage.get(KEY); if(r && r.value) return JSON.parse(r.value); }
+    catch(e){ /* key not set yet */ }
+    return {};
+  }
+  if(hasLocal){
+    try{ const v = localStorage.getItem(KEY); if(v) return JSON.parse(v); }
+    catch(e){ /* unreadable / not set yet */ }
+    return {};
+  }
+  try{ return JSON.parse(memFallback); }catch(e){ return {}; }
+}
+async function saveState(){
+  const s = JSON.stringify(state);
+  if(hasStore){ try{ await window.storage.set(KEY, s); return; }catch(e){} }
+  if(hasLocal){ try{ localStorage.setItem(KEY, s); return; }catch(e){} }
+  memFallback = s;
+}
+
+/* ---------------- Build ---------------- */
+function slug(str){return str.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,"").slice(0,40);}
+let TOTAL = 0;
+const itemEls = []; // {id, el}
+
+function noteCard(cls, lbl, body){
+  const d=document.createElement("div"); d.className="note-card "+cls;
+  d.innerHTML='<span class="lbl">'+lbl+'</span><span class="body">'+body+'</span>';
+  return d;
+}
+
+function build(){
+  const content=document.getElementById("content");
+
+  content.appendChild(noteCard("info","Provided by AC Landing — don't pack", PROVIDED));
+
+  SECTIONS.forEach((sec,si)=>{
+    const sl=slug(sec.title);
+    const section=document.createElement("section"); section.className="section";
+
+    const head=document.createElement("button"); head.className="shead"; head.type="button";
+    head.setAttribute("aria-expanded","true");
+    const badge=document.createElement("span"); badge.className="sbadge"; badge.id="badge-"+si;
+    head.innerHTML='<span class="stitle">'+sec.title+'</span>';
+    const chev=document.createElement("span"); chev.className="chev";
+    head.appendChild(badge); head.appendChild(chev);
+    head.addEventListener("click",()=>{
+      section.classList.toggle("collapsed");
+      head.setAttribute("aria-expanded", section.classList.contains("collapsed")?"false":"true");
+    });
+    section.appendChild(head);
+
+    if(sec.note){const n=document.createElement("div");n.className="snote";n.textContent=sec.note;section.appendChild(n);}
+
+    const list=document.createElement("div"); list.className="items";
+    sec.items.forEach((it,ii)=>{
+      const id=si+"-"+slug(it.t);
+      TOTAL++;
+      const row=document.createElement("div");
+      row.className="item"; row.id="row-"+id;
+      row.setAttribute("role","checkbox"); row.setAttribute("aria-checked","false");
+      row.setAttribute("tabindex","0");
+      const box=document.createElement("div"); box.className="box";
+      const txt=document.createElement("div"); txt.className="txt";
+      txt.innerHTML=esc(it.t)+(it.n?'<span class="n">'+esc(it.n)+'</span>':'');
+      row.appendChild(box); row.appendChild(txt);
+      const toggle=()=>setChecked(id, !state[id]);
+      row.addEventListener("click",toggle);
+      row.addEventListener("keydown",e=>{if(e.key===" "||e.key==="Enter"){e.preventDefault();toggle();}});
+      list.appendChild(row);
+      itemEls.push({id, row, si});
+    });
+    section.appendChild(list);
+    content.appendChild(section);
+  });
+
+  content.appendChild(noteCard("warn","Do NOT pack — confiscated at the gate", PROHIBITED));
+}
+
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+
+/* ---------------- State sync ---------------- */
+function setChecked(id, val, skipSave){
+  if(val) state[id]=true; else delete state[id];
+  const o=itemEls.find(x=>x.id===id);
+  if(o){o.row.classList.toggle("checked",!!val);o.row.setAttribute("aria-checked",val?"true":"false");}
+  if(!skipSave) saveState();
+  updateProgress();
+}
+
+function updateProgress(){
+  const done=Object.keys(state).length;
+  document.getElementById("count").innerHTML=done+' <small>/ '+TOTAL+' packed</small>';
+  const pct=TOTAL? done/TOTAL : 0;
+  const fill=document.getElementById("fill");
+  fill.style.width=(pct*100).toFixed(1)+"%";
+  document.documentElement.style.setProperty("--p", pct.toFixed(3));
+  // per-section badges
+  SECTIONS.forEach((sec,si)=>{
+    const total=sec.items.length;
+    let c=0; itemEls.forEach(x=>{if(x.si===si && state[x.id])c++;});
+    const b=document.getElementById("badge-"+si);
+    if(b){b.textContent=c+"/"+total; b.classList.toggle("done", c===total && total>0);}
+  });
+  document.getElementById("doneBanner").classList.toggle("show", done===TOTAL && TOTAL>0);
+}
+
+/* ---------------- Controls ---------------- */
+function wireControls(){
+  let allCollapsed=false;
+  document.getElementById("toggleAll").addEventListener("click",e=>{
+    allCollapsed=!allCollapsed;
+    document.querySelectorAll(".section").forEach(s=>{
+      s.classList.toggle("collapsed",allCollapsed);
+      const h=s.querySelector(".shead"); if(h) h.setAttribute("aria-expanded",allCollapsed?"false":"true");
+    });
+    e.target.textContent=allCollapsed?"Expand all":"Collapse all";
+  });
+
+  const resetBtn=document.getElementById("reset");
+  let armed=false, t=null;
+  resetBtn.addEventListener("click",()=>{
+    if(!armed){
+      armed=true; resetBtn.textContent="Tap again to clear";
+      t=setTimeout(()=>{armed=false;resetBtn.textContent="Reset all";},3000);
+      return;
+    }
+    clearTimeout(t); armed=false; resetBtn.textContent="Reset all";
+    state={}; itemEls.forEach(x=>{x.row.classList.remove("checked");x.row.setAttribute("aria-checked","false");});
+    saveState(); updateProgress();
+  });
+}
+
+/* ---------------- Fireflies ---------------- */
+function fireflies(){
+  const host=document.getElementById("fireflies"); if(!host) return;
+  const n=10;
+  for(let i=0;i<n;i++){
+    const f=document.createElement("span"); f.className="ff";
+    f.style.left=(5+Math.random()*90)+"%";
+    f.style.top=(10+Math.random()*75)+"%";
+    f.style.setProperty("--d",(4+Math.random()*5).toFixed(1)+"s");
+    f.style.setProperty("--mx",(Math.random()*14-7).toFixed(1)+"px");
+    f.style.setProperty("--my",(-6-Math.random()*10).toFixed(1)+"px");
+    f.style.animationDelay=(Math.random()*4).toFixed(1)+"s";
+    host.appendChild(f);
+  }
+}
+
+/* ---------------- Init ---------------- */
+(async function init(){
+  build();
+  wireControls();
+  fireflies();
+  if(!hasStore && !hasLocal){
+    document.getElementById("saveState").textContent="Checkmarks stay while this view is open.";
+  }
+  state = await loadState();
+  itemEls.forEach(x=>{ if(state[x.id]) setChecked(x.id, true, true); });
+  updateProgress();
+})();
+</script>
+</body>
+</html>
