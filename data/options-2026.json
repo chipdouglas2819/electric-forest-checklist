@@ -152,7 +152,9 @@
     "rv-bring": "BYO RV option — you bring and run the RV.",
     "linens-unconfirmed": "EF does not confirm linens/towels for this lodging in writing — bring your own as backup or confirm with the Good Life concierge.",
     "pillows-provided": "Pillows provided",
-    "hard-shelter": "RV or hard-sided lodging — no camping tent needed"
+    "hard-shelter": "RV or hard-sided lodging — no camping tent needed",
+    "power-real": "Real household AC power — run any appliance (RV 30A, cabin/log home, hotel)",
+    "power-tent": "A/C pre-set tent — real powered circuit, but the guest outlet is officially rated for charging small devices (don’t overload)"
   },
   "catalog": [
     {
@@ -224,7 +226,7 @@
     {
       "id": "tent",
       "category": "Shelter & Sleep",
-      "text": "Tent + stakes",
+      "text": "Tent",
       "note": "Metal hammers get confiscated — bring a rubber mallet.",
       "providedBy": [
         "tent",
@@ -250,7 +252,7 @@
         "sleeping-gear",
         "bedding",
         "hotel-room",
-        "hard-shelter"
+        "linens-unconfirmed"
       ]
     },
     {
@@ -392,7 +394,6 @@
       "text": "Biodegradable dish soap + wash tub",
       "providedBy": [
         "soap",
-        "kitchen",
         "hotel-room"
       ],
       "note": "Strain greywater into the pod sinks — leave no trace."
@@ -400,7 +401,7 @@
     {
       "id": "paper-towels-trash",
       "category": "Camp Kitchen & Food",
-      "text": "Paper towels; trash + recycling bags",
+      "text": "Paper towels",
       "providedBy": [
         "cleaning",
         "hotel-room"
@@ -436,8 +437,8 @@
     {
       "id": "gallon-jugs",
       "category": "Water & Hydration",
-      "text": "Non-glass gallon jugs / drinking water for camp",
-      "note": "Free refill stations throughout; bring drinking water beyond the daily refill for Pre-Set RVs.",
+      "text": "Camp drinking water — gallon jugs or cases of bottled water (non-glass)",
+      "note": "For camp; the refill stations are free too. Freeze a few bottles to double as cooler ice that melts into drinking water. (No outside drinks enter the venue — carry your empty refill bottle instead.)",
       "providedBy": [
         "hotel-room"
       ]
@@ -698,27 +699,10 @@
     {
       "id": "battery-fan",
       "category": "Electronics & Power",
-      "text": "Small battery / USB fan",
-      "note": "Backup air; tents get hot.",
-      "addedBy": [
-        "cooling"
-      ],
+      "text": "Battery / USB fan",
+      "note": "Humid Michigan nights — essential in the no-A/C tents (Electric Avenue, Bungalow, GA Pre-Set) and any BYO tent; a handy backup with A/C or power.",
       "providedBy": [
         "hotel-room"
-      ]
-    },
-    {
-      "id": "fan-no-cooling",
-      "category": "Electronics & Power",
-      "text": "Battery / USB fan (ESSENTIAL)",
-      "note": "Pre-set tents have no A/C and get hot — a battery/USB fan is essential.",
-      "addedBy": [
-        "tent"
-      ],
-      "providedBy": [
-        "cooling",
-        "hotel-room",
-        "hard-shelter"
       ]
     },
     {
@@ -749,8 +733,8 @@
     {
       "id": "rv-self-contained",
       "category": "Electronics & Power",
-      "text": "Fresh-water fill + grey/black-water plan, leveling blocks, battery/solar power",
-      "note": "Self-contained: no on-site dump; external gas generators banned (built-in/solar OK).",
+      "text": "Fresh-water fill + grey/black-water plan, leveling blocks + wheel chocks, battery/solar power",
+      "note": "Self-contained: no on-site dump. External gas generators are banned — built-in RV generator, solar, or a portable power station only.",
       "addedBy": [
         "rv-bring"
       ],
@@ -946,28 +930,27 @@
     {
       "id": "hair-styling-tools",
       "category": "Electronics & Power",
-      "text": "Hair straightener / curling iron",
-      "note": "High-draw heating appliance — only run it on real AC power (RV shore power, your A/C-unit circuit, or a hotel outlet). Do NOT run it off a pre-set tent’s charging-only outlet.",
+      "text": "Hair dryer / straightener / curling iron",
+      "note": "Power-hungry. Runs fine on RV / cabin / log-home power. In an A/C tent the outlet is meant for small devices — use one tool at a time so you don’t overload and knock out the tent’s power (A/C included).",
       "addedBy": [
-        "cooling",
-        "power-30a",
-        "full-hookup",
+        "power-real",
+        "power-tent"
+      ],
+      "providedBy": [
         "hotel-room"
       ]
     },
     {
       "id": "ac-box-fan-cooling",
       "category": "Electronics & Power",
-      "text": "AC box fan + extension cord + power strip",
-      "note": "Great airflow when you have power — A/C Landing runs one off the unit’s circuit / your own cord.",
+      "text": "A/C box fan",
+      "note": "Runs off real AC power (RV / cabin / log home). On an A/C-tent outlet it usually works but isn’t guaranteed — don’t overload, and keep the battery fan as backup.",
       "addedBy": [
-        "cooling"
+        "power-real",
+        "power-tent"
       ],
       "providedBy": [
-        "hotel-room",
-        "in-tent-outlet",
-        "kitchen",
-        "linens-unconfirmed"
+        "hotel-room"
       ]
     },
     {
@@ -1064,7 +1047,7 @@
         "sleeping-gear",
         "bedding",
         "hotel-room",
-        "hard-shelter"
+        "linens-unconfirmed"
       ]
     },
     {
@@ -1072,6 +1055,78 @@
       "category": "Rave / Festival Extras",
       "text": "Personal Bluetooth speaker",
       "note": "Handheld/USB only, under 11x5x5″ to clear venue rules; larger speakers are banned."
+    },
+    {
+      "id": "electric-kettle",
+      "category": "Camp Kitchen & Food",
+      "text": "Electric kettle / coffee maker",
+      "note": "Runs freely on RV / cabin / log-home power. In an A/C tent the outlet is charging-only, so a low-watt kettle may not work — the ≤1 lb camp stove + a stovetop kettle is the safe bet.",
+      "addedBy": [
+        "power-real",
+        "power-tent"
+      ],
+      "providedBy": [
+        "coffee-maker",
+        "kitchen",
+        "hotel-room"
+      ]
+    },
+    {
+      "id": "extension-cord",
+      "category": "Electronics & Power",
+      "text": "Extension cord + outdoor / GFCI power strip",
+      "note": "Reaches or splits the site / in-tent outlet; outdoor-rated only. (RVs also bring the 30A shore-power cord, listed separately.)",
+      "addedBy": [
+        "power-real",
+        "power-tent",
+        "in-tent-outlet"
+      ],
+      "providedBy": [
+        "hotel-room"
+      ]
+    },
+    {
+      "id": "heavy-stakes",
+      "category": "Shelter & Sleep",
+      "text": "Heavy-duty / extra-long stakes (10–12 in)",
+      "note": "Storm-prone venue — standard stakes pull out of soft/wet ground in wind. Forged or spiral 10–12″ stakes hold tents and pop-ups; flying canopies are a common EF sight. Drive at ~60° and guy out everything.",
+      "providedBy": [
+        "tent",
+        "hotel-room",
+        "hard-shelter"
+      ]
+    },
+    {
+      "id": "extra-tarps",
+      "category": "Shelter & Sleep",
+      "text": "Extra tarps (ground + rain)",
+      "note": "Ground tarp + an overhead rain tarp. Tuck the ground tarp UNDER the tent footprint — any tarp sticking out collects rain and funnels a puddle under you.",
+      "providedBy": [
+        "tent",
+        "hotel-room",
+        "hard-shelter"
+      ]
+    },
+    {
+      "id": "ratchet-straps",
+      "category": "Comfort & Camp Setup",
+      "text": "Ratchet straps + tie-downs",
+      "note": "Cinch down pop-ups, tarps, and vehicle/rooftop loads — wind sends shade structures flying at EF.",
+      "providedBy": [
+        "hotel-room"
+      ]
+    },
+    {
+      "id": "rv-extra-tent",
+      "category": "Shelter & Sleep",
+      "text": "Optional extra / pup tent + stakes (extra sleepers)",
+      "note": "RV sites are officially RV-only, but a small extra-sleeper tent on your own 20×50 pad is a common gray area — confirm with EF and keep it on your site alongside the RV + car.",
+      "addedBy": [
+        "rv-bring"
+      ],
+      "providedBy": [
+        "hotel-room"
+      ]
     }
   ],
   "options": [
@@ -1090,7 +1145,8 @@
         "tent-lock",
         "comp-showers",
         "concierge",
-        "shuttle"
+        "shuttle",
+        "power-tent"
       ],
       "notes": [
         "Provided: tent, real bed, sheets/pillows/comforters, cooling unit, side table, battery light, tent lock, comp showers + A/C restrooms, 24-hr concierge, shuttle.",
@@ -1170,7 +1226,8 @@
         "car-onsite",
         "rv-bring",
         "power-30a",
-        "hard-shelter"
+        "hard-shelter",
+        "power-real"
       ],
       "notes": [
         "30A power cord/adapter and 30A surge protector; otherwise self-contained water and waste (powered, not full hookup).",
@@ -1272,7 +1329,8 @@
         "in-camp-ice",
         "shuttle",
         "parking-pass",
-        "hard-shelter"
+        "hard-shelter",
+        "power-real"
       ],
       "notes": [
         "Bring: food/groceries, drinking water beyond daily refill, your own coffee, personal toiletries, swim gear (swimsuit/towel/water shoes), venue daypack.",
@@ -1393,7 +1451,8 @@
         "comp-showers",
         "concierge",
         "shuttle",
-        "hard-shelter"
+        "hard-shelter",
+        "power-real"
       ],
       "notes": [
         "30A cord/adapter + surge protector; self-contained fresh water and waste (powered, not full hookup); venue daypack.",
@@ -1419,7 +1478,8 @@
         "concierge",
         "shuttle",
         "parking-pass",
-        "hard-shelter"
+        "hard-shelter",
+        "power-real"
       ],
       "notes": [
         "Bring: food/groceries, drinking water beyond daily refill, your own coffee, personal toiletries, venue daypack.",
@@ -1513,7 +1573,8 @@
         "brunch",
         "concierge",
         "shuttle",
-        "hard-shelter"
+        "hard-shelter",
+        "power-real"
       ],
       "notes": [
         "30A cord/adapter + surge protector, sewer hose + fittings, drinking-water hose + pressure regulator.",
@@ -1538,7 +1599,8 @@
         "parking-pass",
         "car-onsite",
         "linens-unconfirmed",
-        "hard-shelter"
+        "hard-shelter",
+        "power-real"
       ],
       "notes": [
         "OPEN ITEM — EF is silent on whether linens/bedding and bath towels are included (unlike every other Good Life lodging type). The underlying Double JJ Resort cabins list \"linens & towels provided,\" so likely supplied, but EF does not confirm in writing.",
@@ -1566,7 +1628,8 @@
         "parking-pass",
         "car-onsite",
         "linens-unconfirmed",
-        "hard-shelter"
+        "hard-shelter",
+        "power-real"
       ],
       "notes": [
         "SAME OPEN ITEM as the Cabin — EF is silent on linens/towels; the resort's log homes list \"linens & towels provided,\" so likely supplied, but bring your own bedding/towels as backup or confirm with concierge.",
@@ -1595,7 +1658,8 @@
         "swim",
         "brunch",
         "concierge",
-        "shuttle"
+        "shuttle",
+        "power-tent"
       ],
       "notes": [
         "Very little to bring. Personal clothing + costumes, toiletries beyond soap, swim gear, phone/power bank, venue daypack.",

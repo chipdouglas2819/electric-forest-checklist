@@ -26,6 +26,7 @@
 - You camp beside your car (car/companion pass included; pack heavier).
 - EF does not confirm linens/towels for this lodging in writing — bring your own as backup or confirm with the Good Life concierge.
 - RV or hard-sided lodging — no camping tent needed
+- Real household AC power — run any appliance (RV 30A, cabin/log home, hotel)
 
 ## 📌 Notes for this option
 
@@ -59,7 +60,8 @@
 
 - [ ] Food / groceries — _Low/no-cook options: bars, fruit, nut butter, wraps, jerky, oatmeal, pre-cooked protein._
 - [ ] Utensils, plates, cups
-- [ ] Paper towels; trash + recycling bags
+- [ ] Biodegradable dish soap + wash tub — _Strain greywater into the pod sinks — leave no trace._
+- [ ] Paper towels
 - [ ] Coffee / tea supplies
 - [ ] Ziploc / resealable bags — _Double as phone waterproofing in rain._
 - [ ] Grab-and-go snacks (bars, jerky, trail mix, candy) — _Easy daytime fuel that needs no cooking or cooler._
@@ -69,7 +71,7 @@
 ### Water & Hydration
 
 - [ ] Reusable non-glass bottle + hydration pack — _Both must be EMPTY to enter the venue._
-- [ ] Non-glass gallon jugs / drinking water for camp — _Free refill stations throughout; bring drinking water beyond the daily refill for Pre-Set RVs._
+- [ ] Camp drinking water — gallon jugs or cases of bottled water (non-glass) — _For camp; the refill stations are free too. Freeze a few bottles to double as cooler ice that melts into drinking water. (No outside drinks enter the venue — carry your empty refill bottle instead.)_
 - [ ] Electrolyte packets / tabs — _Essential in the heat and humidity._
 
 ### Clothing
@@ -129,8 +131,10 @@
 - [ ] Spare batteries
 - [ ] Walkie-talkies (optional) — _Cell towers collapse with 40k–50k people._
 - [ ] Chargers / batteries for LED gear + flow toys
-- [ ] Small battery / USB fan — _Backup air; tents get hot._
-- [ ] Hair straightener / curling iron — _High-draw heating appliance — only run it on real AC power (RV shore power, your A/C-unit circuit, or a hotel outlet). Do NOT run it off a pre-set tent’s charging-only outlet._
+- [ ] Battery / USB fan — _Humid Michigan nights — essential in the no-A/C tents (Electric Avenue, Bungalow, GA Pre-Set) and any BYO tent; a handy backup with A/C or power._
+- [ ] Hair dryer / straightener / curling iron — _Power-hungry. Runs fine on RV / cabin / log-home power. In an A/C tent the outlet is meant for small devices — use one tool at a time so you don’t overload and knock out the tent’s power (A/C included)._
+- [ ] A/C box fan — _Runs off real AC power (RV / cabin / log home). On an A/C-tent outlet it usually works but isn’t guaranteed — don’t overload, and keep the battery fan as backup._
+- [ ] Extension cord + outdoor / GFCI power strip — _Reaches or splits the site / in-tent outlet; outdoor-rated only. (RVs also bring the 30A shore-power cord, listed separately.)_
 
 ### Comfort & Camp Setup
 
@@ -147,6 +151,7 @@
 - [ ] Playing cards / UNO / camp + car games
 - [ ] Umbrella — _Sun and rain._
 - [ ] Pee jug / night bottle (lidded, non-glass)
+- [ ] Ratchet straps + tie-downs — _Cinch down pop-ups, tarps, and vehicle/rooftop loads — wind sends shade structures flying at EF._
 
 ### Cleaning & Leave-No-Trace
 

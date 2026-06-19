@@ -42,13 +42,15 @@
 
 ### Shelter & Sleep
 
-- [ ] Tent + stakes — _Metal hammers get confiscated — bring a rubber mallet._
+- [ ] Tent — _Metal hammers get confiscated — bring a rubber mallet._
 - [ ] Shade canopy / pop-up — _Limited tree cover in most GA fields; stake and guy it out — pop-ups catch wind._
 - [ ] Sleeping bag + sleeping pad or air mattress
 - [ ] Pillow
 - [ ] Eye mask + earplugs — _Sun's up around 6 AM._
 - [ ] Padlock for valuables — _Peace of mind for gear in camp._
 - [ ] Air pump for the air mattress — _Walk-in sites may have no car power — bring a battery pump (or a 12V inflator if camping beside your car)._
+- [ ] Heavy-duty / extra-long stakes (10–12 in) — _Storm-prone venue — standard stakes pull out of soft/wet ground in wind. Forged or spiral 10–12″ stakes hold tents and pop-ups; flying canopies are a common EF sight. Drive at ~60° and guy out everything._
+- [ ] Extra tarps (ground + rain) — _Ground tarp + an overhead rain tarp. Tuck the ground tarp UNDER the tent footprint — any tarp sticking out collects rain and funnels a puddle under you._
 
 ### Camp Kitchen & Food
 
@@ -58,7 +60,7 @@
 - [ ] Coleman-style camp stove + fuel — _≤1 lb propane only — grills, charcoal & open flame are banned._
 - [ ] Utensils, plates, cups
 - [ ] Biodegradable dish soap + wash tub — _Strain greywater into the pod sinks — leave no trace._
-- [ ] Paper towels; trash + recycling bags
+- [ ] Paper towels
 - [ ] Coffee / tea supplies
 - [ ] Lighter(s) — _For the ≤1 lb propane camp stove; handy around camp._
 - [ ] Cooking tools: tongs, spatula, cutting board, skillet, foil — _Camp only — knives/blades are banned inside the venue._
@@ -70,7 +72,7 @@
 ### Water & Hydration
 
 - [ ] Reusable non-glass bottle + hydration pack — _Both must be EMPTY to enter the venue._
-- [ ] Non-glass gallon jugs / drinking water for camp — _Free refill stations throughout; bring drinking water beyond the daily refill for Pre-Set RVs._
+- [ ] Camp drinking water — gallon jugs or cases of bottled water (non-glass) — _For camp; the refill stations are free too. Freeze a few bottles to double as cooler ice that melts into drinking water. (No outside drinks enter the venue — carry your empty refill bottle instead.)_
 - [ ] Electrolyte packets / tabs — _Essential in the heat and humidity._
 
 ### Clothing
@@ -130,6 +132,7 @@
 - [ ] Spare batteries
 - [ ] Walkie-talkies (optional) — _Cell towers collapse with 40k–50k people._
 - [ ] Chargers / batteries for LED gear + flow toys
+- [ ] Battery / USB fan — _Humid Michigan nights — essential in the no-A/C tents (Electric Avenue, Bungalow, GA Pre-Set) and any BYO tent; a handy backup with A/C or power._
 
 ### Comfort & Camp Setup
 
@@ -148,6 +151,7 @@
 - [ ] Playing cards / UNO / camp + car games
 - [ ] Umbrella — _Sun and rain._
 - [ ] Pee jug / night bottle (lidded, non-glass)
+- [ ] Ratchet straps + tie-downs — _Cinch down pop-ups, tarps, and vehicle/rooftop loads — wind sends shade structures flying at EF._
 
 ### Cleaning & Leave-No-Trace
 

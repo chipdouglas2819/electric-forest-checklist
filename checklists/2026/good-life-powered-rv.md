@@ -21,6 +21,7 @@
 - On-site concierge / Good Life base perks (A/C lounge, charging, dedicated entrances).
 - Dedicated or 24-hr shuttle service provided.
 - RV or hard-sided lodging — no camping tent needed
+- Real household AC power — run any appliance (RV 30A, cabin/log home, hotel)
 
 ## 📌 Notes for this option
 
@@ -45,9 +46,12 @@
 ### Shelter & Sleep
 
 - [ ] Shade canopy / pop-up — _Limited tree cover in most GA fields; stake and guy it out — pop-ups catch wind._
+- [ ] Sleeping bag + sleeping pad or air mattress
 - [ ] Pillow
 - [ ] Eye mask + earplugs — _Sun's up around 6 AM._
 - [ ] Padlock for valuables — _Peace of mind for gear in camp._
+- [ ] Air pump for the air mattress — _Walk-in sites may have no car power — bring a battery pump (or a 12V inflator if camping beside your car)._
+- [ ] Optional extra / pup tent + stakes (extra sleepers) — _RV sites are officially RV-only, but a small extra-sleeper tent on your own 20×50 pad is a common gray area — confirm with EF and keep it on your site alongside the RV + car._
 
 ### Camp Kitchen & Food
 
@@ -57,7 +61,7 @@
 - [ ] Coleman-style camp stove + fuel — _≤1 lb propane only — grills, charcoal & open flame are banned._
 - [ ] Utensils, plates, cups
 - [ ] Biodegradable dish soap + wash tub — _Strain greywater into the pod sinks — leave no trace._
-- [ ] Paper towels; trash + recycling bags
+- [ ] Paper towels
 - [ ] Coffee / tea supplies
 - [ ] Lighter(s) — _For the ≤1 lb propane camp stove; handy around camp._
 - [ ] Cooking tools: tongs, spatula, cutting board, skillet, foil — _Camp only — knives/blades are banned inside the venue._
@@ -65,11 +69,12 @@
 - [ ] Grab-and-go snacks (bars, jerky, trail mix, candy) — _Easy daytime fuel that needs no cooking or cooler._
 - [ ] Salt & pepper + single-serve condiment packets
 - [ ] Drinks — cans/seltzers or boxed wine only (21+) — _Campground 21+: one case of beer/seltzer OR one box of wine per person. No glass, no kegs, no liquor; none enters the venue._
+- [ ] Electric kettle / coffee maker — _Runs freely on RV / cabin / log-home power. In an A/C tent the outlet is charging-only, so a low-watt kettle may not work — the ≤1 lb camp stove + a stovetop kettle is the safe bet._
 
 ### Water & Hydration
 
 - [ ] Reusable non-glass bottle + hydration pack — _Both must be EMPTY to enter the venue._
-- [ ] Non-glass gallon jugs / drinking water for camp — _Free refill stations throughout; bring drinking water beyond the daily refill for Pre-Set RVs._
+- [ ] Camp drinking water — gallon jugs or cases of bottled water (non-glass) — _For camp; the refill stations are free too. Freeze a few bottles to double as cooler ice that melts into drinking water. (No outside drinks enter the venue — carry your empty refill bottle instead.)_
 - [ ] Electrolyte packets / tabs — _Essential in the heat and humidity._
 
 ### Clothing
@@ -126,9 +131,12 @@
 - [ ] Spare batteries
 - [ ] Walkie-talkies (optional) — _Cell towers collapse with 40k–50k people._
 - [ ] Chargers / batteries for LED gear + flow toys
+- [ ] Battery / USB fan — _Humid Michigan nights — essential in the no-A/C tents (Electric Avenue, Bungalow, GA Pre-Set) and any BYO tent; a handy backup with A/C or power._
 - [ ] 30A power cord/adapter + 30A surge protector — _Needed for 30A shore power._
-- [ ] Fresh-water fill + grey/black-water plan, leveling blocks, battery/solar power — _Self-contained: no on-site dump; external gas generators banned (built-in/solar OK)._
-- [ ] Hair straightener / curling iron — _High-draw heating appliance — only run it on real AC power (RV shore power, your A/C-unit circuit, or a hotel outlet). Do NOT run it off a pre-set tent’s charging-only outlet._
+- [ ] Fresh-water fill + grey/black-water plan, leveling blocks + wheel chocks, battery/solar power — _Self-contained: no on-site dump. External gas generators are banned — built-in RV generator, solar, or a portable power station only._
+- [ ] Hair dryer / straightener / curling iron — _Power-hungry. Runs fine on RV / cabin / log-home power. In an A/C tent the outlet is meant for small devices — use one tool at a time so you don’t overload and knock out the tent’s power (A/C included)._
+- [ ] A/C box fan — _Runs off real AC power (RV / cabin / log home). On an A/C-tent outlet it usually works but isn’t guaranteed — don’t overload, and keep the battery fan as backup._
+- [ ] Extension cord + outdoor / GFCI power strip — _Reaches or splits the site / in-tent outlet; outdoor-rated only. (RVs also bring the 30A shore-power cord, listed separately.)_
 
 ### Comfort & Camp Setup
 
@@ -146,6 +154,7 @@
 - [ ] Playing cards / UNO / camp + car games
 - [ ] Umbrella — _Sun and rain._
 - [ ] Pee jug / night bottle (lidded, non-glass)
+- [ ] Ratchet straps + tie-downs — _Cinch down pop-ups, tarps, and vehicle/rooftop loads — wind sends shade structures flying at EF._
 
 ### Cleaning & Leave-No-Trace
 
