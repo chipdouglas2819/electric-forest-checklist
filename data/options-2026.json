@@ -215,6 +215,12 @@
       "text": "Written phone numbers + a group meetup spot/time"
     },
     {
+      "id": "daypack-bag",
+      "category": "Documents & Entry",
+      "text": "Small non-framed day bag / fanny pack",
+      "note": "For carrying essentials around the venue — every bag is searched; framed or oversized packs are banned inside."
+    },
+    {
       "id": "tent",
       "category": "Shelter & Sleep",
       "text": "Tent + rubber mallet & stakes",
@@ -384,7 +390,8 @@
         "soap",
         "kitchen",
         "hotel-room"
-      ]
+      ],
+      "note": "Strain greywater into the pod sinks — leave no trace."
     },
     {
       "id": "paper-towels-trash",
@@ -772,54 +779,6 @@
       ]
     },
     {
-      "id": "daypack-bag",
-      "category": "Festival Daypack (carry in daily)",
-      "text": "Small bag or non-framed backpack",
-      "note": "Every bag is searched; framed/large packs are banned in the venue."
-    },
-    {
-      "id": "daypack-bottle",
-      "category": "Festival Daypack (carry in daily)",
-      "text": "Empty water bottle / hydration pack"
-    },
-    {
-      "id": "daypack-power",
-      "category": "Festival Daypack (carry in daily)",
-      "text": "Power bank + cable; phone"
-    },
-    {
-      "id": "daypack-id-card",
-      "category": "Festival Daypack (carry in daily)",
-      "text": "ID + a card",
-      "note": "Cashless venue."
-    },
-    {
-      "id": "daypack-sun",
-      "category": "Festival Daypack (carry in daily)",
-      "text": "Sunscreen, lip balm, sunglasses, bandana"
-    },
-    {
-      "id": "daypack-layer",
-      "category": "Festival Daypack (carry in daily)",
-      "text": "Warm layer for after dark"
-    },
-    {
-      "id": "daypack-earplugs",
-      "category": "Festival Daypack (carry in daily)",
-      "text": "Earplugs",
-      "note": "Hearing protection at the bass stages."
-    },
-    {
-      "id": "daypack-led",
-      "category": "Festival Daypack (carry in daily)",
-      "text": "LED accessories / kandi to trade; small flashlight"
-    },
-    {
-      "id": "daypack-poncho",
-      "category": "Festival Daypack (carry in daily)",
-      "text": "Rain poncho if storms threaten"
-    },
-    {
       "id": "camp-chair",
       "category": "Comfort & Camp Setup",
       "text": "Camp chair (1 per person)",
@@ -935,17 +894,6 @@
       ]
     },
     {
-      "id": "greywater-strain",
-      "category": "Cleaning & Leave-No-Trace",
-      "text": "Biodegradable dish soap + wash tub",
-      "note": "Greywater to pod sinks — strain first.",
-      "providedBy": [
-        "soap",
-        "kitchen",
-        "hotel-room"
-      ]
-    },
-    {
       "id": "reusable-shopping-bag",
       "category": "Cleaning & Leave-No-Trace",
       "text": "Reusable shopping bag for ice / supply hauls",
@@ -988,7 +936,7 @@
     {
       "id": "body-paint",
       "category": "Rave / Festival Extras",
-      "text": "Costumes, body/face paint + remover",
+      "text": "Body / face paint + remover",
       "note": "Biodegradable glitter only."
     },
     {

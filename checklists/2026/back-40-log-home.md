@@ -45,6 +45,7 @@
 - [ ] Printed directions + Will Call (Winston Speedway Box Office) location — _Cell service is unreliable on-site._
 - [ ] Spare car key — _Kept separate from your main key._
 - [ ] Written phone numbers + a group meetup spot/time
+- [ ] Small non-framed day bag / fanny pack — _For carrying essentials around the venue — every bag is searched; framed or oversized packs are banned inside._
 
 ### Shelter & Sleep
 
@@ -135,18 +136,6 @@
 - [ ] Hair straightener / curling iron — _High-draw heating appliance — only run it on real AC power (RV shore power, your A/C-unit circuit, or a hotel outlet). Do NOT run it off a pre-set tent’s charging-only outlet._
 - [ ] AC box fan + extension cord + power strip — _Great airflow when you have power — A/C Landing runs one off the unit’s circuit / your own cord._
 
-### Festival Daypack (carry in daily)
-
-- [ ] Small bag or non-framed backpack — _Every bag is searched; framed/large packs are banned in the venue._
-- [ ] Empty water bottle / hydration pack
-- [ ] Power bank + cable; phone
-- [ ] ID + a card — _Cashless venue._
-- [ ] Sunscreen, lip balm, sunglasses, bandana
-- [ ] Warm layer for after dark
-- [ ] Earplugs — _Hearing protection at the bass stages._
-- [ ] LED accessories / kandi to trade; small flashlight
-- [ ] Rain poncho if storms threaten
-
 ### Comfort & Camp Setup
 
 - [ ] Camp chair (1 per person) — _Chairs aren't allowed inside the venue._
@@ -177,7 +166,7 @@
 - [ ] Kandi + small handmade gifts — _Giving Tree: handmade/meaningful only._
 - [ ] LED gear, glow accessories, flow toys — _With chargers._
 - [ ] Totem — _≤7 ft, light PVC (no wood/metal), nothing sharp on top._
-- [ ] Costumes, body/face paint + remover — _Biodegradable glitter only._
+- [ ] Body / face paint + remover — _Biodegradable glitter only._
 - [ ] Notebook/pen; phone or compact camera — _No pro / detachable-lens cameras in the venue._
 - [ ] Personal Bluetooth speaker — _Handheld/USB only, under 11x5x5″ to clear venue rules; larger speakers are banned._
 
