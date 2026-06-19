@@ -202,15 +202,7 @@
       "id": "spare-car-key",
       "category": "Documents & Entry",
       "text": "Spare car key",
-      "note": "Kept separate from your main key.",
-      "addedBy": [
-        "car-onsite",
-        "parking-pass",
-        "rv-bring"
-      ],
-      "providedBy": [
-        "hotel-room"
-      ]
+      "note": "Kept separate from your main key."
     },
     {
       "id": "phone-numbers-meetup",

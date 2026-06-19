@@ -36,6 +36,7 @@
 - [ ] Backup card + some cash — _Venue is cashless; cash is for tolls, gas, off-site stops._
 - [ ] EF app + offline map & set times saved — _Cell service degrades at peak (40k–50k people)._
 - [ ] Printed directions + Will Call (Winston Speedway Box Office) location — _Cell service is unreliable on-site._
+- [ ] Spare car key — _Kept separate from your main key._
 - [ ] Written phone numbers + a group meetup spot/time
 - [ ] Small non-framed day bag / fanny pack — _For carrying essentials around the venue — every bag is searched; framed or oversized packs are banned inside._
 
