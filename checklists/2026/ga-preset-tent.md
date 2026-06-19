@@ -83,12 +83,11 @@
 - [ ] Broken-in closed-toe shoes — _Miles of uneven terrain._
 - [ ] Second pair to rotate — _So wet/muddy ones can dry._
 - [ ] Rain / waterproof boots — _Mud is real after storms._
-- [ ] Camp sandals / flip-flops
+- [ ] Flip-flops / sandals — _One pair does double duty around camp and in the shared/comp showers._
 
 ### Toiletries & Hygiene
 
 - [ ] Towel(s) — _At least one, ideally a spare._
-- [ ] Shower shoes / flip-flops
 - [ ] Soap, shampoo/conditioner, deodorant, toothbrush/toothpaste
 - [ ] Toilet paper + tissues
 - [ ] Wet wipes + hand sanitizer

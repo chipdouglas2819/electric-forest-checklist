@@ -20,6 +20,7 @@
 - Complimentary showers + A/C restrooms provided (no shower-haul needed, but personal toiletries still required).
 - On-site concierge / Good Life base perks (A/C lounge, charging, dedicated entrances).
 - Dedicated or 24-hr shuttle service provided.
+- RV or hard-sided lodging — no camping tent needed
 
 ## 📌 Notes for this option
 
@@ -43,13 +44,10 @@
 
 ### Shelter & Sleep
 
-- [ ] Tent + rubber mallet & stakes — _Metal hammers get confiscated — bring a rubber mallet._
 - [ ] Shade canopy / pop-up — _Limited tree cover in most GA fields; stake and guy it out — pop-ups catch wind._
-- [ ] Sleeping bag + sleeping pad or air mattress
 - [ ] Pillow
 - [ ] Eye mask + earplugs — _Sun's up around 6 AM._
 - [ ] Padlock for valuables — _Peace of mind for gear in camp._
-- [ ] Air pump for the air mattress — _Walk-in sites may have no car power — bring a battery pump (or a 12V inflator if camping beside your car)._
 
 ### Camp Kitchen & Food
 
@@ -87,12 +85,11 @@
 - [ ] Broken-in closed-toe shoes — _Miles of uneven terrain._
 - [ ] Second pair to rotate — _So wet/muddy ones can dry._
 - [ ] Rain / waterproof boots — _Mud is real after storms._
-- [ ] Camp sandals / flip-flops
+- [ ] Flip-flops / sandals — _One pair does double duty around camp and in the shared/comp showers._
 
 ### Toiletries & Hygiene
 
 - [ ] Towel(s) — _At least one, ideally a spare._
-- [ ] Shower shoes / flip-flops
 - [ ] Soap, shampoo/conditioner, deodorant, toothbrush/toothpaste
 - [ ] Toilet paper + tissues
 - [ ] Wet wipes + hand sanitizer
@@ -136,7 +133,6 @@
 ### Comfort & Camp Setup
 
 - [ ] Camp chair (1 per person) — _Chairs aren't allowed inside the venue._
-- [ ] Reflective tarps (4) + bungee cords — _Silver side OUT, with an air gap off the tent fabric. Cinch them down if weather turns; they catch wind like sails. For pre-set tents, check with the concierge that covering the tent is OK._
 - [ ] Folding outdoor side table
 - [ ] Outdoor rug / mat for the tent entrance
 - [ ] Hammock + tree straps

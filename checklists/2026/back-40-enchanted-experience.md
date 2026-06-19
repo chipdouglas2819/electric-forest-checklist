@@ -93,13 +93,12 @@
 - [ ] Broken-in closed-toe shoes — _Miles of uneven terrain._
 - [ ] Second pair to rotate — _So wet/muddy ones can dry._
 - [ ] Rain / waterproof boots — _Mud is real after storms._
-- [ ] Camp sandals / flip-flops
+- [ ] Flip-flops / sandals — _One pair does double duty around camp and in the shared/comp showers._
 - [ ] Water shoes — _For the beach/pool._
 
 ### Toiletries & Hygiene
 
-- [ ] Quick-dry / beach towel + dry bag — _Separate towel for the beach/pool; dry bag keeps gear dry._
-- [ ] Shower shoes / flip-flops
+- [ ] Beach / swim towel + dry bag — _Separate towel for the beach/pool; dry bag keeps gear dry._
 - [ ] Soap, shampoo/conditioner, deodorant, toothbrush/toothpaste
 - [ ] Wet wipes + hand sanitizer
 - [ ] Glasses / contacts + spares; nail clippers

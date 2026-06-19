@@ -45,7 +45,7 @@
 
 ### Shelter & Sleep
 
-- [ ] Tent + rubber mallet & stakes — _Metal hammers get confiscated — bring a rubber mallet._
+- [ ] Tent + stakes — _Metal hammers get confiscated — bring a rubber mallet._
 - [ ] Shade canopy / pop-up — _Limited tree cover in most GA fields; stake and guy it out — pop-ups catch wind._
 - [ ] Sleeping bag + sleeping pad or air mattress
 - [ ] Pillow
@@ -90,14 +90,13 @@
 - [ ] Broken-in closed-toe shoes — _Miles of uneven terrain._
 - [ ] Second pair to rotate — _So wet/muddy ones can dry._
 - [ ] Rain / waterproof boots — _Mud is real after storms._
-- [ ] Camp sandals / flip-flops
+- [ ] Flip-flops / sandals — _One pair does double duty around camp and in the shared/comp showers._
 - [ ] Water shoes — _For the beach/pool._
 
 ### Toiletries & Hygiene
 
 - [ ] Towel(s) — _At least one, ideally a spare._
-- [ ] Quick-dry / beach towel + dry bag — _Separate towel for the beach/pool; dry bag keeps gear dry._
-- [ ] Shower shoes / flip-flops
+- [ ] Beach / swim towel + dry bag — _Separate towel for the beach/pool; dry bag keeps gear dry._
 - [ ] Soap, shampoo/conditioner, deodorant, toothbrush/toothpaste
 - [ ] Toilet paper + tissues
 - [ ] Wet wipes + hand sanitizer

@@ -89,12 +89,11 @@
 - [ ] Broken-in closed-toe shoes — _Miles of uneven terrain._
 - [ ] Second pair to rotate — _So wet/muddy ones can dry._
 - [ ] Rain / waterproof boots — _Mud is real after storms._
-- [ ] Camp sandals / flip-flops
+- [ ] Flip-flops / sandals — _One pair does double duty around camp and in the shared/comp showers._
 
 ### Toiletries & Hygiene
 
 - [ ] Towel(s) — _At least one, ideally a spare._
-- [ ] Shower shoes / flip-flops
 - [ ] Soap, shampoo/conditioner, deodorant, toothbrush/toothpaste
 - [ ] Toilet paper + tissues
 - [ ] Wet wipes + hand sanitizer
@@ -132,7 +131,6 @@
 - [ ] Walkie-talkies (optional) — _Cell towers collapse with 40k–50k people._
 - [ ] Chargers / batteries for LED gear + flow toys
 - [ ] Battery / USB fan (ESSENTIAL) — _Pre-set tents have no A/C and get hot — a battery/USB fan is essential._
-- [ ] AC box fan + power strip — _Use the in-tent outlet for low-draw devices only — fan + phone charging + a small light is fine; do NOT run high-draw appliances (portable A/C, heaters)._
 
 ### Comfort & Camp Setup
 

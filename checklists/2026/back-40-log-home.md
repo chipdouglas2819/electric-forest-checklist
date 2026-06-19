@@ -25,6 +25,7 @@
 - A parking/car pass is included with this option.
 - You camp beside your car (car/companion pass included; pack heavier).
 - EF does not confirm linens/towels for this lodging in writing — bring your own as backup or confirm with the Good Life concierge.
+- RV or hard-sided lodging — no camping tent needed
 
 ## 📌 Notes for this option
 
@@ -49,13 +50,10 @@
 
 ### Shelter & Sleep
 
-- [ ] Sleeping bag + sleeping pad or air mattress
-- [ ] Pillow
 - [ ] Your own sheets / blankets / pillows as backup — _EF doesn't confirm linens for this unit — bring as backup or confirm with the Good Life concierge (goodlife@electricforestfestival.com)._
 - [ ] Eye mask + earplugs — _Sun's up around 6 AM._
 - [ ] On arrival: confirm cooling-unit operation + nearest shower/shuttle
 - [ ] Padlock for valuables — _Peace of mind for gear in camp._
-- [ ] Air pump for the air mattress — _Walk-in sites may have no car power — bring a battery pump (or a 12V inflator if camping beside your car)._
 
 ### Camp Kitchen & Food
 
@@ -88,14 +86,13 @@
 - [ ] Broken-in closed-toe shoes — _Miles of uneven terrain._
 - [ ] Second pair to rotate — _So wet/muddy ones can dry._
 - [ ] Rain / waterproof boots — _Mud is real after storms._
-- [ ] Camp sandals / flip-flops
+- [ ] Flip-flops / sandals — _One pair does double duty around camp and in the shared/comp showers._
 - [ ] Water shoes — _For the beach/pool._
 
 ### Toiletries & Hygiene
 
 - [ ] Towel(s) — _At least one, ideally a spare._
-- [ ] Quick-dry / beach towel + dry bag — _Separate towel for the beach/pool; dry bag keeps gear dry._
-- [ ] Shower shoes / flip-flops
+- [ ] Beach / swim towel + dry bag — _Separate towel for the beach/pool; dry bag keeps gear dry._
 - [ ] Soap, shampoo/conditioner, deodorant, toothbrush/toothpaste
 - [ ] Toilet paper + tissues
 - [ ] Wet wipes + hand sanitizer
@@ -134,12 +131,10 @@
 - [ ] Chargers / batteries for LED gear + flow toys
 - [ ] Small battery / USB fan — _Backup air; tents get hot._
 - [ ] Hair straightener / curling iron — _High-draw heating appliance — only run it on real AC power (RV shore power, your A/C-unit circuit, or a hotel outlet). Do NOT run it off a pre-set tent’s charging-only outlet._
-- [ ] AC box fan + extension cord + power strip — _Great airflow when you have power — A/C Landing runs one off the unit’s circuit / your own cord._
 
 ### Comfort & Camp Setup
 
 - [ ] Camp chair (1 per person) — _Chairs aren't allowed inside the venue._
-- [ ] Reflective tarps (4) + bungee cords — _Silver side OUT, with an air gap off the tent fabric. Cinch them down if weather turns; they catch wind like sails. For pre-set tents, check with the concierge that covering the tent is OK._
 - [ ] Folding outdoor side table
 - [ ] Outdoor rug / mat for the tent entrance
 - [ ] Hammock + tree straps

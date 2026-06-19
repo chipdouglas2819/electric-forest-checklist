@@ -151,7 +151,8 @@
     "meal-card": "$25 meal card per person + welcome basket included.",
     "rv-bring": "BYO RV option — you bring and run the RV.",
     "linens-unconfirmed": "EF does not confirm linens/towels for this lodging in writing — bring your own as backup or confirm with the Good Life concierge.",
-    "pillows-provided": "Pillows provided"
+    "pillows-provided": "Pillows provided",
+    "hard-shelter": "RV or hard-sided lodging — no camping tent needed"
   },
   "catalog": [
     {
@@ -223,11 +224,12 @@
     {
       "id": "tent",
       "category": "Shelter & Sleep",
-      "text": "Tent + rubber mallet & stakes",
+      "text": "Tent + stakes",
       "note": "Metal hammers get confiscated — bring a rubber mallet.",
       "providedBy": [
         "tent",
-        "hotel-room"
+        "hotel-room",
+        "hard-shelter"
       ]
     },
     {
@@ -247,7 +249,8 @@
       "providedBy": [
         "sleeping-gear",
         "bedding",
-        "hotel-room"
+        "hotel-room",
+        "hard-shelter"
       ]
     },
     {
@@ -257,7 +260,8 @@
       "providedBy": [
         "bedding",
         "hotel-room",
-        "pillows-provided"
+        "pillows-provided",
+        "linens-unconfirmed"
       ]
     },
     {
@@ -503,7 +507,8 @@
     {
       "id": "camp-sandals",
       "category": "Footwear",
-      "text": "Camp sandals / flip-flops"
+      "text": "Flip-flops / sandals",
+      "note": "One pair does double duty around camp and in the shared/comp showers."
     },
     {
       "id": "water-shoes",
@@ -530,22 +535,10 @@
     {
       "id": "beach-towel",
       "category": "Toiletries & Hygiene",
-      "text": "Quick-dry / beach towel + dry bag",
+      "text": "Beach / swim towel + dry bag",
       "note": "Separate towel for the beach/pool; dry bag keeps gear dry.",
       "addedBy": [
         "swim"
-      ],
-      "providedBy": [
-        "hotel-room"
-      ]
-    },
-    {
-      "id": "shower-shoes",
-      "category": "Toiletries & Hygiene",
-      "text": "Shower shoes / flip-flops",
-      "addedBy": [
-        "shared-showers",
-        "comp-showers"
       ],
       "providedBy": [
         "hotel-room"
@@ -724,20 +717,8 @@
       ],
       "providedBy": [
         "cooling",
-        "hotel-room"
-      ]
-    },
-    {
-      "id": "ac-box-fan",
-      "category": "Electronics & Power",
-      "text": "AC box fan + power strip",
-      "note": "Use the in-tent outlet for low-draw devices only — fan + phone charging + a small light is fine; do NOT run high-draw appliances (portable A/C, heaters).",
-      "addedBy": [
-        "in-tent-outlet"
-      ],
-      "providedBy": [
-        "cooling",
-        "hotel-room"
+        "hotel-room",
+        "hard-shelter"
       ]
     },
     {
@@ -794,7 +775,8 @@
       "text": "Reflective tarps (4) + bungee cords",
       "note": "Silver side OUT, with an air gap off the tent fabric. Cinch them down if weather turns; they catch wind like sails. For pre-set tents, check with the concierge that covering the tent is OK.",
       "providedBy": [
-        "hotel-room"
+        "hotel-room",
+        "hard-shelter"
       ]
     },
     {
@@ -983,7 +965,9 @@
       ],
       "providedBy": [
         "hotel-room",
-        "in-tent-outlet"
+        "in-tent-outlet",
+        "kitchen",
+        "linens-unconfirmed"
       ]
     },
     {
@@ -1079,7 +1063,8 @@
       "providedBy": [
         "sleeping-gear",
         "bedding",
-        "hotel-room"
+        "hotel-room",
+        "hard-shelter"
       ]
     },
     {
@@ -1166,7 +1151,8 @@
       "arrival": "Wednesday June 24 included.",
       "provides": [
         "car-onsite",
-        "rv-bring"
+        "rv-bring",
+        "hard-shelter"
       ],
       "notes": [
         "Run the RV self-contained — fresh water (no hookup), full propane for onboard systems, battery/solar power.",
@@ -1183,7 +1169,8 @@
       "provides": [
         "car-onsite",
         "rv-bring",
-        "power-30a"
+        "power-30a",
+        "hard-shelter"
       ],
       "notes": [
         "30A power cord/adapter and 30A surge protector; otherwise self-contained water and waste (powered, not full hookup).",
@@ -1284,7 +1271,8 @@
         "swim",
         "in-camp-ice",
         "shuttle",
-        "parking-pass"
+        "parking-pass",
+        "hard-shelter"
       ],
       "notes": [
         "Bring: food/groceries, drinking water beyond daily refill, your own coffee, personal toiletries, swim gear (swimsuit/towel/water shoes), venue daypack.",
@@ -1404,7 +1392,8 @@
         "power-30a",
         "comp-showers",
         "concierge",
-        "shuttle"
+        "shuttle",
+        "hard-shelter"
       ],
       "notes": [
         "30A cord/adapter + surge protector; self-contained fresh water and waste (powered, not full hookup); venue daypack.",
@@ -1429,7 +1418,8 @@
         "comp-showers",
         "concierge",
         "shuttle",
-        "parking-pass"
+        "parking-pass",
+        "hard-shelter"
       ],
       "notes": [
         "Bring: food/groceries, drinking water beyond daily refill, your own coffee, personal toiletries, venue daypack.",
@@ -1522,7 +1512,8 @@
         "swim",
         "brunch",
         "concierge",
-        "shuttle"
+        "shuttle",
+        "hard-shelter"
       ],
       "notes": [
         "30A cord/adapter + surge protector, sewer hose + fittings, drinking-water hose + pressure regulator.",
@@ -1546,7 +1537,8 @@
         "shuttle",
         "parking-pass",
         "car-onsite",
-        "linens-unconfirmed"
+        "linens-unconfirmed",
+        "hard-shelter"
       ],
       "notes": [
         "OPEN ITEM — EF is silent on whether linens/bedding and bath towels are included (unlike every other Good Life lodging type). The underlying Double JJ Resort cabins list \"linens & towels provided,\" so likely supplied, but EF does not confirm in writing.",
@@ -1573,7 +1565,8 @@
         "shuttle",
         "parking-pass",
         "car-onsite",
-        "linens-unconfirmed"
+        "linens-unconfirmed",
+        "hard-shelter"
       ],
       "notes": [
         "SAME OPEN ITEM as the Cabin — EF is silent on linens/towels; the resort's log homes list \"linens & towels provided,\" so likely supplied, but bring your own bedding/towels as backup or confirm with concierge.",

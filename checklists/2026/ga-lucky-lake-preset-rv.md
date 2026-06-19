@@ -27,6 +27,7 @@
 - In-camp ice sales available (lighter cooler-loading possible).
 - Dedicated or 24-hr shuttle service provided.
 - A parking/car pass is included with this option.
+- RV or hard-sided lodging — no camping tent needed
 
 ## 📌 Notes for this option
 
@@ -84,13 +85,12 @@
 - [ ] Broken-in closed-toe shoes — _Miles of uneven terrain._
 - [ ] Second pair to rotate — _So wet/muddy ones can dry._
 - [ ] Rain / waterproof boots — _Mud is real after storms._
-- [ ] Camp sandals / flip-flops
+- [ ] Flip-flops / sandals — _One pair does double duty around camp and in the shared/comp showers._
 - [ ] Water shoes — _For the beach/pool._
 
 ### Toiletries & Hygiene
 
-- [ ] Quick-dry / beach towel + dry bag — _Separate towel for the beach/pool; dry bag keeps gear dry._
-- [ ] Shower shoes / flip-flops
+- [ ] Beach / swim towel + dry bag — _Separate towel for the beach/pool; dry bag keeps gear dry._
 - [ ] Soap, shampoo/conditioner, deodorant, toothbrush/toothpaste
 - [ ] Wet wipes + hand sanitizer
 - [ ] Glasses / contacts + spares; nail clippers
@@ -126,12 +126,10 @@
 - [ ] Spare batteries
 - [ ] Walkie-talkies (optional) — _Cell towers collapse with 40k–50k people._
 - [ ] Chargers / batteries for LED gear + flow toys
-- [ ] Battery / USB fan (ESSENTIAL) — _Pre-set tents have no A/C and get hot — a battery/USB fan is essential._
 
 ### Comfort & Camp Setup
 
 - [ ] Camp chair (1 per person) — _Chairs aren't allowed inside the venue._
-- [ ] Reflective tarps (4) + bungee cords — _Silver side OUT, with an air gap off the tent fabric. Cinch them down if weather turns; they catch wind like sails. For pre-set tents, check with the concierge that covering the tent is OK._
 - [ ] Folding outdoor side table
 - [ ] Outdoor rug / mat for the tent entrance
 - [ ] Hammock + tree straps
