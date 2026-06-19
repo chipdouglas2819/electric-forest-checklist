@@ -7,7 +7,9 @@
     "dates": {
       "start": "2026-06-25",
       "end": "2026-06-28",
-      "label": "Thu June 25 – Sun June 28, 2026"
+      "label": "Thu June 25 – Sun June 28, 2026",
+      "arrivalEarly": "2026-06-24",
+      "departure": "2026-06-29"
     },
     "earlyArrival": "Standard GA campers arrive Thursday June 25 (Wednesday June 24 = +$50 add-on, one per campsite/vehicle). GA Preferred Car Camping, GA RV/Powered RV, Lucky Lake Pre-Set RV, Group Camping include Wednesday arrival. All Good Life tiers include Wednesday June 24, 8:00 AM ET. Back 40 camping/FHU/Enchanted: Wednesday June 24, 8:00 AM ET; Back 40 Cabins/Log Homes: Wednesday June 24, 3:00 PM ET. Hotel packages: 5 nights, check-in Wed June 24 / check-out Mon June 29.",
     "boxOffice": "Winston Speedway Box Office (new location for 2026) opens Tuesday June 23 at 10 PM and runs 24 hrs through the weekend; all will-call must be picked up there before reaching the toll entrances.",
@@ -18,24 +20,40 @@
     "climatology": "Late-June Rothbury (49452): typical highs ~74–78°F, lows ~55–60°F; June day-highs 68–88°F, lows 52–69°F; ~14 rain days/month totaling ~2.5\"; humidity ~80%; UV index ~5; ~15.5 hrs daylight (sunrise ~6:05 AM, sunset ~9:30 PM); no snow May–September. The severe-storm pattern is real and recurring.",
     "forecast": [
       {
+        "date": "2026-06-24",
+        "day": "Wed 6/24",
+        "high": 75,
+        "low": 55
+      },
+      {
+        "date": "2026-06-25",
         "day": "Thu 6/25",
         "high": 74,
         "low": 55
       },
       {
+        "date": "2026-06-26",
         "day": "Fri 6/26",
         "high": 78,
         "low": 57
       },
       {
+        "date": "2026-06-27",
         "day": "Sat 6/27",
         "high": 78,
         "low": 59
       },
       {
+        "date": "2026-06-28",
         "day": "Sun 6/28",
         "high": 77,
         "low": 58
+      },
+      {
+        "date": "2026-06-29",
+        "day": "Mon 6/29",
+        "high": 76,
+        "low": 57
       }
     ],
     "packFor": "Plan for warm, humid days near 80°F, cool nights in the mid-to-upper 50s, and a high likelihood of at least one thunderstorm. Bring sun protection (SPF, hat, sunglasses, bandana), rain protection (poncho/rain jacket, pack-cover, extra tarp, dry bag), a warm layer/hoodie for nights, sturdy closed-toe shoes plus a rinse-off pair, and a documented severe-weather plan.",
@@ -1145,7 +1163,8 @@
         "Provided: tent, real bed, sheets/pillows/comforters, cooling unit, side table, battery light, tent lock, comp showers + A/C restrooms, 24-hr concierge, shuttle.",
         "NOT provided: towels (bring your own) and chairs (bring a camp chair).",
         "If reflective-tarping the pre-set tent, confirm with the concierge that covering it is OK."
-      ]
+      ],
+      "arrivalDate": "2026-06-24"
     },
     {
       "id": "ga-tent-camping",
@@ -1160,7 +1179,8 @@
         "Everything — full master camping kit.",
         "Buy a parking pass separately (or arrive with a multi-person car).",
         "Bring extra shade — limited tree cover."
-      ]
+      ],
+      "arrivalDate": "2026-06-25"
     },
     {
       "id": "ga-car-camping",
@@ -1175,7 +1195,8 @@
       "notes": [
         "Full master kit; pack heavier since the car is on-site (bigger cooler, more water, car-powered inflator).",
         "Narrow site (~12 ft wide) — a low-profile canopy fits better than a large pavilion."
-      ]
+      ],
+      "arrivalDate": "2026-06-25"
     },
     {
       "id": "ga-preferred-car-camping",
@@ -1190,7 +1211,8 @@
       "notes": [
         "Full master kit; the extra space supports a full canopy + larger group setup.",
         "Guaranteed location near the main venue entrance regardless of arrival time."
-      ]
+      ],
+      "arrivalDate": "2026-06-24"
     },
     {
       "id": "ga-rv",
@@ -1206,7 +1228,8 @@
         "Run the RV self-contained — fresh water (no hookup), full propane for onboard systems, battery/solar power.",
         "External gas generators banned; RV built-in gas generators and solar OK.",
         "Leveling blocks, grey/black-water plan (no on-site dump). Bring a venue daypack."
-      ]
+      ],
+      "arrivalDate": "2026-06-24"
     },
     {
       "id": "ga-powered-rv",
@@ -1222,7 +1245,8 @@
       "notes": [
         "30A power cord/adapter and 30A surge protector; otherwise self-contained water and waste (powered, not full hookup).",
         "Run rooftop A/C off shore power. Fresh-water fill and a grey/black-water plan still needed."
-      ]
+      ],
+      "arrivalDate": "2026-06-24"
     },
     {
       "id": "ga-preset-tent",
@@ -1241,7 +1265,8 @@
         "Bring pillow + sheet/liner, camp chair, shade/canopy if desired, cooler + ice, lantern/headlamp, power banks, toiletries + quick-dry towel + shower shoes, food + stove.",
         "Bring a fan — no in-tent power; tents can get hot.",
         "2026 tent design revealed on arrival."
-      ]
+      ],
+      "arrivalDate": "2026-06-25"
     },
     {
       "id": "ga-maplewoods",
@@ -1258,7 +1283,8 @@
       "notes": [
         "Full BYO tent master kit, but shade canopy is less critical (tree cover).",
         "Bring a wagon/cart for the walk-in haul, extra rope/tarps for the wooded site, and bug spray (wooded)."
-      ]
+      ],
+      "arrivalDate": "2026-06-25"
     },
     {
       "id": "ga-lucky-lake-camping",
@@ -1277,7 +1303,8 @@
       "notes": [
         "Full BYO tent kit PLUS swim gear: swimsuit, beach/quick-dry towel, water shoes, dry bag, extra SPF, bug spray.",
         "Walk-in haul cart. Ice can be bought in-camp (lighter cooler-loading possible)."
-      ]
+      ],
+      "arrivalDate": "2026-06-25"
     },
     {
       "id": "ga-lucky-lake-lakeside",
@@ -1296,7 +1323,8 @@
       "notes": [
         "Same as Lucky Lake camping but pack heavier (car on-site); swim gear is the defining extra.",
         "Very limited availability."
-      ]
+      ],
+      "arrivalDate": "2026-06-25"
     },
     {
       "id": "ga-lucky-lake-preset-rv",
@@ -1323,7 +1351,8 @@
       "notes": [
         "Bring: food/groceries, drinking water beyond daily refill, your own coffee, personal toiletries, swim gear (swimsuit/towel/water shoes), venue daypack.",
         "Don't bring a generator. Includes 1 car pass."
-      ]
+      ],
+      "arrivalDate": "2026-06-24"
     },
     {
       "id": "camp-higher-love",
@@ -1341,7 +1370,8 @@
       "notes": [
         "Full BYO tent master kit (camp next to car since car pass included).",
         "Higher Love Lounge (shaded seating) + dedicated shuttle reduce the need to haul your own shade/seating to the venue, but you still need full camp gear."
-      ]
+      ],
+      "arrivalDate": "2026-06-25"
     },
     {
       "id": "ga-group-camping",
@@ -1356,7 +1386,8 @@
         "Full BYO tent master kit; group gear coordination (shared canopy, group flag/totem to find camp, communal water/shade).",
         "Camp Traction = substance-free homebase (no alcohol); Her Forest = femme-identifying space; Wayfinder = guided/solo-friendly.",
         "Parking/car pass per the specific group option."
-      ]
+      ],
+      "arrivalDate": "2026-06-24"
     },
     {
       "id": "ga-hotel-package",
@@ -1374,7 +1405,8 @@
         "Venue daypack only (empty bottle, power bank, poncho, warm layer, SPF, earplugs, ID/card), plus a normal hotel travel bag.",
         "Plan around shuttle schedule; no campground access. Backup card (cashless).",
         "Includes $25 meal card/person, souvenir poster, 1 locker, 1 welcome basket."
-      ]
+      ],
+      "arrivalDate": "2026-06-24"
     },
     {
       "id": "good-life-tent-camping",
@@ -1391,7 +1423,8 @@
       "notes": [
         "Full BYO tent master kit (tent through cooler).",
         "The A/C lounge + charging lounges reduce reliance on your own power, but you still bring full camp gear."
-      ]
+      ],
+      "arrivalDate": "2026-06-24"
     },
     {
       "id": "good-life-village-car-camping",
@@ -1407,7 +1440,8 @@
       ],
       "notes": [
         "Full master kit; pack heavier (car on-site)."
-      ]
+      ],
+      "arrivalDate": "2026-06-24"
     },
     {
       "id": "good-life-meadow-car-camping",
@@ -1424,7 +1458,8 @@
       "notes": [
         "Identical to Village car camping; choose for quiet.",
         "Bring everything; nothing extra provided beyond the car-side space."
-      ]
+      ],
+      "arrivalDate": "2026-06-24"
     },
     {
       "id": "good-life-powered-rv",
@@ -1443,7 +1478,8 @@
       "notes": [
         "30A cord/adapter + surge protector; self-contained fresh water and waste (powered, not full hookup); venue daypack.",
         "No external generators."
-      ]
+      ],
+      "arrivalDate": "2026-06-24"
     },
     {
       "id": "good-life-preset-rv",
@@ -1468,7 +1504,8 @@
       "notes": [
         "Bring: food/groceries, drinking water beyond daily refill, your own coffee, personal toiletries, venue daypack.",
         "The most hands-off RV option. Includes 1 car pass."
-      ]
+      ],
+      "arrivalDate": "2026-06-24"
     },
     {
       "id": "electric-avenue",
@@ -1493,7 +1530,8 @@
         "Bring your own bath/shower towels (NOT provided).",
         "The in-tent outlet is rated only for charging small electronic devices — a fan + phone charging + a small light is fine, but do NOT run high-draw appliances (portable A/C, heaters).",
         "Bring toiletries; cooler + food + stove; personal lighting/power bank."
-      ]
+      ],
+      "arrivalDate": "2026-06-24"
     },
     {
       "id": "bungalow",
@@ -1519,7 +1557,8 @@
         "Sheet/liner for cots if desired; extra lantern (only one battery light included).",
         "Same outlet caveat as Electric Avenue — small devices only.",
         "Bring cooler + food + stove; toiletries; power bank."
-      ]
+      ],
+      "arrivalDate": "2026-06-24"
     },
     {
       "id": "back-40-camping",
@@ -1540,7 +1579,8 @@
         "Full BYO tent master kit PLUS swim gear: swimsuit, towel, water shoes.",
         "Old Western Town pool + 150-ft slide + hot tub + unlimited Frontier Water Park; daily brunch (Thu–Sun, 9 AM–1 PM ET) reduces breakfast-food needs.",
         "Quick-dry towel for showers; separate beach towel for pool."
-      ]
+      ],
+      "arrivalDate": "2026-06-24"
     },
     {
       "id": "back-40-fhu-rv",
@@ -1562,7 +1602,8 @@
         "30A cord/adapter + surge protector, sewer hose + fittings, drinking-water hose + pressure regulator.",
         "Full hook-up means no water-rationing or waste-hauling. Food/groceries; swim gear; venue daypack.",
         "No external generators (built-in/solar OK). Pool/waterpark + daily brunch."
-      ]
+      ],
+      "arrivalDate": "2026-06-24"
     },
     {
       "id": "back-40-cabin",
@@ -1588,7 +1629,8 @@
         "Bring your own sheets/blankets/pillows and bath towels as backup, or confirm with the Good Life concierge (goodlife@electricforestfestival.com).",
         "Also bring: groceries (kitchenette cooking), toiletries, swim gear, venue daypack.",
         "Includes 2 Back 40 parking passes; pool/waterpark + daily brunch."
-      ]
+      ],
+      "arrivalDate": "2026-06-24"
     },
     {
       "id": "back-40-log-home",
@@ -1613,7 +1655,8 @@
         "SAME OPEN ITEM as the Cabin — EF is silent on linens/towels; the resort's log homes list \"linens & towels provided,\" so likely supplied, but bring your own bedding/towels as backup or confirm with concierge.",
         "Also bring: groceries/pantry staples + dish soap (resort units list cookware, but confirm), toiletries, swim gear, venue daypacks for the group.",
         "Includes 3 Back 40 parking passes; pool/waterpark + daily brunch. Best option for large groups wanting a house."
-      ]
+      ],
+      "arrivalDate": "2026-06-24"
     },
     {
       "id": "back-40-enchanted-experience",
@@ -1642,7 +1685,8 @@
         "Very little to bring. Personal clothing + costumes, toiletries beyond soap, swim gear, phone/power bank, venue daypack.",
         "Food/snacks optional — or rely on brunch + vendors.",
         "The lowest-effort camping option at the festival."
-      ]
+      ],
+      "arrivalDate": "2026-06-24"
     },
     {
       "id": "good-life-hotel-package",
@@ -1661,7 +1705,8 @@
         "Venue daypack only + normal travel bag. Plan around shuttle; backup card (cashless).",
         "Good Life perks: dedicated entrances, viewing areas, A/C lounge, happy hours.",
         "Includes $25 meal card/person, poster, 1 locker, 1 welcome basket. Highest-comfort no-camping Good Life option."
-      ]
+      ],
+      "arrivalDate": "2026-06-24"
     }
   ]
 }

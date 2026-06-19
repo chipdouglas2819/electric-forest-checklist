@@ -7,7 +7,7 @@
 > **Weather — pulled 2026-06-18** (re-check 2–3 days out)
 > 
 > *Climatology:* Late-June Rothbury (49452): typical highs ~74–78°F, lows ~55–60°F; June day-highs 68–88°F, lows 52–69°F; ~14 rain days/month totaling ~2.5"; humidity ~80%; UV index ~5; ~15.5 hrs daylight (sunrise ~6:05 AM, sunset ~9:30 PM); no snow May–September. The severe-storm pattern is real and recurring.
-> *Forecast:* Thu 6/25 ~74°/55° · Fri 6/26 ~78°/57° · Sat 6/27 ~78°/59° · Sun 6/28 ~77°/58°
+> *Forecast:* Thu 6/25 ~74°/55° · Fri 6/26 ~78°/57° · Sat 6/27 ~78°/59° · Sun 6/28 ~77°/58° · Mon 6/29 ~76°/57°
 > *Pack for:* Plan for warm, humid days near 80°F, cool nights in the mid-to-upper 50s, and a high likelihood of at least one thunderstorm. Bring sun protection (SPF, hat, sunglasses, bandana), rain protection (poncho/rain jacket, pack-cover, extra tarp, dry bag), a warm layer/hoodie for nights, sturdy closed-toe shoes plus a rinse-off pair, and a documented severe-weather plan.
 > ⚠️ In a storm, shelter in a hard vehicle or a shuttle/shelter bus — NOT a tent (Michigan State Police: "do not try to shelter in your tent. Go into your vehicle"). Stake/guy-out everything; secure pop-ups, tarps, and loose items. Monitor the EF app and 99.5 FM. The 2024 festival evacuated twice and 2025 also saw weather disruptions.
 > _Synthesized from weather.com, FOX Weather, and NWS Grand Rapids (GRR), pulled June 17–18, 2026; AccuWeather and weather-us.com for climatology._

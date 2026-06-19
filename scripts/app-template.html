@@ -283,8 +283,11 @@ function buildSelect(){
   sel.addEventListener("change",()=>{ selectOption(sel.value, true); });
 }
 
-/* ---------------- Weather (static baseline + live auto-update) ---------------- */
+/* ---------------- Weather (per-option range, static baseline + live auto-update) ---------------- */
 let wRefs=null;
+let weatherDays=[];      // full-range days Wed–Mon (static baseline; replaced by live fetch)
+let weatherIsLive=false;
+let weatherDateText="";
 function dayLabel(dateStr){
   const p=String(dateStr).split("-"); if(p.length!==3) return dateStr;
   const y=+p[0],m=+p[1],d=+p[2]; const wd=new Date(y,m-1,d).getDay();
@@ -316,6 +319,22 @@ function renderWeather(days, stormy, dateText, isLive){
   wRefs.dateEl.innerHTML=(isLive?'<span class="wlive">● Live</span> ':'')+esc(dateText||"");
   wRefs.card.classList.toggle("live", !!isLive);
 }
+// Each option only sees its own on-site window: Wednesday only for options that
+// include Wednesday arrival (opt.arrivalDate), through Monday teardown for everyone.
+function optWeatherRange(opt){
+  const ev=(DATA.event&&DATA.event.dates)||{};
+  const start=(opt&&opt.arrivalDate)||ev.arrivalEarly||ev.start||null;
+  const end=ev.departure||ev.end||null;
+  return {start, end};
+}
+function renderWeatherForOption(opt){
+  if(!wRefs || !weatherDays.length) return;
+  const {start,end}=optWeatherRange(opt);
+  const days=weatherDays.filter(d=>d.date && (!start||d.date>=start) && (!end||d.date<=end));
+  const use=days.length?days:weatherDays;
+  const stormy = weatherIsLive ? use.some(d=>(d.pop!=null&&d.pop>=50)||(d.code!=null&&d.code>=95)) : true;
+  renderWeather(use, stormy, weatherDateText, weatherIsLive);
+}
 function buildWeather(){
   const w=DATA.weather||{}; const host=document.getElementById("weatherHost");
   const card=document.createElement("section"); card.className="weather";
@@ -336,8 +355,10 @@ function buildWeather(){
 
   wRefs={ card, summaryEl:head.querySelector(".wsummary"), dateEl:body.querySelector(".wdate"), forecastEl:body.querySelector(".forecast") };
   // Static baseline first (works offline); storms are the known historical risk.
-  const staticDays=(w.forecast||[]).map(d=>({day:d.day, high:d.high, low:d.low, icon:"", pop:null}));
-  renderWeather(staticDays, true, (w.pulledDate?"Typical forecast (pulled "+w.pulledDate+") — re-check 2–3 days out.":""), false);
+  weatherDays=(w.forecast||[]).map(d=>({date:d.date, day:d.day||dayLabel(d.date), high:d.high, low:d.low, icon:"", pop:null, code:null}));
+  weatherIsLive=false;
+  weatherDateText=(w.pulledDate?"Typical forecast (pulled "+w.pulledDate+") — re-check 2–3 days out.":"");
+  renderWeather(weatherDays, true, weatherDateText, false);
 
   const startCollapsed = !!(window.matchMedia && window.matchMedia("(max-width:560px)").matches);
   card.classList.toggle("collapsed", startCollapsed);
@@ -351,12 +372,13 @@ function buildWeather(){
 async function fetchLiveWeather(){
   const L=(DATA.weather&&DATA.weather.live)||null;
   const ev=(DATA.event&&DATA.event.dates)||null;
-  if(!L||!ev||!ev.start||!ev.end||typeof fetch!=="function") return;
+  const start=ev&&(ev.arrivalEarly||ev.start), end=ev&&(ev.departure||ev.end);
+  if(!L||!start||!end||typeof fetch!=="function") return;
   const url="https://api.open-meteo.com/v1/forecast"+
     "?latitude="+encodeURIComponent(L.latitude)+"&longitude="+encodeURIComponent(L.longitude)+
     "&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,weathercode"+
     "&temperature_unit=fahrenheit&timezone="+encodeURIComponent(L.timezone||"America/Detroit")+
-    "&start_date="+encodeURIComponent(ev.start)+"&end_date="+encodeURIComponent(ev.end);
+    "&start_date="+encodeURIComponent(start)+"&end_date="+encodeURIComponent(end);
   let json;
   try{
     const ctrl=new AbortController(); const to=setTimeout(()=>ctrl.abort(),6500);
@@ -366,16 +388,18 @@ async function fetchLiveWeather(){
   const dl=json&&json.daily;
   if(!dl||!Array.isArray(dl.time)||!dl.time.length) return;
   const days=dl.time.map((t,i)=>({
-    day:dayLabel(t),
+    date:t, day:dayLabel(t),
     high: dl.temperature_2m_max? Math.round(dl.temperature_2m_max[i]) : null,
     low:  dl.temperature_2m_min? Math.round(dl.temperature_2m_min[i]) : null,
     pop:  dl.precipitation_probability_max? dl.precipitation_probability_max[i] : null,
+    code: dl.weathercode? dl.weathercode[i] : null,
     icon: wIcon(dl.weathercode? dl.weathercode[i] : null)
   })).filter(d=>d.high!=null&&!isNaN(d.high));
   if(!days.length) return;
-  const stormy = days.some(d=>d.pop!=null&&d.pop>=50) || (dl.weathercode||[]).some(c=>c>=95);
+  weatherDays=days; weatherIsLive=true;
   let stamp=""; try{ stamp=new Date().toLocaleDateString(undefined,{month:"short",day:"numeric"}); }catch(e){}
-  renderWeather(days, stormy, "Updated "+stamp+" · live forecast for the festival dates", true);
+  weatherDateText="Updated "+stamp+" · live forecast for your dates";
+  renderWeatherForOption(currentOpt);   // re-render for the currently selected option
 }
 
 /* ---------------- Note cards ---------------- */
@@ -483,6 +507,7 @@ async function selectOption(optId, userInitiated){
   document.getElementById("opt").value=opt.id;
   document.getElementById("optSub").textContent=[opt.lodging, opt.arrival?("Arrival: "+opt.arrival):null].filter(Boolean).join(" · ");
   buildChecklist(opt);
+  renderWeatherForOption(opt);   // weather window matches this option's arrival → Monday
   const loaded=await loadState(opt.id);
   if(gen!==selectGen) return;                 // superseded by a newer selection
   state=loaded;

@@ -44,9 +44,13 @@ function providedList(opt) {
   return (opt.provides || []).map((f) => vocab[f] || f);
 }
 
-function weatherBlock() {
+function weatherBlock(opt) {
   const w = data.weather || {};
-  const fc = (w.forecast || []).map((d) => `${d.day} ~${d.high}°/${d.low}°`).join(' · ');
+  const ev = data.event?.dates || {};
+  const start = opt?.arrivalDate || ev.arrivalEarly || ev.start;
+  const end = ev.departure || ev.end;
+  const inRange = (w.forecast || []).filter((d) => d.date && (!start || d.date >= start) && (!end || d.date <= end));
+  const fc = (inRange.length ? inRange : (w.forecast || [])).map((d) => `${d.day} ~${d.high}°/${d.low}°`).join(' · ');
   return [
     `> **Weather — pulled ${w.pulledDate || 'n/a'}** (re-check 2–3 days out)`,
     `> `,
@@ -79,7 +83,7 @@ function checklistMarkdown(opt) {
   const sub = [opt.tier, opt.lodging, opt.arrival ? `arrival ${opt.arrival}` : null].filter(Boolean).join(' · ');
   if (sub) out.push(`*${sub}*`, '');
   if (ev.dates?.label) out.push(`**${ev.dates.label}** — ${ev.location || ''}`.trim(), '');
-  out.push(weatherBlock(), '');
+  out.push(weatherBlock(opt), '');
 
   const prov = providedList(opt);
   if (prov.length) {
