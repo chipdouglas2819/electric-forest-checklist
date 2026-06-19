@@ -118,9 +118,11 @@
   .wbody{padding:0 15px 14px;font-size:13px;line-height:1.5;color:var(--ink-dim);}
   .weather.collapsed .wbody{display:none;}
   .wdate{font-size:11px;color:var(--ink-dim);font-weight:600;margin-bottom:9px;}
-  .forecast{display:flex;gap:6px;margin:0 0 10px;flex-wrap:wrap;}
-  .fday{flex:1 1 0;min-width:64px;text-align:center;background:#0c1f16;border:1px solid var(--panel-line);
-        border-radius:10px;padding:8px 4px;}
+  /* Grid keeps every forecast tile identical, even on a partial last row. */
+  .forecast{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:0 0 10px;}
+  @media (min-width:520px){ .forecast{grid-template-columns:repeat(6,1fr);} }
+  .fday{text-align:center;background:#0c1f16;border:1px solid var(--panel-line);
+        border-radius:10px;padding:8px 4px;min-width:0;}
   .fday .d{font-size:11px;color:var(--ink-dim);font-weight:600;}
   .fday .hi{font-size:16px;font-weight:800;color:var(--ink);font-variant-numeric:tabular-nums;}
   .fday .lo{font-size:12px;color:var(--ink-dim);font-variant-numeric:tabular-nums;}
