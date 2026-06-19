@@ -10,7 +10,7 @@ An interactive, mobile-first packing checklist for **Electric Forest 2026** (Dou
 
 - **27 options** across GA, GA Enhanced, Good Life, Back 40, and Hotel tiers (A/C Landing, GA Tent, Pre-Set RVs, Electric Avenue, Bungalow, Back 40 Cabin/Log Home/Enchanted, Hotel packages, and more).
 - **Provided ⇒ removed.** Each list is the master kit *minus* what your option supplies (bed, cooling, towels, power, kitchen, chairs…) *plus* the gear that option specifically needs (fan for un-cooled pre-set tents, 30A cord for powered RV, swim gear for Lucky Lake/Back 40…).
-- **Weather, dated, on top** — climatology + the festival-week forecast + a severe-weather plan (this venue has a real evacuation history).
+- **Live weather, on top** — the festival-date forecast **auto-updates** from [Open-Meteo](https://open-meteo.com) (free, no API key, no tracking) with highs/lows, rain %, and icons; falls back to the baked-in climatology when you're offline. Plus a severe-weather plan (this venue has a real evacuation history).
 - **Saves automatically** on your device (`localStorage`) — no account, no server. Each option keeps its own progress.
 - **Shareable & deep-linkable** — the URL updates per option (e.g. `…/#ga-tent-camping`), so you can send someone the exact list for their tier.
 - **Works offline** — one self-contained HTML file. "Add to Home Screen" and it runs without signal at the festival.

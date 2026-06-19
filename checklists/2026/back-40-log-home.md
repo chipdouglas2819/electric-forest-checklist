@@ -54,6 +54,7 @@
 - [ ] Eye mask + earplugs — _Sun's up around 6 AM._
 - [ ] On arrival: confirm cooling-unit operation + nearest shower/shuttle
 - [ ] Padlock for valuables — _Peace of mind for gear in camp._
+- [ ] Air pump for the air mattress — _Walk-in sites may have no car power — bring a battery pump (or a 12V inflator if camping beside your car)._
 
 ### Camp Kitchen & Food
 
@@ -61,6 +62,10 @@
 - [ ] Utensils, plates, cups
 - [ ] Paper towels; trash + recycling bags
 - [ ] Coffee / tea supplies
+- [ ] Ziploc / resealable bags — _Double as phone waterproofing in rain._
+- [ ] Grab-and-go snacks (bars, jerky, trail mix, candy) — _Easy daytime fuel that needs no cooking or cooler._
+- [ ] Salt & pepper + single-serve condiment packets
+- [ ] Drinks — cans/seltzers or boxed wine only (21+) — _Campground 21+: one case of beer/seltzer OR one box of wine per person. No glass, no kegs, no liquor; none enters the venue._
 
 ### Water & Hydration
 
@@ -97,6 +102,9 @@
 - [ ] Shaving supplies
 - [ ] Feminine hygiene products
 - [ ] Body Glide / Gold Bond — _Chafing._
+- [ ] Hairbrush/comb, hair ties + bobby pins, compact mirror, makeup
+- [ ] Q-tips / cotton swabs + baby powder — _Powder helps with chafe and damp feet._
+- [ ] Dry shampoo + travel styling product
 
 ### Health, First Aid & Meds
 
@@ -124,6 +132,8 @@
 - [ ] Walkie-talkies (optional) — _Cell towers collapse with 40k–50k people._
 - [ ] Chargers / batteries for LED gear + flow toys
 - [ ] Small battery / USB fan — _Backup air; tents get hot._
+- [ ] Hair straightener / curling iron — _High-draw heating appliance — only run it on real AC power (RV shore power, your A/C-unit circuit, or a hotel outlet). Do NOT run it off a pre-set tent’s charging-only outlet._
+- [ ] AC box fan + extension cord + power strip — _Great airflow when you have power — A/C Landing runs one off the unit’s circuit / your own cord._
 
 ### Festival Daypack (carry in daily)
 
@@ -150,12 +160,16 @@
 - [ ] Multi-tool — _Camp only — no knives in the venue._
 - [ ] Duct tape; zip ties; jumper cables
 - [ ] Wagon / cart for the walk-in haul — _Carts are allowed in the campground (banned only IN the venue)._
+- [ ] Playing cards / UNO / camp + car games
+- [ ] Umbrella — _Sun and rain._
+- [ ] Pee jug / night bottle (lidded, non-glass)
 
 ### Cleaning & Leave-No-Trace
 
 - [ ] Heavy-duty trash + recycling bags — _Tie them down so they don't blow away._
 - [ ] Reusable shopping bag for ice / supply hauls
 - [ ] Plan to donate usable gear on the way out
+- [ ] Camp broom + dustpan — _Keep the tent floor and site clear; pack out everything._
 
 ### Rave / Festival Extras
 
@@ -165,6 +179,7 @@
 - [ ] Totem — _≤7 ft, light PVC (no wood/metal), nothing sharp on top._
 - [ ] Costumes, body/face paint + remover — _Biodegradable glitter only._
 - [ ] Notebook/pen; phone or compact camera — _No pro / detachable-lens cameras in the venue._
+- [ ] Personal Bluetooth speaker — _Handheld/USB only, under 11x5x5″ to clear venue rules; larger speakers are banned._
 
 ## 🚫 Do NOT pack (confiscated at the gate)
 

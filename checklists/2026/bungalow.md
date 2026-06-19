@@ -62,6 +62,12 @@
 - [ ] Biodegradable dish soap + wash tub
 - [ ] Paper towels; trash + recycling bags
 - [ ] Coffee / tea supplies
+- [ ] Lighter(s) — _For the ≤1 lb propane camp stove; handy around camp._
+- [ ] Cooking tools: tongs, spatula, cutting board, skillet, foil — _Camp only — knives/blades are banned inside the venue._
+- [ ] Ziploc / resealable bags — _Double as phone waterproofing in rain._
+- [ ] Grab-and-go snacks (bars, jerky, trail mix, candy) — _Easy daytime fuel that needs no cooking or cooler._
+- [ ] Salt & pepper + single-serve condiment packets
+- [ ] Drinks — cans/seltzers or boxed wine only (21+) — _Campground 21+: one case of beer/seltzer OR one box of wine per person. No glass, no kegs, no liquor; none enters the venue._
 
 ### Water & Hydration
 
@@ -95,6 +101,9 @@
 - [ ] Shaving supplies
 - [ ] Feminine hygiene products
 - [ ] Body Glide / Gold Bond — _Chafing._
+- [ ] Hairbrush/comb, hair ties + bobby pins, compact mirror, makeup
+- [ ] Q-tips / cotton swabs + baby powder — _Powder helps with chafe and damp feet._
+- [ ] Dry shampoo + travel styling product
 
 ### Health, First Aid & Meds
 
@@ -148,6 +157,9 @@
 - [ ] Multi-tool — _Camp only — no knives in the venue._
 - [ ] Duct tape; zip ties; jumper cables
 - [ ] Wagon / cart for the walk-in haul — _Carts are allowed in the campground (banned only IN the venue)._
+- [ ] Playing cards / UNO / camp + car games
+- [ ] Umbrella — _Sun and rain._
+- [ ] Pee jug / night bottle (lidded, non-glass)
 
 ### Cleaning & Leave-No-Trace
 
@@ -155,6 +167,7 @@
 - [ ] Biodegradable dish soap + wash tub — _Greywater to pod sinks — strain first._
 - [ ] Reusable shopping bag for ice / supply hauls
 - [ ] Plan to donate usable gear on the way out
+- [ ] Camp broom + dustpan — _Keep the tent floor and site clear; pack out everything._
 
 ### Rave / Festival Extras
 
@@ -164,6 +177,7 @@
 - [ ] Totem — _≤7 ft, light PVC (no wood/metal), nothing sharp on top._
 - [ ] Costumes, body/face paint + remover — _Biodegradable glitter only._
 - [ ] Notebook/pen; phone or compact camera — _No pro / detachable-lens cameras in the venue._
+- [ ] Personal Bluetooth speaker — _Handheld/USB only, under 11x5x5″ to clear venue rules; larger speakers are banned._
 
 ## 🚫 Do NOT pack (confiscated at the gate)
 

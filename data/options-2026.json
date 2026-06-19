@@ -40,7 +40,13 @@
     ],
     "packFor": "Plan for warm, humid days near 80°F, cool nights in the mid-to-upper 50s, and a high likelihood of at least one thunderstorm. Bring sun protection (SPF, hat, sunglasses, bandana), rain protection (poncho/rain jacket, pack-cover, extra tarp, dry bag), a warm layer/hoodie for nights, sturdy closed-toe shoes plus a rinse-off pair, and a documented severe-weather plan.",
     "stormNote": "In a storm, shelter in a hard vehicle or a shuttle/shelter bus — NOT a tent (Michigan State Police: \"do not try to shelter in your tent. Go into your vehicle\"). Stake/guy-out everything; secure pop-ups, tarps, and loose items. Monitor the EF app and 99.5 FM. The 2024 festival evacuated twice and 2025 also saw weather disruptions.",
-    "sources": "Synthesized from weather.com, FOX Weather, and NWS Grand Rapids (GRR), pulled June 17–18, 2026; AccuWeather and weather-us.com for climatology."
+    "sources": "Synthesized from weather.com, FOX Weather, and NWS Grand Rapids (GRR), pulled June 17–18, 2026; AccuWeather and weather-us.com for climatology.",
+    "live": {
+      "provider": "open-meteo",
+      "latitude": 43.5,
+      "longitude": -86.34,
+      "timezone": "America/Detroit"
+    }
   },
   "prohibited": {
     "everywhere": [
@@ -972,6 +978,149 @@
       "category": "Rave / Festival Extras",
       "text": "Notebook/pen; phone or compact camera",
       "note": "No pro / detachable-lens cameras in the venue."
+    },
+    {
+      "id": "hairbrush-grooming",
+      "category": "Toiletries & Hygiene",
+      "text": "Hairbrush/comb, hair ties + bobby pins, compact mirror, makeup"
+    },
+    {
+      "id": "qtips-baby-powder",
+      "category": "Toiletries & Hygiene",
+      "text": "Q-tips / cotton swabs + baby powder",
+      "note": "Powder helps with chafe and damp feet."
+    },
+    {
+      "id": "dry-shampoo",
+      "category": "Toiletries & Hygiene",
+      "text": "Dry shampoo + travel styling product"
+    },
+    {
+      "id": "hair-styling-tools",
+      "category": "Electronics & Power",
+      "text": "Hair straightener / curling iron",
+      "note": "High-draw heating appliance — only run it on real AC power (RV shore power, your A/C-unit circuit, or a hotel outlet). Do NOT run it off a pre-set tent’s charging-only outlet.",
+      "addedBy": [
+        "cooling",
+        "power-30a",
+        "full-hookup",
+        "hotel-room"
+      ]
+    },
+    {
+      "id": "ac-box-fan-cooling",
+      "category": "Electronics & Power",
+      "text": "AC box fan + extension cord + power strip",
+      "note": "Great airflow when you have power — A/C Landing runs one off the unit’s circuit / your own cord.",
+      "addedBy": [
+        "cooling"
+      ],
+      "providedBy": [
+        "hotel-room",
+        "in-tent-outlet"
+      ]
+    },
+    {
+      "id": "playing-cards-games",
+      "category": "Comfort & Camp Setup",
+      "text": "Playing cards / UNO / camp + car games"
+    },
+    {
+      "id": "umbrella",
+      "category": "Comfort & Camp Setup",
+      "text": "Umbrella",
+      "note": "Sun and rain."
+    },
+    {
+      "id": "pee-jug",
+      "category": "Comfort & Camp Setup",
+      "text": "Pee jug / night bottle (lidded, non-glass)",
+      "providedBy": [
+        "hotel-room"
+      ]
+    },
+    {
+      "id": "camp-broom-dustpan",
+      "category": "Cleaning & Leave-No-Trace",
+      "text": "Camp broom + dustpan",
+      "note": "Keep the tent floor and site clear; pack out everything.",
+      "providedBy": [
+        "cleaning",
+        "hotel-room"
+      ]
+    },
+    {
+      "id": "lighter",
+      "category": "Camp Kitchen & Food",
+      "text": "Lighter(s)",
+      "note": "For the ≤1 lb propane camp stove; handy around camp.",
+      "providedBy": [
+        "kitchen",
+        "hotel-room"
+      ]
+    },
+    {
+      "id": "cooking-tools",
+      "category": "Camp Kitchen & Food",
+      "text": "Cooking tools: tongs, spatula, cutting board, skillet, foil",
+      "note": "Camp only — knives/blades are banned inside the venue.",
+      "providedBy": [
+        "cookware",
+        "kitchen",
+        "hotel-room"
+      ]
+    },
+    {
+      "id": "ziploc-bags",
+      "category": "Camp Kitchen & Food",
+      "text": "Ziploc / resealable bags",
+      "note": "Double as phone waterproofing in rain.",
+      "providedBy": [
+        "hotel-room"
+      ]
+    },
+    {
+      "id": "camp-snacks",
+      "category": "Camp Kitchen & Food",
+      "text": "Grab-and-go snacks (bars, jerky, trail mix, candy)",
+      "note": "Easy daytime fuel that needs no cooking or cooler.",
+      "providedBy": [
+        "hotel-room"
+      ]
+    },
+    {
+      "id": "condiment-packets",
+      "category": "Camp Kitchen & Food",
+      "text": "Salt & pepper + single-serve condiment packets",
+      "providedBy": [
+        "hotel-room"
+      ]
+    },
+    {
+      "id": "drinks-cans-only",
+      "category": "Camp Kitchen & Food",
+      "text": "Drinks — cans/seltzers or boxed wine only (21+)",
+      "note": "Campground 21+: one case of beer/seltzer OR one box of wine per person. No glass, no kegs, no liquor; none enters the venue.",
+      "providedBy": [
+        "hotel-room"
+      ]
+    },
+    {
+      "id": "air-pump",
+      "category": "Shelter & Sleep",
+      "text": "Air pump for the air mattress",
+      "note": "Walk-in sites may have no car power — bring a battery pump (or a 12V inflator if camping beside your car).",
+      "providedBy": [
+        "sleeping-gear",
+        "bedding",
+        "hotel-room"
+      ]
+    },
+    {
+      "id": "portable-speaker",
+      "category": "Rave / Festival Extras",
+      "text": "Personal Bluetooth speaker",
+      "note": "Handheld/USB only, under 11x5x5″ to clear venue rules; larger speakers are banned."
     }
   ],
   "options": [

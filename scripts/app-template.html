@@ -124,6 +124,10 @@
   .fday .d{font-size:11px;color:var(--ink-dim);font-weight:600;}
   .fday .hi{font-size:16px;font-weight:800;color:var(--ink);font-variant-numeric:tabular-nums;}
   .fday .lo{font-size:12px;color:var(--ink-dim);font-variant-numeric:tabular-nums;}
+  .fico{font-size:14px;line-height:1;margin:1px 0;}
+  .fpop{font-size:10.5px;color:var(--ink-dim);margin-top:2px;font-variant-numeric:tabular-nums;}
+  .wlive{color:var(--glow);font-weight:700;letter-spacing:.04em;}
+  .weather.live{border-left-color:var(--glow);}
   .wpack{color:var(--ink);}
   .wstorm{color:#ffd2c2;margin-top:8px;}
   .wsrc{color:var(--ink-faint);font-size:11px;margin-top:8px;font-style:italic;}
@@ -279,43 +283,99 @@ function buildSelect(){
   sel.addEventListener("change",()=>{ selectOption(sel.value, true); });
 }
 
-/* ---------------- Weather (built once) ---------------- */
+/* ---------------- Weather (static baseline + live auto-update) ---------------- */
+let wRefs=null;
+function dayLabel(dateStr){
+  const p=String(dateStr).split("-"); if(p.length!==3) return dateStr;
+  const y=+p[0],m=+p[1],d=+p[2]; const wd=new Date(y,m-1,d).getDay();
+  return ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][wd]+" "+m+"/"+d;
+}
+function wIcon(code){
+  if(code==null) return "";
+  if(code>=95) return "⛈️"; if(code>=80) return "🌦️"; if(code>=71&&code<=77) return "🌨️";
+  if(code>=51&&code<=67) return "🌧️"; if(code>=45&&code<=48) return "🌫️";
+  if(code>=1&&code<=3) return "🌤️"; if(code===0) return "☀️"; return "🌥️";
+}
+function rangeStr(arr){ const v=arr.filter(n=>n!=null&&!isNaN(n)); if(!v.length) return null; const a=Math.min(...v),b=Math.max(...v); return a===b?String(a):a+"–"+b; }
+function tilesHtml(days){
+  return days.map(d=>'<div class="fday"><div class="d">'+esc(d.day)+'</div>'+
+    (d.icon?'<div class="fico">'+d.icon+'</div>':'')+
+    '<div class="hi">'+(d.high!=null?esc(d.high):'—')+'°</div>'+
+    '<div class="lo">'+(d.low!=null?esc(d.low):'—')+'°</div>'+
+    (d.pop!=null?'<div class="fpop">💧'+esc(d.pop)+'%</div>':'')+'</div>').join("");
+}
+function summaryText(days, stormy){
+  const hi=rangeStr(days.map(d=>d.high)), lo=rangeStr(days.map(d=>d.low));
+  if(!hi||!lo) return "";
+  return "Highs "+hi+"° · nights "+lo+"° · "+(stormy?"storms likely":"watch for rain");
+}
+function renderWeather(days, stormy, dateText, isLive){
+  if(!wRefs) return;
+  wRefs.forecastEl.innerHTML=tilesHtml(days);
+  wRefs.summaryEl.textContent=summaryText(days, stormy);
+  wRefs.dateEl.innerHTML=(isLive?'<span class="wlive">● Live</span> ':'')+esc(dateText||"");
+  wRefs.card.classList.toggle("live", !!isLive);
+}
 function buildWeather(){
   const w=DATA.weather||{}; const host=document.getElementById("weatherHost");
   const card=document.createElement("section"); card.className="weather";
   const bodyId="weather-body";
-  const fc=w.forecast||[];
-  let summary="";
-  const his=fc.map(d=>d.high).filter(n=>n!=null), los=fc.map(d=>d.low).filter(n=>n!=null);
-  if(his.length && los.length){
-    const a=Math.min(...his),b=Math.max(...his),c=Math.min(...los),e=Math.max(...los);
-    summary="Highs "+(a===b?a:a+"–"+b)+"° · nights "+(c===e?c:c+"–"+e)+"° · storms likely";
-  }
   const head=document.createElement("button"); head.className="whead"; head.type="button"; head.setAttribute("aria-controls",bodyId);
-  head.innerHTML='<span class="wtitlewrap"><span class="wtitle">Weather — pack for</span>'+
-    (summary?'<span class="wsummary">'+esc(summary)+'</span>':'')+'</span>';
+  head.innerHTML='<span class="wtitlewrap"><span class="wtitle">Weather — pack for</span><span class="wsummary"></span></span>';
   const chev=document.createElement("span"); chev.className="chev"; head.appendChild(chev);
-
   const body=document.createElement("div"); body.className="wbody"; body.id=bodyId;
-  let fcHtml="";
-  fc.forEach(d=>{ fcHtml+='<div class="fday"><div class="d">'+esc(d.day)+'</div><div class="hi">'+(d.high!=null?esc(d.high):'—')+'°</div><div class="lo">'+(d.low!=null?esc(d.low):'—')+'°</div></div>'; });
   body.innerHTML=
-    (w.pulledDate?'<div class="wdate">Forecast pulled '+esc(w.pulledDate)+' — re-check 2–3 days out.</div>':'')+
-    (fcHtml?'<div class="forecast">'+fcHtml+'</div>':'')+
+    '<div class="wdate"></div>'+
+    '<div class="forecast"></div>'+
     (w.packFor?'<p class="wpack">'+esc(w.packFor)+'</p>':'')+
     (w.stormNote?'<p class="wstorm">⚠️ '+esc(w.stormNote)+'</p>':'')+
     (w.climatology?'<p>'+esc(w.climatology)+'</p>':'')+
     (w.sources?'<p class="wsrc">'+esc(w.sources)+'</p>':'');
+  card.appendChild(head); card.appendChild(body);
+  host.appendChild(card);
 
-  // Default collapsed on small screens so the checklist isn't buried; the
-  // always-visible summary still surfaces the key weather call.
+  wRefs={ card, summaryEl:head.querySelector(".wsummary"), dateEl:body.querySelector(".wdate"), forecastEl:body.querySelector(".forecast") };
+  // Static baseline first (works offline); storms are the known historical risk.
+  const staticDays=(w.forecast||[]).map(d=>({day:d.day, high:d.high, low:d.low, icon:"", pop:null}));
+  renderWeather(staticDays, true, (w.pulledDate?"Typical forecast (pulled "+w.pulledDate+") — re-check 2–3 days out.":""), false);
+
   const startCollapsed = !!(window.matchMedia && window.matchMedia("(max-width:560px)").matches);
   card.classList.toggle("collapsed", startCollapsed);
   head.setAttribute("aria-expanded", startCollapsed?"false":"true");
   head.addEventListener("click",()=>{ card.classList.toggle("collapsed"); head.setAttribute("aria-expanded", card.classList.contains("collapsed")?"false":"true"); });
 
-  card.appendChild(head); card.appendChild(body);
-  host.appendChild(card);
+  fetchLiveWeather();   // progressive enhancement; leaves static data in place if it fails
+}
+// Pull a live daily forecast for the festival dates from Open-Meteo (free, no key,
+// CORS-ok, no PII). Silently keeps the static baseline if offline/blocked/out-of-range.
+async function fetchLiveWeather(){
+  const L=(DATA.weather&&DATA.weather.live)||null;
+  const ev=(DATA.event&&DATA.event.dates)||null;
+  if(!L||!ev||!ev.start||!ev.end||typeof fetch!=="function") return;
+  const url="https://api.open-meteo.com/v1/forecast"+
+    "?latitude="+encodeURIComponent(L.latitude)+"&longitude="+encodeURIComponent(L.longitude)+
+    "&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,weathercode"+
+    "&temperature_unit=fahrenheit&timezone="+encodeURIComponent(L.timezone||"America/Detroit")+
+    "&start_date="+encodeURIComponent(ev.start)+"&end_date="+encodeURIComponent(ev.end);
+  let json;
+  try{
+    const ctrl=new AbortController(); const to=setTimeout(()=>ctrl.abort(),6500);
+    const res=await fetch(url,{signal:ctrl.signal}); clearTimeout(to);
+    if(!res.ok) return; json=await res.json();
+  }catch(e){ return; }
+  const dl=json&&json.daily;
+  if(!dl||!Array.isArray(dl.time)||!dl.time.length) return;
+  const days=dl.time.map((t,i)=>({
+    day:dayLabel(t),
+    high: dl.temperature_2m_max? Math.round(dl.temperature_2m_max[i]) : null,
+    low:  dl.temperature_2m_min? Math.round(dl.temperature_2m_min[i]) : null,
+    pop:  dl.precipitation_probability_max? dl.precipitation_probability_max[i] : null,
+    icon: wIcon(dl.weathercode? dl.weathercode[i] : null)
+  })).filter(d=>d.high!=null&&!isNaN(d.high));
+  if(!days.length) return;
+  const stormy = days.some(d=>d.pop!=null&&d.pop>=50) || (dl.weathercode||[]).some(c=>c>=95);
+  let stamp=""; try{ stamp=new Date().toLocaleDateString(undefined,{month:"short",day:"numeric"}); }catch(e){}
+  renderWeather(days, stormy, "Updated "+stamp+" · live forecast for the festival dates", true);
 }
 
 /* ---------------- Note cards ---------------- */

@@ -70,6 +70,9 @@
 - [ ] Shaving supplies
 - [ ] Feminine hygiene products
 - [ ] Body Glide / Gold Bond — _Chafing._
+- [ ] Hairbrush/comb, hair ties + bobby pins, compact mirror, makeup
+- [ ] Q-tips / cotton swabs + baby powder — _Powder helps with chafe and damp feet._
+- [ ] Dry shampoo + travel styling product
 
 ### Health, First Aid & Meds
 
@@ -94,6 +97,7 @@
 - [ ] Spare batteries
 - [ ] Walkie-talkies (optional) — _Cell towers collapse with 40k–50k people._
 - [ ] Chargers / batteries for LED gear + flow toys
+- [ ] Hair straightener / curling iron — _High-draw heating appliance — only run it on real AC power (RV shore power, your A/C-unit circuit, or a hotel outlet). Do NOT run it off a pre-set tent’s charging-only outlet._
 
 ### Festival Daypack (carry in daily)
 
@@ -115,6 +119,12 @@
 - [ ] Totem — _≤7 ft, light PVC (no wood/metal), nothing sharp on top._
 - [ ] Costumes, body/face paint + remover — _Biodegradable glitter only._
 - [ ] Notebook/pen; phone or compact camera — _No pro / detachable-lens cameras in the venue._
+- [ ] Personal Bluetooth speaker — _Handheld/USB only, under 11x5x5″ to clear venue rules; larger speakers are banned._
+
+### Comfort & Camp Setup
+
+- [ ] Playing cards / UNO / camp + car games
+- [ ] Umbrella — _Sun and rain._
 
 ## 🚫 Do NOT pack (confiscated at the gate)
 
