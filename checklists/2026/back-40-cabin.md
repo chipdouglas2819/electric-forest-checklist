@@ -26,14 +26,14 @@
 - EF does not confirm linens/towels for this lodging in writing — bring your own as backup or confirm with the Good Life concierge.
 - RV or hard-sided lodging — no camping tent needed
 - Real household AC power — run any appliance (RV 30A, cabin/log home, hotel)
+- Bath/shower towels provided.
 
 ## 📌 Notes for this option
 
-- OPEN ITEM — EF is silent on whether linens/bedding and bath towels are included (unlike every other Good Life lodging type). The underlying Double JJ Resort cabins list "linens & towels provided," so likely supplied, but EF does not confirm in writing.
-- Kitchenette is microwave + mini-fridge only — no cooktop/oven, so a ≤1 lb camp stove is still needed for hot food; cookware/utensils are not confirmed.
-- Bring your own sheets/blankets/pillows and bath towels as backup, or confirm with the Good Life concierge (goodlife@electricforestfestival.com).
-- Also bring: groceries (kitchenette cooking), toiletries, swim gear, venue daypack.
-- Includes 2 Back 40 parking passes; pool/waterpark + daily brunch.
+- Towels: the Double JJ cabins list "linens & towels provided," so bath towels are supplied — confirm with the Good Life concierge (goodlife@electricforestfestival.com).
+- EF is silent on bedding/linens — bring your own sheets/blankets/pillows as backup.
+- Kitchenette is microwave + mini-fridge only (no cooktop/oven), so a ≤1 lb camp stove is still useful for hot food; cookware/utensils not confirmed.
+- Also bring: groceries, toiletries, swim gear, venue daypack. Includes 2 Back 40 parking passes; pool/waterpark + daily brunch.
 
 ## Packing list
 
@@ -55,7 +55,6 @@
 - [ ] Your own sheets / blankets / pillows as backup — _EF doesn't confirm linens for this unit — bring as backup or confirm with the Good Life concierge (goodlife@electricforestfestival.com)._
 - [ ] Eye mask + earplugs — _Sun's up around 6 AM._
 - [ ] On arrival: confirm cooling-unit operation + nearest shower/shuttle
-- [ ] Padlock for valuables — _Peace of mind for gear in camp._
 
 ### Camp Kitchen & Food
 
@@ -100,7 +99,6 @@
 
 ### Toiletries & Hygiene
 
-- [ ] Towel(s) — _At least one, ideally a spare._
 - [ ] Beach / swim towel + dry bag — _Separate towel for the beach/pool; dry bag keeps gear dry._
 - [ ] Soap, shampoo/conditioner, deodorant, toothbrush/toothpaste
 - [ ] Toilet paper + tissues
@@ -131,6 +129,7 @@
 ### Electronics & Power
 
 - [ ] Phone + cable
+- [ ] Earbuds / headphones — _For the drive/bus, camp downtime, and blocking noise to sleep._
 - [ ] 2 power banks per person — _Primarily for the venue and long charging lines; cell towers collapse with 40k–50k people._
 - [ ] Wall / USB charger + adapters
 - [ ] Headlamp + backup flashlight

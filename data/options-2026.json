@@ -330,6 +330,8 @@
       "text": "Padlock for valuables",
       "note": "Peace of mind for gear in camp.",
       "providedBy": [
+        "tent-lock",
+        "hard-shelter",
         "hotel-room"
       ]
     },
@@ -466,13 +468,7 @@
     {
       "id": "swimsuit",
       "category": "Clothing",
-      "text": "Swimsuit",
-      "addedBy": [
-        "swim"
-      ],
-      "providedBy": [
-        "hotel-room"
-      ]
+      "text": "Swimsuit"
     },
     {
       "id": "costumes",
@@ -630,6 +626,12 @@
       "id": "phone-cable",
       "category": "Electronics & Power",
       "text": "Phone + cable"
+    },
+    {
+      "id": "earbuds",
+      "category": "Electronics & Power",
+      "text": "Earbuds / headphones",
+      "note": "For the drive/bus, camp downtime, and blocking noise to sleep."
     },
     {
       "id": "power-banks",
@@ -1592,14 +1594,14 @@
         "car-onsite",
         "linens-unconfirmed",
         "hard-shelter",
-        "power-real"
+        "power-real",
+        "towels"
       ],
       "notes": [
-        "OPEN ITEM — EF is silent on whether linens/bedding and bath towels are included (unlike every other Good Life lodging type). The underlying Double JJ Resort cabins list \"linens & towels provided,\" so likely supplied, but EF does not confirm in writing.",
-        "Kitchenette is microwave + mini-fridge only — no cooktop/oven, so a ≤1 lb camp stove is still needed for hot food; cookware/utensils are not confirmed.",
-        "Bring your own sheets/blankets/pillows and bath towels as backup, or confirm with the Good Life concierge (goodlife@electricforestfestival.com).",
-        "Also bring: groceries (kitchenette cooking), toiletries, swim gear, venue daypack.",
-        "Includes 2 Back 40 parking passes; pool/waterpark + daily brunch."
+        "Towels: the Double JJ cabins list \"linens & towels provided,\" so bath towels are supplied — confirm with the Good Life concierge (goodlife@electricforestfestival.com).",
+        "EF is silent on bedding/linens — bring your own sheets/blankets/pillows as backup.",
+        "Kitchenette is microwave + mini-fridge only (no cooktop/oven), so a ≤1 lb camp stove is still useful for hot food; cookware/utensils not confirmed.",
+        "Also bring: groceries, toiletries, swim gear, venue daypack. Includes 2 Back 40 parking passes; pool/waterpark + daily brunch."
       ]
     },
     {
@@ -1621,12 +1623,14 @@
         "car-onsite",
         "linens-unconfirmed",
         "hard-shelter",
-        "power-real"
+        "power-real",
+        "towels"
       ],
       "notes": [
-        "SAME OPEN ITEM as the Cabin — EF is silent on linens/towels; the resort's log homes list \"linens & towels provided,\" so likely supplied, but bring your own bedding/towels as backup or confirm with concierge.",
-        "Also bring: groceries/pantry staples + dish soap (resort units list cookware, but confirm), toiletries, swim gear, venue daypacks for the group.",
-        "Includes 3 Back 40 parking passes; pool/waterpark + daily brunch. Best option for large groups wanting a house."
+        "Towels: the Double JJ log homes list \"linens & towels provided,\" so bath towels are supplied — confirm with the concierge.",
+        "EF is silent on bedding/linens — bring your own sheets/blankets/pillows as backup.",
+        "Full kitchen + living room; bring groceries/pantry staples + dish soap (resort units list cookware, but confirm), toiletries, swim gear, venue daypacks.",
+        "Includes 3 Back 40 parking passes; pool/waterpark + daily brunch. Best for large groups — sleeps up to 8."
       ]
     },
     {
@@ -1651,7 +1655,8 @@
         "brunch",
         "concierge",
         "shuttle",
-        "power-tent"
+        "power-tent",
+        "tent-lock"
       ],
       "notes": [
         "Very little to bring. Personal clothing + costumes, toiletries beyond soap, swim gear, phone/power bank, venue daypack.",

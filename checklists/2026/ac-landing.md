@@ -52,7 +52,6 @@
 - [ ] Mattress topper — _Comfort over the provided bed._
 - [ ] Eye mask + earplugs — _Sun's up around 6 AM._
 - [ ] On arrival: confirm cooling-unit operation + nearest shower/shuttle
-- [ ] Padlock for valuables — _Peace of mind for gear in camp._
 
 ### Camp Kitchen & Food
 
@@ -84,6 +83,7 @@
 - [ ] Night: hoodie/fleece, long pants, pashmina/onesie — _Genuinely cold after dark._
 - [ ] Rain: packable jacket/poncho + quick-dry layers — _Cotton stays wet._
 - [ ] Bandana / neck gaiter, sun hat, sunglasses
+- [ ] Swimsuit
 - [ ] Costumes / themed outfits
 
 ### Footwear
@@ -125,6 +125,7 @@
 ### Electronics & Power
 
 - [ ] Phone + cable
+- [ ] Earbuds / headphones — _For the drive/bus, camp downtime, and blocking noise to sleep._
 - [ ] 2 power banks per person — _Primarily for the venue and long charging lines; cell towers collapse with 40k–50k people._
 - [ ] Wall / USB charger + adapters
 - [ ] Headlamp + backup flashlight

@@ -27,12 +27,14 @@
 - EF does not confirm linens/towels for this lodging in writing — bring your own as backup or confirm with the Good Life concierge.
 - RV or hard-sided lodging — no camping tent needed
 - Real household AC power — run any appliance (RV 30A, cabin/log home, hotel)
+- Bath/shower towels provided.
 
 ## 📌 Notes for this option
 
-- SAME OPEN ITEM as the Cabin — EF is silent on linens/towels; the resort's log homes list "linens & towels provided," so likely supplied, but bring your own bedding/towels as backup or confirm with concierge.
-- Also bring: groceries/pantry staples + dish soap (resort units list cookware, but confirm), toiletries, swim gear, venue daypacks for the group.
-- Includes 3 Back 40 parking passes; pool/waterpark + daily brunch. Best option for large groups wanting a house.
+- Towels: the Double JJ log homes list "linens & towels provided," so bath towels are supplied — confirm with the concierge.
+- EF is silent on bedding/linens — bring your own sheets/blankets/pillows as backup.
+- Full kitchen + living room; bring groceries/pantry staples + dish soap (resort units list cookware, but confirm), toiletries, swim gear, venue daypacks.
+- Includes 3 Back 40 parking passes; pool/waterpark + daily brunch. Best for large groups — sleeps up to 8.
 
 ## Packing list
 
@@ -54,7 +56,6 @@
 - [ ] Your own sheets / blankets / pillows as backup — _EF doesn't confirm linens for this unit — bring as backup or confirm with the Good Life concierge (goodlife@electricforestfestival.com)._
 - [ ] Eye mask + earplugs — _Sun's up around 6 AM._
 - [ ] On arrival: confirm cooling-unit operation + nearest shower/shuttle
-- [ ] Padlock for valuables — _Peace of mind for gear in camp._
 
 ### Camp Kitchen & Food
 
@@ -93,7 +94,6 @@
 
 ### Toiletries & Hygiene
 
-- [ ] Towel(s) — _At least one, ideally a spare._
 - [ ] Beach / swim towel + dry bag — _Separate towel for the beach/pool; dry bag keeps gear dry._
 - [ ] Soap, shampoo/conditioner, deodorant, toothbrush/toothpaste
 - [ ] Toilet paper + tissues
@@ -124,6 +124,7 @@
 ### Electronics & Power
 
 - [ ] Phone + cable
+- [ ] Earbuds / headphones — _For the drive/bus, camp downtime, and blocking noise to sleep._
 - [ ] 2 power banks per person — _Primarily for the venue and long charging lines; cell towers collapse with 40k–50k people._
 - [ ] Wall / USB charger + adapters
 - [ ] Headlamp + backup flashlight

@@ -45,7 +45,6 @@
 - [ ] Sleeping bag + sleeping pad or air mattress
 - [ ] Pillow
 - [ ] Eye mask + earplugs — _Sun's up around 6 AM._
-- [ ] Padlock for valuables — _Peace of mind for gear in camp._
 - [ ] Air pump for the air mattress — _Walk-in sites may have no car power — bring a battery pump (or a 12V inflator if camping beside your car)._
 - [ ] Optional extra / pup tent + stakes (extra sleepers) — _RV sites are officially RV-only, but a small extra-sleeper tent on your own 20×50 pad is a common gray area — confirm with EF and keep it on your site alongside the RV + car._
 
@@ -78,6 +77,7 @@
 - [ ] Night: hoodie/fleece, long pants, pashmina/onesie — _Genuinely cold after dark._
 - [ ] Rain: packable jacket/poncho + quick-dry layers — _Cotton stays wet._
 - [ ] Bandana / neck gaiter, sun hat, sunglasses
+- [ ] Swimsuit
 - [ ] Costumes / themed outfits
 
 ### Footwear
@@ -119,6 +119,7 @@
 ### Electronics & Power
 
 - [ ] Phone + cable
+- [ ] Earbuds / headphones — _For the drive/bus, camp downtime, and blocking noise to sleep._
 - [ ] 2 power banks per person — _Primarily for the venue and long charging lines; cell towers collapse with 40k–50k people._
 - [ ] Wall / USB charger + adapters
 - [ ] Headlamp + backup flashlight

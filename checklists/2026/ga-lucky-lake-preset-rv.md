@@ -55,7 +55,6 @@
 - [ ] Extra warm blanket or sleeping-bag liner — _Nights hit the low-to-mid 50s; no throw blanket is included._
 - [ ] Mattress topper — _Comfort over the provided bed._
 - [ ] Eye mask + earplugs — _Sun's up around 6 AM._
-- [ ] Padlock for valuables — _Peace of mind for gear in camp._
 
 ### Camp Kitchen & Food
 
@@ -120,6 +119,7 @@
 ### Electronics & Power
 
 - [ ] Phone + cable
+- [ ] Earbuds / headphones — _For the drive/bus, camp downtime, and blocking noise to sleep._
 - [ ] 2 power banks per person — _Primarily for the venue and long charging lines; cell towers collapse with 40k–50k people._
 - [ ] Wall / USB charger + adapters
 - [ ] Headlamp + backup flashlight
